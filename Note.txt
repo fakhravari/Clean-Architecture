@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "Data Source=00;Initial Catalog=00;User ID=00;Password=00" Microsoft.EntityFrameworkCore.SqlServer  --context-dir Contexts -c Dota2BotDbContext --output-dir ..\Dota2Bot.Model\Entities --namespace Dota2Bot.Model.Entities -f
