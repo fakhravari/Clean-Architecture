@@ -4,6 +4,7 @@ namespace Shared.Extentions
 {
     public static class StringExtensions
     {
+        public static string GetCamelCase(this string str) => char.ToLowerInvariant(str[0]) + str[1..]; //str.Substring(1)
         public static bool HasValue(this string value, bool ignoreWhiteSpace = true)
         {
             return ignoreWhiteSpace ? !string.IsNullOrWhiteSpace(value) : !string.IsNullOrEmpty(value);

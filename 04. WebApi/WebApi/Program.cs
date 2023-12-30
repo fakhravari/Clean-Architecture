@@ -11,8 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddJwtAuthentication(builder);
 builder.Services.AddSwagger();
 
-
-
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {

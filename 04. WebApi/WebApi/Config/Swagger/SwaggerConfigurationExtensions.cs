@@ -38,50 +38,35 @@ namespace WebApi.Config.Swagger
                 #region Filters
                 options.ExampleFilters();
 
-                options.OperationFilter<ApplySummariesOperationFilter>();
-                options.OperationFilter<ApplyUploadFileOperationFilter>();
+                options.OperationFilter<SwaggerApplyOperationFilter.ApplySummariesOperationFilter>();
+                options.OperationFilter<SwaggerApplyOperationFilter.ApplyUploadFileOperationFilter>();
+                options.OperationFilter<SwaggerApplyOperationFilter.SwggerHeaders>();
+                options.OperationFilter<SwaggerApplyOperationFilter.SwaggerJsonIgnore>();
 
-                #region Add UnAuthorized to Response
-                //Add 401 response and security requirements (Lock icon) to actions that need authorization
-                //options.OperationFilter<UnauthorizedResponsesOperationFilter>(true, "OAuth2");
-                options.OperationFilter<UnauthorizedResponsesOperationFilter>(true, "OAuth2");
-                #endregion
-                #region Add Jwt Authentication
-                //options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                //{
-                //    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                //    Name = "Authorization",
-                //    In = ParameterLocation.Header
-                //});
-                //options.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                //{
-                //    {
-                //        new OpenApiSecurityScheme
-                //        {
-                //            Reference = new OpenApiReference
-                //            {
-                //                Id = JwtBearerDefaults.AuthenticationScheme,
-                //                Type = ReferenceType.SecurityScheme
-                //            },
-                //            Scheme = "Bearer",
-                //            BearerFormat = "JWT",
-                //            Name = "X-token",
-                //            Type = SecuritySchemeType.ApiKey,
-                //            In = ParameterLocation.Header
-                //        },
-                //        new List<string>()
-                //    }
-                //});
-                #endregion
+
+                options.OperationFilter<SwaggerApplyOperationFilter.UnauthorizedResponsesOperationFilter>();
                 #region Versioning
-                options.OperationFilter<RemoveVersionParameters>();
-                options.DocumentFilter<SetVersionInPaths>();
+                options.OperationFilter<SwaggerApplyOperationFilter.RemoveVersionParameters>();
+                options.DocumentFilter<SwaggerApplyOperationFilter.SetVersionInPaths>();
                 options.DocInclusionPredicate((docName, apiDesc) =>
                 {
                     if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
                     var versions = methodInfo.DeclaringType.GetCustomAttributes<ApiVersionAttribute>(true).SelectMany(attr => attr.Versions);
                     return versions.Any(v => $"v{v}" == docName);
                 });
+
+
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "X-token",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    In = ParameterLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}.",
+                    BearerFormat = "JWT",
+
+                });
+                options.OperationFilter<SwaggerApplyOperationFilter.AuthorizationOperationFilter>();
                 #endregion
 
                 #endregion
@@ -151,4 +136,8 @@ namespace WebApi.Config.Swagger
             return app;
         }
     }
+
+
+
+
 }

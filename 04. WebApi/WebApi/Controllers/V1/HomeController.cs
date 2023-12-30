@@ -5,6 +5,13 @@ using WebApi.Controllers.Base;
 
 namespace WebApi.Controllers.V1
 {
+    public class Employee
+    {
+        public int EmployeeID { get; set; }
+        public string FirstName { get; set; }
+        public int Zip { get; set; }
+    }
+
     [ApiVersion("1")]
     public class HomeController : BaseController
     {
@@ -15,9 +22,9 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> SendSMS(string Phone)
+        public async Task<IActionResult> SendSMS(Employee ep)
         {
-            return Ok("Phone = " + Phone);
+            return Ok("Phone = " + ep.FirstName);
         }
 
         [Authorize]
@@ -28,7 +35,7 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public IActionResult JwtTokenGenerate(string UserName, string Password)
+        public async Task<IActionResult> JwtTokenGenerate(string UserName, string Password)
         {
             var jwt = iwJwtService.JwtTokenGenerate(UserName, Password);
 
