@@ -33,3 +33,15 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Domain\obj\
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Domain\obj\Debug\net8.0\refint\Domain.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.pdb
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.pdb
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\ref\Domain.dll
