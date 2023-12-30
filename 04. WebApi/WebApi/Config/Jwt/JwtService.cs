@@ -9,7 +9,7 @@ namespace WebApi.Config.Jwt
 {
     public interface IJwtService
     {
-        string Generate(string UserName, string Password);
+        string JwtTokenGenerate(string UserName, string Password);
     }
 
     public class JwtService : IJwtService
@@ -21,7 +21,7 @@ namespace WebApi.Config.Jwt
             _siteSetting = settings.Value;
         }
 
-        public string Generate(string UserName, string Password)
+        public string JwtTokenGenerate(string UserName, string Password)
         {
             var secretKey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.SecretKey);
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey),
@@ -31,7 +31,6 @@ namespace WebApi.Config.Jwt
             var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey),
                 SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
-            var roles = GetClaims(UserName);
             var descriptor = new SecurityTokenDescriptor
             {
                 Issuer = _siteSetting.JwtSettings.Issuer,
@@ -41,25 +40,18 @@ namespace WebApi.Config.Jwt
                 Expires = DateTime.Now.AddYears(_siteSetting.JwtSettings.ExpirationYear),
                 SigningCredentials = signingCredentials,
                 EncryptingCredentials = encryptingCredentials,
-                Subject = new ClaimsIdentity(roles)
+                Subject = new ClaimsIdentity(new List<Claim>
+                {
+                    new(ClaimTypes.NameIdentifier, UserName),
+                    new(ClaimTypes.Name, UserName)
+                })
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var securityToken = tokenHandler.CreateToken(descriptor);
             var jwt = tokenHandler.WriteToken(securityToken);
 
-
             return jwt;
-        }
-
-        private IEnumerable<Claim> GetClaims(string UserName)
-        {
-            var claims = new List<Claim>
-            {
-                new(ClaimTypes.NameIdentifier, UserName),
-                new(ClaimTypes.Name, UserName)
-            };
-            return claims;
         }
     }
 }
