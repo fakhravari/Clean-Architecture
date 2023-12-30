@@ -1,6 +1,4 @@
-﻿using WebApi.Config.Jwt;
-using WebApi.Config.Jwt.Common;
-using WebApi.Config.Jwt.Extensions;
+﻿using WebApi.Config.Jwt.Extensions;
 using WebApi.Config.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,32 +8,16 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 
-
-
-var siteSetting = builder.Configuration.GetSection(nameof(SiteSettingsJwt)).Get<SiteSettingsJwt>();
-builder.Services.Configure<SiteSettingsJwt>(builder.Configuration.GetSection(nameof(SiteSettingsJwt)));
-builder.Services.AddScoped<IJwtService, JwtService>();
-builder.Services.AddJwtAuthentication(siteSetting.JwtSettings);
-
-
-
-
-builder.Services.AddSwaggerGen();
+builder.Services.AddJwtAuthentication(builder);
+builder.Services.AddSwagger();
 
 
 
 var app = builder.Build();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Project v1");
-        c.SwaggerEndpoint("/swagger/v2/swagger.json", "Project v2");
-    });
+    app.UseSwaggerAndUI();
 }
 else
 {

@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApi.Config.Jwt;
 using WebApi.Controllers.Base;
-using static WebApi.Config.Swagger.SwaggerConfiguration;
 
 namespace WebApi.Controllers.V1
 {
-    [ApiController]
     [ApiVersion("1")]
     public class HomeController : BaseController
     {
@@ -15,27 +14,49 @@ namespace WebApi.Controllers.V1
             this.iwJwtService = _iwJwtService;
         }
 
-        [AllowAnonymousAPI]
         [HttpPost("[action]")]
         public async Task<IActionResult> SendSMS(string Phone)
         {
             return Ok("Phone = " + Phone);
         }
 
-        [AuthorizeAPI]
+        [Authorize]
         [HttpPost("[action]")]
         public async Task<IActionResult> SendSMS_Authorize(string Phone)
         {
             return Ok("Phone = " + Phone);
         }
 
-        [AllowAnonymousAPI]
         [HttpPost("[action]")]
         public IActionResult JwtTokenGenerate(string UserName, string Password)
         {
-            var jwt = iwJwtService.Generate(UserName, Password);
+            var jwt = iwJwtService.JwtTokenGenerate(UserName, Password);
 
             return Ok(jwt);
+        }
+
+
+
+
+
+
+        /// <summary>
+        /// ورژن موبایل
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetVersion()
+        {
+            return Ok("GetVersion = 44");
+        }
+        /// <summary>
+        /// VERSION MOBILE
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetVersion2()
+        {
+            return Ok("GetVersion2 = 44");
         }
     }
 }

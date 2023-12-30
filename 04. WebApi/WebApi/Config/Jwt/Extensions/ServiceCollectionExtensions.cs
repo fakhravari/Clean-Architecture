@@ -1,18 +1,21 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Net;
+using Newtonsoft.Json;
 using System.Security.Claims;
 using System.Text;
 using WebApi.Config.Jwt.Common;
-using WebApi.Config.Jwt.Exceptions;
 using WebApi.Config.Jwt.Result;
 
 namespace WebApi.Config.Jwt.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddJwtAuthentication(this IServiceCollection services, JwtSettings jwtSettings)
+        public static void AddJwtAuthentication(this IServiceCollection services, WebApplicationBuilder builder)
         {
+            var jwtSettings = builder.Configuration.GetSection(nameof(SiteSettingsJwt)).Get<SiteSettingsJwt>();
+            builder.Services.Configure<SiteSettingsJwt>(builder.Configuration.GetSection(nameof(SiteSettingsJwt)));
+            builder.Services.AddScoped<IJwtService, JwtService>();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -20,8 +23,8 @@ namespace WebApi.Config.Jwt.Extensions
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                var secretkey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
-                var encryptionkey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
+                var secretkey = Encoding.UTF8.GetBytes(jwtSettings.JwtSettings.SecretKey);
+                var encryptionkey = Encoding.UTF8.GetBytes(jwtSettings.JwtSettings.Encryptkey);
 
                 var validationParameters = new TokenValidationParameters
                 {
@@ -32,9 +35,9 @@ namespace WebApi.Config.Jwt.Extensions
                     RequireExpirationTime = true,
                     ValidateLifetime = true,
                     ValidateAudience = true,
-                    ValidAudience = jwtSettings.Audience,
+                    ValidAudience = jwtSettings.JwtSettings.Audience,
                     ValidateIssuer = true,
-                    ValidIssuer = jwtSettings.Issuer,
+                    ValidIssuer = jwtSettings.JwtSettings.Issuer,
                     TokenDecryptionKey = new SymmetricSecurityKey(encryptionkey)
                 };
 
@@ -43,14 +46,6 @@ namespace WebApi.Config.Jwt.Extensions
                 options.TokenValidationParameters = validationParameters;
                 options.Events = new JwtBearerEvents
                 {
-                    OnAuthenticationFailed = context =>
-                    {
-                        if (context.Exception != null)
-                            throw new AppException(ApiResultStatusCode.UnAuthorized, "Authentication failed.", HttpStatusCode.Unauthorized, context.Exception, null);
-
-                        return Task.CompletedTask;
-                    },
-                    OnMessageReceived = context => Task.CompletedTask,
                     OnTokenValidated = async context =>
                     {
                         //var userRepository = context.HttpContext.RequestServices.GetRequiredService<IPersonnel>();
@@ -70,7 +65,7 @@ namespace WebApi.Config.Jwt.Extensions
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = (int)ApiResultStatusCode.UnAuthorized;
 
-                        var apiResult = Newtonsoft.Json.JsonConvert.SerializeObject(new ApiResult<object>(false, ApiResultStatusCode.UnAuthorized, context.ErrorDescription));
+                        var apiResult =JsonConvert.SerializeObject(new ApiResult<object>(false, ApiResultStatusCode.UnAuthorized, context.ErrorDescription));
 
                         return context.Response.WriteAsync(apiResult);
                     }
