@@ -1,8 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using WebApi.Config.Jwt;
+using WebApi.Config.Jwt.Common;
+using WebApi.Config.Jwt.Extensions;
 using WebApi.Config.Swagger;
-using WebApi.Config.Utilities.Common;
-using WebApi.Config.Utilities.Extensions;
-using WebApi.Config.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,23 +20,22 @@ builder.Services.AddJwtAuthentication(siteSetting.JwtSettings);
 
 
 
+builder.Services.AddSwaggerGen();
 
 
-#region Register Swagger
-builder.Services.AddSwagger();
-builder.Services.AddApiVersioning(options =>
-{
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-    options.ReportApiVersions = true;
-});
-#endregion
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Project v1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "Project v2");
+    });
 }
 else
 {
@@ -47,7 +45,6 @@ else
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();
 app.UseRouting();
-app.UseSwaggerAndUI();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

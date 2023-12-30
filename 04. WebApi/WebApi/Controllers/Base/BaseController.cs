@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Config.Utilities.Filters;
+using WebApi.Config.Jwt.Filters;
 
 namespace WebApi.Controllers.Base
 {

@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebApi.Config.Jwt;
 using WebApi.Controllers.Base;
+using static WebApi.Config.Swagger.SwaggerConfiguration;
 
 namespace WebApi.Controllers.V1
 {
@@ -8,23 +9,33 @@ namespace WebApi.Controllers.V1
     [ApiVersion("1")]
     public class HomeController : BaseController
     {
-        public HomeController()
+        private readonly IJwtService iwJwtService;
+        public HomeController(IJwtService _iwJwtService)
         {
-
+            this.iwJwtService = _iwJwtService;
         }
 
-        [HttpPost("SendSMS")]
+        [AllowAnonymousAPI]
+        [HttpPost("[action]")]
         public async Task<IActionResult> SendSMS(string Phone)
         {
             return Ok("Phone = " + Phone);
         }
 
-
-        [Authorize]
-        [HttpPost("SendSMS_Authorize")]
+        [AuthorizeAPI]
+        [HttpPost("[action]")]
         public async Task<IActionResult> SendSMS_Authorize(string Phone)
         {
             return Ok("Phone = " + Phone);
+        }
+
+        [AllowAnonymousAPI]
+        [HttpPost("[action]")]
+        public IActionResult JwtTokenGenerate(string UserName, string Password)
+        {
+            var jwt = iwJwtService.Generate(UserName, Password);
+
+            return Ok(jwt);
         }
     }
 }
