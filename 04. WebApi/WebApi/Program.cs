@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Config.Jwt.ServiceExtensions;
 using Infrastructure.Config.Swagger;
+using Shared.Resources;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddJwtAuthentication(builder);
 builder.Services.AddSwagger();
-
+ 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
@@ -20,6 +21,8 @@ else
 {
     app.UseHsts();
 }
+
+app.ResourcesBuilder();
 
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();
