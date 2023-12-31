@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
@@ -8,7 +9,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using FilterDescriptor = Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor;
 
-namespace WebApi.Config.Swagger
+namespace Infrastructure.Config.Swagger
 {
     public class SwaggerApplyOperationFilter
     {

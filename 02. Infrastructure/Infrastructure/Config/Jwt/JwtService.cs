@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Infrastructure.Config.Jwt.Common;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApi.Config.Jwt.Common;
 
-namespace WebApi.Config.Jwt
+namespace Infrastructure.Config.Jwt
 {
     public interface IJwtService
     {
@@ -14,29 +14,29 @@ namespace WebApi.Config.Jwt
 
     public class JwtService : IJwtService
     {
-        private readonly SiteSettingsJwt _siteSetting;
+        private readonly JwtSettingsDTO _siteSetting;
 
-        public JwtService(IOptionsSnapshot<SiteSettingsJwt> settings)
+        public JwtService(IOptionsSnapshot<JwtSettingsDTO> settings)
         {
             _siteSetting = settings.Value;
         }
 
         public string JwtTokenGenerate(string UserName, string Password)
         {
-            var secretKey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.SecretKey);
+            var secretKey = Encoding.UTF8.GetBytes(_siteSetting.SecretKey);
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey),
                 SecurityAlgorithms.HmacSha256Signature);
 
-            var encryptionkey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.Encryptkey);
+            var encryptionkey = Encoding.UTF8.GetBytes(_siteSetting.Encryptkey);
             var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
             var descriptor = new SecurityTokenDescriptor
             {
-                Issuer = _siteSetting.JwtSettings.Issuer,
-                Audience = _siteSetting.JwtSettings.Audience,
+                Issuer = _siteSetting.Issuer,
+                Audience = _siteSetting.Audience,
                 IssuedAt = DateTime.Now,
-                NotBefore = DateTime.Now.AddMinutes(_siteSetting.JwtSettings.NotBeforeMinutes),
-                Expires = DateTime.Now.AddYears(_siteSetting.JwtSettings.ExpirationYear),
+                NotBefore = DateTime.Now.AddMinutes(_siteSetting.NotBeforeMinutes),
+                Expires = DateTime.Now.AddYears(_siteSetting.ExpirationYear),
                 SigningCredentials = signingCredentials,
                 EncryptingCredentials = encryptingCredentials,
                 Subject = new ClaimsIdentity(new List<Claim>

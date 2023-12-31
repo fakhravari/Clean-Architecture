@@ -1,6 +1,6 @@
-﻿using WebApi.Config.Jwt.Common;
+﻿using Infrastructure.Config.Jwt.Common;
 
-namespace WebApi.Config.Jwt.Exceptions
+namespace Infrastructure.Config.Jwt.Exceptions
 {
     public class BadRequestException : AppException
     {

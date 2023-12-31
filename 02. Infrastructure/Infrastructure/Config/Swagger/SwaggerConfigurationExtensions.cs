@@ -1,12 +1,14 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Reflection;
 
-namespace WebApi.Config.Swagger
+namespace Infrastructure.Config.Swagger
 {
     public static class SwaggerConfigurationExtensions
     {
@@ -134,8 +136,4 @@ namespace WebApi.Config.Swagger
             return app;
         }
     }
-
-
-
-
 }

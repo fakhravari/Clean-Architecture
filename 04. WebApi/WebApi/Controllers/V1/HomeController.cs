@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Application.Model;
+using Infrastructure.Config.Jwt;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Config.Jwt;
 using WebApi.Controllers.Base;
 
 namespace WebApi.Controllers.V1
 {
-    public class Employee
-    {
-        public int EmployeeID { get; set; }
-        public string FirstName { get; set; }
-        public int Zip { get; set; }
-    }
-
     [ApiVersion("1")]
     public class HomeController : BaseController
     {
@@ -22,28 +16,27 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> SendSMS(Employee ep)
+        public async Task<IActionResult> PublicAction(PublicActionDTO model)
         {
-            return Ok("Phone = " + ep.FirstName);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
+            return Ok(json);
         }
 
         [Authorize]
         [HttpPost("[action]")]
-        public async Task<IActionResult> SendSMS_Authorize(string Phone)
+        public async Task<IActionResult> PrivateAction(PrivateActionDTO model)
         {
-            return Ok("Phone = " + Phone);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
+            return Ok(json);
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> JwtTokenGenerate(string UserName, string Password)
+        public async Task<IActionResult> JwtTokenGenerate(AuthorizeDTO model)
         {
-            var jwt = iwJwtService.JwtTokenGenerate(UserName, Password);
+            var jwt = iwJwtService.JwtTokenGenerate(model.UserName, model.Password);
 
             return Ok(jwt);
         }
-
-
-
 
 
 
@@ -54,16 +47,7 @@ namespace WebApi.Controllers.V1
         [HttpPost("[action]")]
         public async Task<IActionResult> GetVersion()
         {
-            return Ok("GetVersion = 44");
-        }
-        /// <summary>
-        /// VERSION MOBILE
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost("[action]")]
-        public async Task<IActionResult> GetVersion2()
-        {
-            return Ok("GetVersion2 = 44");
+            return Ok("GetVersion = " + DateTime.Now.ToString());
         }
     }
 }

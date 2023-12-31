@@ -87,12 +87,10 @@
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/2.1.0": {
@@ -312,7 +310,7 @@
           "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
         },
         "build": {
-          "build/Swashbuckle.AspNetCore.props": {}
+          "build/_._": {}
         }
       },
       "Swashbuckle.AspNetCore.Annotations/6.5.0": {
@@ -496,6 +494,21 @@
       "Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Pluralize.NET": "1.0.2",
+          "Shared": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+          "Swashbuckle.AspNetCore.Filters": "7.0.12",
+          "Swashbuckle.AspNetCore.Newtonsoft": "6.5.0",
+          "Swashbuckle.AspNetCore.ReDoc": "6.5.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+        },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
         },
@@ -1441,19 +1454,8 @@
     "net8.0": [
       "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
-      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
-      "Microsoft.AspNetCore.Mvc.Versioning >= 5.1.0",
       "Newtonsoft.Json >= 13.0.3",
-      "Pluralize.NET >= 1.0.2",
-      "Shared >= 1.0.0",
-      "Swashbuckle.AspNetCore >= 6.5.0",
-      "Swashbuckle.AspNetCore.Annotations >= 6.5.0",
-      "Swashbuckle.AspNetCore.Filters >= 7.0.12",
-      "Swashbuckle.AspNetCore.Newtonsoft >= 6.5.0",
-      "Swashbuckle.AspNetCore.ReDoc >= 6.5.0",
-      "Swashbuckle.AspNetCore.Swagger >= 6.5.0",
-      "Swashbuckle.AspNetCore.SwaggerGen >= 6.5.0",
-      "Swashbuckle.AspNetCore.SwaggerUI >= 6.5.0"
+      "Shared >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1513,53 +1515,9 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": {
-            "target": "Package",
-            "version": "[8.0.0, )"
-          },
-          "Microsoft.AspNetCore.Mvc.Versioning": {
-            "target": "Package",
-            "version": "[5.1.0, )"
-          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
-          },
-          "Pluralize.NET": {
-            "target": "Package",
-            "version": "[1.0.2, )"
-          },
-          "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.Annotations": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.Filters": {
-            "target": "Package",
-            "version": "[7.0.12, )"
-          },
-          "Swashbuckle.AspNetCore.Newtonsoft": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.ReDoc": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.Swagger": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.SwaggerGen": {
-            "target": "Package",
-            "version": "[6.5.0, )"
-          },
-          "Swashbuckle.AspNetCore.SwaggerUI": {
-            "target": "Package",
-            "version": "[6.5.0, )"
           }
         },
         "imports": [

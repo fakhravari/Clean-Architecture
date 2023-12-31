@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Config.Jwt.Common;
+using Infrastructure.Config.Jwt.ResultDTO;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using WebApi.Config.Jwt.Common;
-using WebApi.Config.Jwt.Result;
 
-namespace WebApi.Config.Jwt.Filters
+namespace Infrastructure.Config.Jwt.FiltersResult
 {
     public class ApiResultFilterAttribute : ActionFilterAttribute
     {
@@ -35,7 +35,7 @@ namespace WebApi.Config.Jwt.Filters
 
                 if (badRequestObjectResult.Value is Microsoft.AspNetCore.Mvc.ValidationProblemDetails)
                 {
-                    var _error = badRequestObjectResult.Value as  Microsoft.AspNetCore.Mvc.ValidationProblemDetails;
+                    var _error = badRequestObjectResult.Value as Microsoft.AspNetCore.Mvc.ValidationProblemDetails;
                     var errorMessages = _error.Errors.SelectMany(p => (string[])p.Value).Distinct();
                     message = string.Join(" | ", errorMessages);
                 }

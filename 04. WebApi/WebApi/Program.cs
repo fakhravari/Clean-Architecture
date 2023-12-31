@@ -1,5 +1,5 @@
-﻿using WebApi.Config.Jwt.Extensions;
-using WebApi.Config.Swagger;
+﻿using Infrastructure.Config.Jwt.ServiceExtensions;
+using Infrastructure.Config.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -45,3 +45,7 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete

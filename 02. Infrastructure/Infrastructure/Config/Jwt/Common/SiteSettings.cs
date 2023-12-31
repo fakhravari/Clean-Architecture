@@ -1,12 +1,6 @@
-﻿namespace WebApi.Config.Jwt.Common
+﻿namespace Infrastructure.Config.Jwt.Common
 {
-    public class SiteSettingsJwt
-    {
-        public string ElmahPath { get; set; }
-        public JwtSettings JwtSettings { get; set; }
-    }
-
-    public class JwtSettings
+    public class JwtSettingsDTO
     {
         public string SecretKey { get; set; }
         public string Encryptkey { get; set; }

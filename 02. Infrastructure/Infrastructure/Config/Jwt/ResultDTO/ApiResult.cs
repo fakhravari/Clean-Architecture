@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Config.Jwt.Common;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using WebApi.Config.Jwt.Common;
 using WebApi.Config.Jwt.Extensions;
 
-namespace WebApi.Config.Jwt.Result
+namespace Infrastructure.Config.Jwt.ResultDTO
 {
     public class ApiResult
     {

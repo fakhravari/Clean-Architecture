@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Config.Jwt.Common;
+using Infrastructure.Config.Jwt.ResultDTO;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using WebApi.Config.Jwt.Common;
-using WebApi.Config.Jwt.Result;
 
 namespace WebApi.ActionFilters
 {

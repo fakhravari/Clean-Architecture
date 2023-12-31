@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Config.Jwt.Common
+namespace Infrastructure.Config.Jwt.Common
 {
     public enum ApiResultStatusCode
     {

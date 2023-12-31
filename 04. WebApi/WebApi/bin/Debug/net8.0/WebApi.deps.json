@@ -10,19 +10,8 @@
         "dependencies": {
           "Application": "1.0.0",
           "Infrastructure": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
           "Newtonsoft.Json": "13.0.3",
-          "Pluralize.NET": "1.0.2",
-          "Shared": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.5.0",
-          "Swashbuckle.AspNetCore.Annotations": "6.5.0",
-          "Swashbuckle.AspNetCore.Filters": "7.0.12",
-          "Swashbuckle.AspNetCore.Newtonsoft": "6.5.0",
-          "Swashbuckle.AspNetCore.ReDoc": "6.5.0",
-          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+          "Shared": "1.0.0"
         },
         "runtime": {
           "WebApi.dll": {}
@@ -322,6 +311,21 @@
         }
       },
       "Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Pluralize.NET": "1.0.2",
+          "Shared": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+          "Swashbuckle.AspNetCore.Filters": "7.0.12",
+          "Swashbuckle.AspNetCore.Newtonsoft": "6.5.0",
+          "Swashbuckle.AspNetCore.ReDoc": "6.5.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+        },
         "runtime": {
           "Infrastructure.dll": {}
         }

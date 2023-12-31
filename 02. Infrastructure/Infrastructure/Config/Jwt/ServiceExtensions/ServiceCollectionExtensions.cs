@@ -1,22 +1,22 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Infrastructure.Config.Jwt.Common;
+using Infrastructure.Config.Jwt.ResultDTO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
-using WebApi.Config.Jwt.Common;
-using WebApi.Config.Jwt.Result;
 
-namespace WebApi.Config.Jwt.Extensions
+namespace Infrastructure.Config.Jwt.ServiceExtensions
 {
     public static class ServiceCollectionExtensions
     {
         public static void AddJwtAuthentication(this IServiceCollection services, WebApplicationBuilder builder)
         {
-            builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
-
-            var jwtSettings = builder.Configuration.GetSection(nameof(SiteSettingsJwt)).Get<SiteSettingsJwt>();
-            builder.Services.Configure<SiteSettingsJwt>(builder.Configuration.GetSection(nameof(SiteSettingsJwt)));
+            var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettingsDTO>();
             builder.Services.AddScoped<IJwtService, JwtService>();
 
             services.AddAuthentication(options =>
@@ -26,8 +26,8 @@ namespace WebApi.Config.Jwt.Extensions
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                var secretkey = Encoding.UTF8.GetBytes(jwtSettings.JwtSettings.SecretKey);
-                var encryptionkey = Encoding.UTF8.GetBytes(jwtSettings.JwtSettings.Encryptkey);
+                var secretkey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
+                var encryptionkey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
 
                 var validationParameters = new TokenValidationParameters
                 {
@@ -39,9 +39,9 @@ namespace WebApi.Config.Jwt.Extensions
                     RequireExpirationTime = true,
                     ValidateLifetime = true,
                     ValidateAudience = true,
-                    ValidAudience = jwtSettings.JwtSettings.Audience,
+                    ValidAudience = jwtSettings.Audience,
                     ValidateIssuer = true,
-                    ValidIssuer = jwtSettings.JwtSettings.Issuer
+                    ValidIssuer = jwtSettings.Issuer
                 };
 
                 options.RequireHttpsMetadata = false;
@@ -76,13 +76,11 @@ namespace WebApi.Config.Jwt.Extensions
                             }
 
                             if (IsError)
-                            {
-                                context.Fail("کاربر نامعتبر است");
-                            }
+                                context.Fail("error");
                         }
                         else
                         {
-                            context.Fail("کاربر نامعتبر است");
+                            context.Fail("error");
                         }
 
                         //var userRepository = context.HttpContext.RequestServices.GetRequiredService<IPersonnel>();

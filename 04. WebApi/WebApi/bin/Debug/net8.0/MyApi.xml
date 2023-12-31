@@ -10,11 +10,5 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.V1.HomeController.GetVersion2">
-            <summary>
-            VERSION MOBILE
-            </summary>
-            <returns></returns>
-        </member>
     </members>
 </doc>
