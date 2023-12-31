@@ -17,6 +17,7 @@ namespace Infrastructure.Config.Jwt.ServiceExtensions
         public static void AddJwtAuthentication(this IServiceCollection services, WebApplicationBuilder builder)
         {
             var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettingsDTO>();
+            builder.Services.Configure<JwtSettingsDTO>(builder.Configuration.GetSection("JwtSettings"));
             builder.Services.AddScoped<IJwtService, JwtService>();
 
             services.AddAuthentication(options =>
@@ -51,15 +52,17 @@ namespace Infrastructure.Config.Jwt.ServiceExtensions
                 {
                     OnTokenValidated = context =>
                     {
-                        string token = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
-                        if (!token.IsNullOrEmpty())
+                        string IdToken = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
+                        string IdLanguage = context.HttpContext.Request.Headers["IdLanguage"].ToString().Trim();
+
+                        if (!IdToken.IsNullOrEmpty())
                         {
                             bool IsError = false;
 
                             var tokenHandler = new JwtSecurityTokenHandler();
                             try
                             {
-                                tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
+                                tokenHandler.ValidateToken(IdToken, validationParameters, out SecurityToken validatedToken);
                                 var jwtToken = (JwtSecurityToken)validatedToken;
 
                                 var user1 = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToString().Trim();
@@ -89,6 +92,9 @@ namespace Infrastructure.Config.Jwt.ServiceExtensions
                     },
                     OnChallenge = context =>
                     {
+                        string IdToken = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
+                        string IdLanguage = context.HttpContext.Request.Headers["IdLanguage"].ToString().Trim();
+
                         context.HandleResponse();
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = (int)ApiResultStatusCode.UnAuthorized;

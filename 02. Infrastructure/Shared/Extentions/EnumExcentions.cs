@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace WebApi.Config.Jwt.Extensions
+namespace Shared.Extentions
 {
     public static class EnumExtensions
     {
@@ -25,10 +25,7 @@ namespace WebApi.Config.Jwt.Extensions
 
         public static string ToDisplay(this Enum value, DisplayProperty property = DisplayProperty.Name)
         {
-            //Assert.NotNull(value, nameof(value));
-
-            var attribute = value.GetType().GetField(value.ToString())
-                .GetCustomAttributes<DisplayAttribute>(false).FirstOrDefault();
+            var attribute = value.GetType().GetField(value.ToString()).GetCustomAttributes<DisplayAttribute>(false).FirstOrDefault();
 
             if (attribute == null)
                 return value.ToString();

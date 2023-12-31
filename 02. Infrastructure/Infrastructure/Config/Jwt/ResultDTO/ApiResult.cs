@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Config.Jwt.Common;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using WebApi.Config.Jwt.Extensions;
+using Shared.Extentions;
 
 namespace Infrastructure.Config.Jwt.ResultDTO
 {
