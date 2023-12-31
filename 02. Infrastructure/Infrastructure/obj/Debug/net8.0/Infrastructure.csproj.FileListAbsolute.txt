@@ -49,3 +49,7 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete

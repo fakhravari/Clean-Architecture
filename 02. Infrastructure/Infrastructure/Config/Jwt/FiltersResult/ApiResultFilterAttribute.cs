@@ -2,6 +2,7 @@
 using Infrastructure.Config.Jwt.ResultDTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Text.RegularExpressions;
 
 namespace Infrastructure.Config.Jwt.FiltersResult
 {
@@ -29,15 +30,25 @@ namespace Infrastructure.Config.Jwt.FiltersResult
                 var message = badRequestObjectResult.Value.ToString();
                 if (badRequestObjectResult.Value is SerializableError errors)
                 {
-                    var errorMessages = errors.SelectMany(p => (string[])p.Value).Distinct();
+                    var errorMessages = errors.SelectMany(p => (string[])p.Value).Distinct().ToList();
                     message = string.Join(" | ", errorMessages);
                 }
 
                 if (badRequestObjectResult.Value is Microsoft.AspNetCore.Mvc.ValidationProblemDetails)
                 {
+                    var lst = new List<string>();
+
                     var _error = badRequestObjectResult.Value as Microsoft.AspNetCore.Mvc.ValidationProblemDetails;
-                    var errorMessages = _error.Errors.SelectMany(p => (string[])p.Value).Distinct();
-                    message = string.Join(" | ", errorMessages);
+
+                    foreach (var trace in _error.Errors.SelectMany(p => (string[])p.Value).Distinct().ToList())
+                    {
+                        Match match = Regex.Match(trace, @"\$\.(\w+)");
+                        if (match.Success)
+                        {
+                            lst.Add(match.Groups[1].Value + " The field is required.");
+                        }
+                    }
+                    message = string.Join(" | ", lst);
                 }
 
                 var apiResult = new ApiResult(false, ApiResultStatusCode.BadRequest, message);
