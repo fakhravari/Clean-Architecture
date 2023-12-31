@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZLluN2zjNNz+NGMfgjQNXISfI1tcphCkUs744SeW+rrxYyhE1K9Lsk63Ax5JrA1zkbtyUOcXNMWhP4r4Cmoi+g==",
+  "dgSpecHash": "q21apnANlgwUzo4LvkDgl9KC483T9NdigOsSDpKJLva6BuIlyD7qbCrIBoD9EqmYzqo/uQW7I6mHxmu7hN2wtQ==",
   "success": true,
-  "projectFilePath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

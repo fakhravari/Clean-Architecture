@@ -116,7 +116,7 @@ namespace WebApi.Config.Swagger
             {
                 operation.Parameters.Add(new OpenApiParameter
                 {
-                    Name = "X-Language",
+                    Name = "IdLanguage",
                     In = ParameterLocation.Header,
                     Description = "Persian = 1, English = 2, Arabic = 3",
                     Required = true,
@@ -129,10 +129,8 @@ namespace WebApi.Config.Swagger
                             new OpenApiString("2"),
                             new OpenApiString("3")
                         }
-                    },
-
+                    }
                 });
-
 
                 var allowAnonymous = context.ApiDescription.ActionDescriptor.EndpointMetadata.OfType<AuthorizeAttribute>().Any();
                 if (allowAnonymous)

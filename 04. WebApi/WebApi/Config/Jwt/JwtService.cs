@@ -28,8 +28,7 @@ namespace WebApi.Config.Jwt
                 SecurityAlgorithms.HmacSha256Signature);
 
             var encryptionkey = Encoding.UTF8.GetBytes(_siteSetting.JwtSettings.Encryptkey);
-            var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey),
-                SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
+            var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
             var descriptor = new SecurityTokenDescriptor
             {
@@ -43,7 +42,10 @@ namespace WebApi.Config.Jwt
                 Subject = new ClaimsIdentity(new List<Claim>
                 {
                     new(ClaimTypes.NameIdentifier, UserName),
-                    new(ClaimTypes.Name, UserName)
+                    new(ClaimTypes.Name, UserName),
+                    new(ClaimTypes.DateOfBirth, "1369/01/07"),
+                    new(ClaimTypes.Actor, "محمدحسین فخرآوری"),
+                    new(ClaimTypes.Email, "fakhravary@gmail.com")
                 })
             };
 

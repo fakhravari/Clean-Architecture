@@ -55,16 +55,14 @@ namespace WebApi.Config.Swagger
                     return versions.Any(v => $"v{v}" == docName);
                 });
 
-
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Name = "X-token",
+                    Name = "IdToken",
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer",
                     In = ParameterLocation.Header,
                     Description = "Type into the textbox: Bearer {your JWT token}.",
-                    BearerFormat = "JWT",
-
+                    BearerFormat = "JWT"
                 });
                 options.OperationFilter<SwaggerApplyOperationFilter.AuthorizationOperationFilter>();
                 #endregion

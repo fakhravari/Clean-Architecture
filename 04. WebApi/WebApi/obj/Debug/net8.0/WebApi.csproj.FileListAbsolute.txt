@@ -238,3 +238,5 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bi
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Domain.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Shared.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Shared.pdb
