@@ -6,6 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Contexts\**" />
+    <Compile Remove="Interface\**" />
+    <EmbeddedResource Remove="Contexts\**" />
+    <EmbeddedResource Remove="Interface\**" />
+    <None Remove="Contexts\**" />
+    <None Remove="Interface\**" />
+  </ItemGroup>
+
 
 
 	<ItemGroup>
@@ -22,15 +31,12 @@
 		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+
+
+		<PackageReference Include="MediatR" Version="12.2.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
 	</ItemGroup>
-
-
-
-  <ItemGroup>
-    <Folder Include="Contexts\" />
-    <Folder Include="Interface\" />
-    <Folder Include="Repository\" />
-  </ItemGroup>
 
 
 

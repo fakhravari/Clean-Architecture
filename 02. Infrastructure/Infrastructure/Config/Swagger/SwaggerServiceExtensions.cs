@@ -10,9 +10,9 @@ using System.Reflection;
 
 namespace Infrastructure.Config.Swagger
 {
-    public static class SwaggerConfigurationExtensions
+    public static class SwaggerServiceExtensions
     {
-        public static void AddSwagger(this IServiceCollection services)
+        public static void AddSwaggerService(this IServiceCollection services)
         {
             #region AddSwaggerExamples
             var mainAssembly = Assembly.GetEntryAssembly();

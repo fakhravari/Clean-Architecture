@@ -16,8 +16,23 @@ namespace Shared.Resources
 
         public async Task Invoke(HttpContext context)
         {
-            var cultureHeader = context.Request.Headers["IdLanguage"].ToString();
-            var culture = string.IsNullOrEmpty(cultureHeader) ? "en-US" : "fa-IR";
+            int cultureHeader = int.Parse(context.Request.Headers["IdLanguage"].ToString());
+            string culture = string.Empty;
+            switch (cultureHeader)
+            {
+                case 1:
+                    culture = "fa-IR";
+                    break;
+                case 2:
+                    culture = "en-US";
+                    break;
+                case 3:
+                    culture = "ar-SA";
+                    break;
+                default:
+                    culture = "fa-IR";
+                    break;
+            }
 
             var cultureInfo = new CultureInfo(culture);
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
@@ -39,5 +54,4 @@ namespace Shared.Resources
             app.UseMiddleware<ResourcesCulture>();
         }
     }
-
 }

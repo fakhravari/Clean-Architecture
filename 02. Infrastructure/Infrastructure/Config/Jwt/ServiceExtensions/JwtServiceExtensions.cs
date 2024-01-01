@@ -12,9 +12,9 @@ using System.Text;
 
 namespace Infrastructure.Config.Jwt.ServiceExtensions
 {
-    public static class ServiceCollectionExtensions
+    public static class JwtServiceExtensions
     {
-        public static void AddJwtAuthentication(this IServiceCollection services, WebApplicationBuilder builder)
+        public static void AddJwtAuthenticationService(this IServiceCollection services, WebApplicationBuilder builder)
         {
             var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettingsDTO>();
             builder.Services.Configure<JwtSettingsDTO>(builder.Configuration.GetSection("JwtSettings"));

@@ -1,10 +1,11 @@
-﻿using Application.Model;
+﻿using Application.Features.Account.Model;
+using Application.Model;
 using FluentValidation;
 using Infrastructure.Config.Jwt;
+using Infrastructure.Repository.Product;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
 using WebApi.Controllers.Base;
 
 namespace WebApi.Controllers.V1
@@ -34,7 +35,7 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> JwtTokenGenerate(AuthorizeDTO model)
+        public async Task<IActionResult> Login(AccountLoginDto model)
         {
             var jwt = iwJwtService.JwtTokenGenerate(model.UserName, model.Password);
 
@@ -70,17 +71,25 @@ namespace WebApi.Controllers.V1
 
 
 
-
-
-    #region ایجاد محصول
     public class CreateProductCommand : IRequest<int>
     {
-        [Required(ErrorMessage = "نام محصول الزامی است.")]
         public string Name { get; set; }
-
-        [Range(0.01, double.MaxValue, ErrorMessage = "قیمت محصول باید بیشتر از صفر باشد.")]
         public decimal Price { get; set; }
+
+        public CreateProductTags Tags { get; set; }
     }
+
+    public class CreateProductTags
+    {
+        public List<string> Name { get; set; }
+        public int Id { get; set; }
+    }
+
+
+
+
+
+
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
     {
         private readonly IProductRepository _productRepository;
@@ -97,37 +106,12 @@ namespace WebApi.Controllers.V1
         }
     }
 
-    #endregion
-    #region ولیدیشن
     public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
     {
         public CreateProductCommandValidator()
         {
-            RuleFor(p => p.Name)
-                .NotNull()
-                .NotEmpty()
-                .WithMessage("نام محصول الزامی است.");
-
-            RuleFor(command => command.Price)
-                .GreaterThan(0)
-                .WithMessage("قیمت محصول باید بیشتر از صفر باشد.");
+            RuleFor(p => p.Name).NotNull().NotEmpty().WithMessage("نام محصول الزامی است.");
+            RuleFor(command => command.Price).GreaterThan(0).WithMessage("قیمت محصول باید بیشتر از صفر باشد.");
         }
     }
-
-
-
-    #endregion
-    #region ریپازیتوری
-    public interface IProductRepository
-    {
-        Task<int> CreateProduct(string Name, decimal Price);
-    }
-    public class ProductRepository : IProductRepository
-    {
-        public async Task<int> CreateProduct(string Name, decimal Price)
-        {
-            return DateTime.Now.Second;
-        }
-    }
-    #endregion
 }

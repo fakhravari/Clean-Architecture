@@ -7,10 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Entities\" />
-    <Folder Include="Interface\" />
-    <Folder Include="Repository\" />
+    <Compile Remove="Entities\**" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Interface\**" />
+    <Compile Remove="Repository\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Interface\**" />
+    <EmbeddedResource Remove="Repository\**" />
+    <None Remove="Entities\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Interface\**" />
+    <None Remove="Repository\**" />
   </ItemGroup>
 
 </Project>

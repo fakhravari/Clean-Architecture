@@ -33,23 +33,23 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\I
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\bin\Debug\net8.0\Shared.pdb
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CopyComplete

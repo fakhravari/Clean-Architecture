@@ -13,9 +13,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-		<PackageReference Include="MediatR" Version="12.2.0" />
-		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
@@ -23,6 +20,10 @@
 		<ProjectReference Include="..\..\01. Core\Application\Application.csproj" />
 		<ProjectReference Include="..\..\02. Infrastructure\Infrastructure\Infrastructure.csproj" />
 		<ProjectReference Include="..\..\02. Infrastructure\Shared\Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ActionFilters\" />
 	</ItemGroup>
 
 </Project>
