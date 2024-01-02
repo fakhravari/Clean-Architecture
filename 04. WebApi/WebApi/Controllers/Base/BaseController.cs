@@ -1,4 +1,4 @@
-using Infrastructure.Config.Jwt.FiltersResult;
+using Application.Services.Jwt.FiltersResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

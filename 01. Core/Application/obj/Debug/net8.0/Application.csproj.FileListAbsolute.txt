@@ -49,6 +49,10 @@ D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.pdb
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Domain.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Persistence.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Persistence.pdb
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Shared.pdb
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Domain.pdb
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig

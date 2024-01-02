@@ -36,6 +36,12 @@
             "projectReferences": {
               "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj"
+              },
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj"
+              },
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
               }
             }
           }
@@ -49,6 +55,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -110,6 +130,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -130,14 +162,14 @@
         }
       }
     },
-    "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
+        "projectName": "Persistence",
+        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\obj\\",
+        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -160,6 +192,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj"
+              },
               "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
                 "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
               }
@@ -195,6 +230,10 @@
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -368,9 +407,6 @@
             "projectReferences": {
               "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj": {
                 "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj"
-              },
-              "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj"
               },
               "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
                 "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"

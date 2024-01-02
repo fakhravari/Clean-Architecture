@@ -1,11 +1,10 @@
-﻿using Application.Features.Account.Model;
-using Application.Model;
+﻿using Application.Services.Jwt;
 using FluentValidation;
-using Infrastructure.Config.Jwt;
-using Infrastructure.Repository.Product;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Persistence.Repository.Personel;
+using Shared.Extentions;
 using WebApi.Controllers.Base;
 
 namespace WebApi.Controllers.V1
@@ -20,7 +19,7 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> PublicAction(PublicActionDTO model)
+        public async Task<IActionResult> PublicAction(string model)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
             return Ok(json);
@@ -28,19 +27,19 @@ namespace WebApi.Controllers.V1
 
         [Authorize]
         [HttpPost("[action]")]
-        public async Task<IActionResult> PrivateAction(PrivateActionDTO model)
+        public async Task<IActionResult> PrivateAction(string model)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
             return Ok(json);
         }
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> Login(AccountLoginDto model)
-        {
-            var jwt = iwJwtService.JwtTokenGenerate(model.UserName, model.Password);
+        //[HttpPost("[action]")]
+        //public async Task<IActionResult> Login(LoginCommand model)
+        //{
+        //    var jwt = iwJwtService.JwtTokenGenerate(model);
 
-            return Ok(jwt);
-        }
+        //    return Ok(jwt);
+        //}
 
 
 
@@ -56,11 +55,6 @@ namespace WebApi.Controllers.V1
 
 
 
-
-
-
-
-
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
@@ -69,9 +63,7 @@ namespace WebApi.Controllers.V1
         }
     }
 
-
-
-    public class CreateProductCommand : IRequest<int>
+    public record CreateProductCommand : IRequest<object>
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -79,27 +71,23 @@ namespace WebApi.Controllers.V1
         public CreateProductTags Tags { get; set; }
     }
 
-    public class CreateProductTags
+    public record CreateProductTags
     {
         public List<string> Name { get; set; }
         public int Id { get; set; }
     }
 
 
-
-
-
-
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, object>
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IPersonelRepository _productRepository;
 
-        public CreateProductCommandHandler(IProductRepository productRepository)
+        public CreateProductCommandHandler(IPersonelRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
-        public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<object> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var productId = await _productRepository.CreateProduct(request.Name, request.Price);
             return productId;
@@ -108,10 +96,33 @@ namespace WebApi.Controllers.V1
 
     public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
     {
-        public CreateProductCommandValidator()
+        private readonly IPersonelRepository _productRepository;
+
+        public CreateProductCommandValidator(IPersonelRepository productRepository)
         {
-            RuleFor(p => p.Name).NotNull().NotEmpty().WithMessage("نام محصول الزامی است.");
+            _productRepository = productRepository;
+
+            When(x => x.Name.Length == 2, () =>
+            {
+                RuleFor(p => p.Name)
+                    .Must(b => false)
+                    .WithMessage("دو کاراکتر وارد نکنید");
+            });
+
+            RuleFor(p => p.Name)
+                .NotNull().NotEmpty().WithMessage("نام محصول الزامی است.")
+                .Must(p => p.IsValidName()).WithMessage("مقدار تست را وارد نکنید")
+                .MustAsync(IsValidName2).WithMessage("مقدار تست2 را وارد نکنید");
+
             RuleFor(command => command.Price).GreaterThan(0).WithMessage("قیمت محصول باید بیشتر از صفر باشد.");
         }
+
+
+
+        private async Task<bool> IsValidName2(string Name, CancellationToken cancellationToken)
+        {
+            return await _productRepository.IsValidName(Name);
+        }
     }
+
 }

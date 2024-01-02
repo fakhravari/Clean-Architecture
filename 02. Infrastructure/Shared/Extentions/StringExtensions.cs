@@ -4,6 +4,10 @@ namespace Shared.Extentions
 {
     public static class StringExtensions
     {
+        public static bool IsValidName(this string obj)
+        {
+            return (obj).Trim()==("test") == false;
+        }
         public static string GetCamelCase(this string str) => char.ToLowerInvariant(str[0]) + str[1..]; //str.Substring(1)
         public static bool HasValue(this string value, bool ignoreWhiteSpace = true)
         {
@@ -151,10 +155,10 @@ namespace Shared.Extentions
             }
             var codeBank = str.Substring(4, 3);
 
-            if(codeBank=="069")
+            if (codeBank == "069")
                 return true;
             else
-               return false;
+                return false;
         }
 
         public static bool IsCorrectDateTimeRequest(this string RequestDateTime)

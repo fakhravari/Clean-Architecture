@@ -1,29 +1,25 @@
-﻿using FluentValidation;
-using Infrastructure.Config.Jwt.FiltersResult;
-using Infrastructure.Config.Jwt.ServiceExtensions;
-using Infrastructure.Config.MediatR;
-using Infrastructure.Config.Swagger;
-using Infrastructure.Repository.Product;
+﻿using Application.Services.Jwt.FiltersResult;
+using Application.Services.Jwt.ServiceExtensions;
+using Application.Services.MediatR;
+using FluentValidation;
+using Persistence.Repository.Personel;
 using Shared.Resources;
 using WebApi.Controllers.V1;
+using WebApi.Services.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
  
-
 builder.Services.AddJwtAuthenticationService(builder);
 builder.Services.AddSwaggerService();
 builder.Services.AddMediatR_FluentService("WebApi");
 
-
 // Fluent Validation
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IPersonelRepository, PersonelRepository>();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateProductCommandValidator>();
 //End Fluent Validation------------------------- 
-
-
 
 builder.Services.AddControllers(options =>
 {
