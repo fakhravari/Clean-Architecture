@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6RQY/5ocShOBcg8aRGlN4O6UnVY8wKPajsl8Ojrx3xH8AcUrlhbDAsh5ZMj01JKucSyzwPFg61gCYntGxt9lgA==",
+  "dgSpecHash": "FundXbxYrJnaaqR6GtWwaowg19zvWSC1/qm8Ajx3HCOvrMvxUkfVLB3OVWK0hRSkMC//+xeq4gQJ+OMYcMcKRA==",
   "success": true,
   "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [

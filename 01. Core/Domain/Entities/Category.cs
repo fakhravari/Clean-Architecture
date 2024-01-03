@@ -1,10 +1,11 @@
-﻿namespace Domain.Entities;
-
-public partial class Category
+﻿namespace Domain.Entities
 {
-    public int Id { get; set; }
+    public partial class Category
+    {
+        public int Id { get; set; }
 
-    public string Title { get; set; } = null!;
+        public string Title { get; set; } = null!;
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+    }
 }

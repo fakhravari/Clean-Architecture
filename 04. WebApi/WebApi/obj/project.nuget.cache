@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4X4Bj7SZpASzjttfWst7aixryhdrpDB5dBzNLshF99SL+KL4QzRJ7cKyk7y3XQNxr4gYkNzT1ciLkhGPaPJunA==",
+  "dgSpecHash": "tBZv1JVPxm/yu2F3ThiTs3xkKsGJW+0x5+rZNtvWrZKzphUIBu1eMrV6dD9XjsKPp+EYvVs9s+C1JLZLCYmBwA==",
   "success": true,
   "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\04. WebApi\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [

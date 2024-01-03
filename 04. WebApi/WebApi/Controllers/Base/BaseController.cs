@@ -1,6 +1,6 @@
-using Application.Services.Jwt.FiltersResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Services.ActionFilter;
 
 namespace WebApi.Controllers.Base
 {
@@ -11,7 +11,7 @@ namespace WebApi.Controllers.Base
     {
         public BaseController()
         {
-           
+
         }
         private ISender? _mediator;
         protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();

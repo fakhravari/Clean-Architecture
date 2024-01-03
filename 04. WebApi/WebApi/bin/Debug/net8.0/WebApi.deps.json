@@ -10,7 +10,16 @@
         "dependencies": {
           "Application": "1.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "Shared": "1.0.0"
+          "Persistence": "1.0.0",
+          "Pluralize.NET": "1.0.2",
+          "Shared": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+          "Swashbuckle.AspNetCore.Newtonsoft": "6.5.0",
+          "Swashbuckle.AspNetCore.ReDoc": "6.5.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
         },
         "runtime": {
           "WebApi.dll": {}
@@ -791,7 +800,7 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR": "12.2.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
-          "Persistence": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Shared": "1.0.0"
         },
         "runtime": {
@@ -800,7 +809,8 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "Domain.dll": {}
@@ -808,6 +818,7 @@
       },
       "Persistence/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Domain": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MediatR": "12.2.0",

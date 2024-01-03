@@ -1,11 +1,4 @@
-﻿dotnet ef dbcontext scaffold "Data Source=00;Initial Catalog=00;User ID=00;Password=00" Microsoft.EntityFrameworkCore.SqlServer  --context-dir Contexts -c Dota2BotDbContext --output-dir ..\Dota2Bot.Model\Entities --namespace Dota2Bot.Model.Entities -f
-
-
+﻿use domain
 
 dotnet ef dbcontext scaffold "Server=185.55.224.117;Initial Catalog=technos6_cafe;User ID=technos6_cafe;Password=cn*6s6I52;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --context-dir "D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\Contexts" -c FakhravariDbContext --output-dir "D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\Entities" --namespace Persistence.Contexts -f
 
-
-
-انتیتی ها در لایه domain
-ریپازیتوری ها در Infrastructure
-سرویس ها معادل ریپازیتوری در Application
