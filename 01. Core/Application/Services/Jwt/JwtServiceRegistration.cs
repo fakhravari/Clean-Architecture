@@ -97,7 +97,7 @@ namespace Application.Services.Jwt
 
                         context.HandleResponse();
                         context.Response.ContentType = "application/json";
-                        context.Response.StatusCode = (int)ApiResultStatusCode.UnAuthorized;
+                        context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;
 
                         var Response = new BaseResponse()
                         {

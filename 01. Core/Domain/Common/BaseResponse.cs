@@ -5,7 +5,7 @@ namespace Domain.Common
 {
     public class BaseResponse
     {
-        public int StatusCode { get; set; } = (int)ApiResultStatusCode.Success;
+        public int StatusCode { get; set; } = (int)ApiStatusCode.Success;
         public bool Success { get; set; } = false;
         public string Message { get; set; } = null;
 

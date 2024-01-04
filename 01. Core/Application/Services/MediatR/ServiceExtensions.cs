@@ -21,12 +21,12 @@ namespace Application.Services.MediatR
 
 
             // اعمال Exception Validation در خروجی سمت Api
-            services.AddScoped<ValidationExceptionFilterAttribute>();
-            services.AddControllers(options => { options.Filters.AddService<ValidationExceptionFilterAttribute>(); });
+            services.AddScoped<ApiResultValidationException>();
+            services.AddControllers(options => { options.Filters.AddService<ApiResultValidationException>(); });
 
             // اعمال Exception در خروجی سمت Api
-            services.AddScoped<ApiResultFilterAttribute>();
-            services.AddControllers(options => { options.Filters.AddService<ApiResultFilterAttribute>(); });
+            services.AddScoped<ApiResultException>();
+            services.AddControllers(options => { options.Filters.AddService<ApiResultException>(); });
             #endregion
         }
     }
