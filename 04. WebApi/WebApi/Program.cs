@@ -1,6 +1,5 @@
-﻿using Application;
-using Application.MediatR;
-using Application.Services.Jwt;
+﻿using Application.Services.Jwt;
+using Application.Services.MediatR;
 using Newtonsoft.Json;
 using Persistence;
 using Shared.Resources;
@@ -12,17 +11,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
-
 builder.Services.AddControllers().AddNewtonsoftJson(options => { options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; });
-
-builder.Services.AddJwtAuthenticationService(builder);
 builder.Services.AddSwaggerService();
 
 
+builder.Services.AddJwtAuthenticationService(builder);
 builder.Services.AddPersistenceServices(builder.Configuration);
-builder.Services.AddFluentValidationRegistration();
-builder.Services.AddMediatR_FluentService("WebApi");
 
+builder.Services.AddMediatR_FluentService();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

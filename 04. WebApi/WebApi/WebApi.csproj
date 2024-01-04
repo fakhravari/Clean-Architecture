@@ -31,4 +31,8 @@
 		<ProjectReference Include="..\..\02. Infrastructure\Shared\Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Services\ActionFilter\" />
+	</ItemGroup>
+
 </Project>

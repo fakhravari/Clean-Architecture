@@ -1,11 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Services.ActionFilter;
 
 namespace WebApi.Controllers.Base
 {
     [Route("api/v{version:apiVersion}/[controller]")]
-    [ApiResultFilter]
     [ApiController]
     public class BaseController : Controller
     {

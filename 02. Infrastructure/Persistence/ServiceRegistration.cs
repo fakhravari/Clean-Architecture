@@ -9,14 +9,13 @@ namespace Persistence
 {
     public static class ServiceRegistration
     {
-        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnectionString_01")));
 
             services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepository<>));
-            services.AddScoped<IPersonelRepository, PersonelRepository>();
 
-            return services;
+            services.AddScoped<IPersonelRepository, PersonelRepository>();
         }
     }
 }

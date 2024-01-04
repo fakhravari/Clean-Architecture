@@ -1,4 +1,4 @@
-﻿using Application.Features.Account.Queries.Login;
+﻿using Application.Features.Account.Commands.Login;
 using Application.Services.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

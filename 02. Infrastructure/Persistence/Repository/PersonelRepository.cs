@@ -13,20 +13,20 @@ namespace Persistence.Repository
 
         }
 
-        public async Task<LoginResultDto> Login(string UserName, string Password)
+        public async Task<LoginDto> Login(string UserName, string Password)
         {
             var matches = await _dbContext.Personels.AsNoTracking().FirstOrDefaultAsync(e => e.UserName == UserName && e.Password == Password);
 
             if (matches == null)
             {
-                return new LoginResultDto()
+                return new LoginDto()
                 {
                     IsLogin = false
                 };
             }
             else
             {
-                return new LoginResultDto()
+                return new LoginDto()
                 {
                     IsLogin = true,
                     FirstName = matches.FirstName,

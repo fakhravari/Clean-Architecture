@@ -63,3 +63,5 @@ D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Shared.pdb

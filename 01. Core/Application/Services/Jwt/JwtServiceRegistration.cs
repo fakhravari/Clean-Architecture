@@ -56,7 +56,6 @@ namespace Application.Services.Jwt
                         string IdToken = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
                         string IdLanguage = context.HttpContext.Request.Headers["IdLanguage"].ToString().Trim();
 
-
                         // var userRepository = context.HttpContext.RequestServices.GetRequiredService<IPersonelRepository>();
 
                         if (!IdToken.IsNullOrEmpty())

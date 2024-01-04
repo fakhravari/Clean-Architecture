@@ -1,28 +1,33 @@
-﻿using System.Reflection;
-using Application.Features.Account.Queries.Login;
+﻿using Application.Features.Account.Commands.Login;
+using Domain.Exception;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
-namespace Application.MediatR
+namespace Application.Services.MediatR
 {
     public static class ServiceExtensions
     {
-        public static void AddMediatR_FluentService(this IServiceCollection services, string AssemblyName)
+        public static void AddMediatR_FluentService(this IServiceCollection services)
         {
-            // ValidatorOptions.Global.CascadeMode = CascadeMode.StopOnFirstFailure;
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            #region راه انداز MediatR
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+            #endregion
+
+            #region راه انداز ولیدیشن
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.Load(AssemblyName)));
+            services.AddValidatorsFromAssemblyContaining<LoginCommandValidator>();
 
 
+            // اعمال Exception Validation در خروجی سمت Api
+            services.AddScoped<ValidationExceptionFilterAttribute>();
+            services.AddControllers(options => { options.Filters.AddService<ValidationExceptionFilterAttribute>(); });
 
-
-
-
-            services.AddScoped<IRequestHandler<LoginCommand, LoginResponseDto>, LoginQueryHandler>();
-
-
+            // اعمال Exception در خروجی سمت Api
+            services.AddScoped<ApiResultFilterAttribute>();
+            services.AddControllers(options => { options.Filters.AddService<ApiResultFilterAttribute>(); });
+            #endregion
         }
     }
 }
