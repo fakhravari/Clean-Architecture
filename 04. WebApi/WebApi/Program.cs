@@ -10,15 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-
 builder.Services.AddControllers().AddNewtonsoftJson(options => { options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; });
 builder.Services.AddSwaggerService();
 
 
-builder.Services.AddJwtAuthenticationService(builder);
-builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.Add_JwtIdentity_Service(builder);
+builder.Services.Add_Persistence_Services(builder.Configuration);
 
-builder.Services.AddMediatR_FluentService();
+
+builder.Services.Add_MediatR_Fluent_ApiResult_Service();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

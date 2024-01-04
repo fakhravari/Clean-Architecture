@@ -9,7 +9,7 @@ namespace Application.Services.MediatR
 {
     public static class ServiceExtensions
     {
-        public static void AddMediatR_FluentService(this IServiceCollection services)
+        public static void Add_MediatR_Fluent_ApiResult_Service(this IServiceCollection services)
         {
             #region راه انداز MediatR
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));

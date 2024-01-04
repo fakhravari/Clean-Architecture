@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
@@ -27,48 +27,61 @@ namespace WebApi.Services.Swagger
                 apiVersioningOptions.ReportApiVersions = true;
                 apiVersioningOptions.ApiVersionReader = new UrlSegmentApiVersionReader();
             });
+
             services.AddSwaggerGen(options =>
-            {
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "MyApi.xml"), true);
-                options.EnableAnnotations();
-
-                options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "API V1", Description = "API V1 Description" });
-                options.SwaggerDoc("v2", new OpenApiInfo { Version = "v2", Title = "API V2", Description = "API V2 Description" });
-
-                #region Filters
-                options.ExampleFilters();
-
-                options.OperationFilter<SwaggerApplyOperationFilter.ApplySummariesOperationFilter>();
-                options.OperationFilter<SwaggerApplyOperationFilter.ApplyUploadFileOperationFilter>();
-                options.OperationFilter<SwaggerApplyOperationFilter.SwggerHeaders>();
-                options.OperationFilter<SwaggerApplyOperationFilter.SwaggerJsonIgnore>();
-
-
-                options.OperationFilter<SwaggerApplyOperationFilter.UnauthorizedResponsesOperationFilter>();
-                #region Versioning
-                options.OperationFilter<SwaggerApplyOperationFilter.RemoveVersionParameters>();
-                options.DocumentFilter<SwaggerApplyOperationFilter.SetVersionInPaths>();
-                options.DocInclusionPredicate((docName, apiDesc) =>
                 {
-                    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
-                    var versions = methodInfo.DeclaringType.GetCustomAttributes<ApiVersionAttribute>(true).SelectMany(attr => attr.Versions);
-                    return versions.Any(v => $"v{v}" == docName);
-                });
+                    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "MyApi.xml"), true);
+                    options.EnableAnnotations();
 
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    Name = "IdToken",
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer",
-                    In = ParameterLocation.Header,
-                    Description = "Type into the textbox: Bearer {your JWT token}.",
-                    BearerFormat = "JWT"
-                });
-                options.OperationFilter<SwaggerApplyOperationFilter.AuthorizationOperationFilter>();
-                #endregion
+                    options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "API V1", Description = "API V1 Description" });
+                    options.SwaggerDoc("v2", new OpenApiInfo { Version = "v2", Title = "API V2", Description = "API V2 Description" });
 
-                #endregion
-            });
+                    #region Filters
+                    options.ExampleFilters();
+
+                    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Type = SecuritySchemeType.Http,
+                        Name = "Bearer",
+                        Scheme = "bearer",
+                        BearerFormat = "JWT",
+                        In = ParameterLocation.Header
+                    });
+                    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "JWT"
+                                }
+                            },
+                            new string[] {}
+                        }
+                    });
+
+                    options.OperationFilter<SwaggerApplyOperationFilter.ApplySummariesOperationFilter>();
+                    options.OperationFilter<SwaggerApplyOperationFilter.ApplyUploadFileOperationFilter>();
+                    options.OperationFilter<SwaggerApplyOperationFilter.SwggerHeaders>();
+                    options.OperationFilter<SwaggerApplyOperationFilter.SwaggerJsonIgnore>();
+
+
+                    // Authorization Ui
+                    options.OperationFilter<SwaggerApplyOperationFilter.AuthorizationOperationFilter>();
+                    #endregion
+                    #region Versioning
+                    options.OperationFilter<SwaggerApplyOperationFilter.RemoveVersionParameters>();
+                    options.DocumentFilter<SwaggerApplyOperationFilter.SetVersionInPaths>();
+                    options.DocInclusionPredicate((docName, apiDesc) =>
+                    {
+                        if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
+                        var versions = methodInfo.DeclaringType.GetCustomAttributes<ApiVersionAttribute>(true).SelectMany(attr => attr.Versions);
+                        return versions.Any(v => $"v{v}" == docName);
+                    });
+                    #endregion
+                });
             services.AddApiVersioning(options =>
             {
                 //url segment => {version}
@@ -77,7 +90,7 @@ namespace WebApi.Services.Swagger
                 options.ReportApiVersions = true;
             });
         }
-        public static IApplicationBuilder UseSwaggerAndUI(this IApplicationBuilder app)
+        public static void UseSwaggerAndUI(this IApplicationBuilder app)
         {
             app.UseSwagger();
             app.UseSwaggerUI(options =>
@@ -130,8 +143,6 @@ namespace WebApi.Services.Swagger
                 options.SortPropsAlphabetically();
                 #endregion
             });
-
-            return app;
         }
     }
 }

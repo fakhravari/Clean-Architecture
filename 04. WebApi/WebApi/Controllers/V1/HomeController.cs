@@ -3,6 +3,7 @@ using Application.Services.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Controllers.Base;
+using WebApi.Model;
 
 namespace WebApi.Controllers.V1
 {
@@ -16,7 +17,7 @@ namespace WebApi.Controllers.V1
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> PublicAction(string model)
+        public async Task<IActionResult> PublicAction(PublicActionDto model)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
             return Ok(json);
@@ -24,20 +25,11 @@ namespace WebApi.Controllers.V1
 
         [Authorize]
         [HttpPost("[action]")]
-        public async Task<IActionResult> PrivateAction(string model)
+        public async Task<IActionResult> PrivateAction(PrivateActionDto model)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
             return Ok(json);
         }
-
-        //[HttpPost("[action]")]
-        //public async Task<IActionResult> Login(LoginCommand model)
-        //{
-        //    var jwt = iwJwtService.JwtTokenGenerate(model);
-
-        //    return Ok(jwt);
-        //}
-
 
 
         /// <summary>
@@ -49,7 +41,6 @@ namespace WebApi.Controllers.V1
         {
             return Ok("GetVersion = " + DateTime.Now.ToString());
         }
-
 
 
         [HttpPost("[action]")]

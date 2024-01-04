@@ -15,7 +15,7 @@ namespace Application.Services.Jwt
 {
     public static class JwtServiceRegistration
     {
-        public static void AddJwtAuthenticationService(this IServiceCollection services, WebApplicationBuilder builder)
+        public static void Add_JwtIdentity_Service(this IServiceCollection services, WebApplicationBuilder builder)
         {
             var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtModel>();
             builder.Services.Configure<JwtModel>(builder.Configuration.GetSection("JwtSettings"));
@@ -53,19 +53,19 @@ namespace Application.Services.Jwt
                 {
                     OnTokenValidated = context =>
                     {
-                        string IdToken = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
                         string IdLanguage = context.HttpContext.Request.Headers["IdLanguage"].ToString().Trim();
+                        var Authorization = context.HttpContext.Request.Headers["Authorization"].FirstOrDefault();
 
-                        // var userRepository = context.HttpContext.RequestServices.GetRequiredService<IPersonelRepository>();
-
-                        if (!IdToken.IsNullOrEmpty())
+                        if (string.IsNullOrWhiteSpace(Authorization) == false)
                         {
                             bool IsError = false;
 
                             var tokenHandler = new JwtSecurityTokenHandler();
                             try
                             {
-                                tokenHandler.ValidateToken(IdToken, validationParameters, out SecurityToken validatedToken);
+                                var token = Authorization.Substring("Bearer ".Length).Trim();
+
+                                tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
                                 var jwtToken = (JwtSecurityToken)validatedToken;
 
                                 var user1 = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToString().Trim();
@@ -92,9 +92,6 @@ namespace Application.Services.Jwt
                     },
                     OnChallenge = context =>
                     {
-                        string IdToken = context.HttpContext.Request.Headers["IdToken"].ToString().Trim();
-                        string IdLanguage = context.HttpContext.Request.Headers["IdLanguage"].ToString().Trim();
-
                         context.HandleResponse();
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;

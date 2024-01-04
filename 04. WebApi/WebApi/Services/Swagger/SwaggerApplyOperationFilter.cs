@@ -1,13 +1,11 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Pluralize.NET;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using FilterDescriptor = Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor;
+using System.Reflection;
 
 namespace WebApi.Services.Swagger
 {
@@ -159,43 +157,6 @@ namespace WebApi.Services.Swagger
 
                     }
                 }
-            }
-        }
-        public class UnauthorizedResponsesOperationFilter : IOperationFilter
-        {
-            public UnauthorizedResponsesOperationFilter()
-            {
-
-            }
-
-            public void Apply(OpenApiOperation operation, OperationFilterContext context)
-            {
-                var filters = context.ApiDescription.ActionDescriptor.FilterDescriptors;
-                var metadta = context.ApiDescription.ActionDescriptor.EndpointMetadata;
-
-                var hasAnonymous = filters.Any(p => p.Filter is Microsoft.AspNetCore.Mvc.Authorization.AllowAnonymousFilter) || metadta.Any(p => p is AllowAnonymousAttribute);
-                if (hasAnonymous) return;
-
-                var hasAuthorize = filters.Any(p => p.Filter is Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter) || metadta.Any(p => p is AuthorizeAttribute);
-                if (!hasAuthorize) return;
-
-
-                operation.Responses.TryAdd("401", new OpenApiResponse { Description = "Unauthorized" });
-                operation.Responses.TryAdd("403", new OpenApiResponse { Description = "Forbidden" });
-                operation.Security.Add(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        Array.Empty<string>()
-                    }
-                });
             }
         }
         public class AuthorizationOperationFilter : IOperationFilter

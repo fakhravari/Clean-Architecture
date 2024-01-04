@@ -9,7 +9,7 @@ namespace Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        public static void Add_Persistence_Services(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnectionString_01")));
 
