@@ -5,12 +5,12 @@ using MediatR;
 
 namespace Application.Features.Account.Commands.Login
 {
-    public sealed class LoginCommandHandler : IRequestHandler<LoginCommand , LoginResponseDto>
+    public sealed class GetListProductsQuerieHandler : IRequestHandler<LoginCommand , LoginResponseDto>
     {
         private readonly IPersonelRepository personelRepository;
         private readonly IJwtService jwt;
 
-        public LoginCommandHandler(IPersonelRepository _personelRepository, IJwtService _jwt)
+        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtService _jwt)
         {
             personelRepository = _personelRepository;
             jwt = _jwt;
@@ -18,7 +18,7 @@ namespace Application.Features.Account.Commands.Login
 
         public async Task<LoginResponseDto> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await personelRepository.Login(request.Input.UserName, request.Input.Password);
+            var user = await personelRepository.Login(request.UserName, request.Password);
 
             if (user.IsLogin)
             {

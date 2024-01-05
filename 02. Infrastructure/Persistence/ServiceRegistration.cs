@@ -16,6 +16,7 @@ namespace Persistence
             services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepository<>));
 
             services.AddScoped<IPersonelRepository, PersonelRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
     }
 }

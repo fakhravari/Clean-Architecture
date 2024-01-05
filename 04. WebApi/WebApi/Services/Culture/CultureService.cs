@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Shared.Resources
+namespace WebApi.Services.Culture
 {
-    public class ResourcesCulture
+    public class CultureService
     {
         private readonly RequestDelegate _next;
-        public static string DateTimeFormat => "yyyy-MM-dd HH:mm:ss";
+        public static string DateTimeFormat => "yyyy-MM-dd HH:mm:ss.fff";
 
-        public ResourcesCulture(RequestDelegate next)
+        public CultureService(RequestDelegate next)
         {
             _next = next;
+
         }
 
         public async Task Invoke(HttpContext context)
@@ -41,17 +40,18 @@ namespace Shared.Resources
             CultureInfo.CurrentUICulture = cultureInfo;
 
             DateTime currentDate = DateTime.Now;
-            string formattedDate = currentDate.ToString(ResourcesCulture.DateTimeFormat);
+            string formattedDate = currentDate.ToString(CultureService.DateTimeFormat);
 
             await _next(context);
         }
     }
 
-    public static class ResourcesMiddleware
+
+    public static class CultureServiceMiddleware
     {
-        public static void ResourcesBuilder(this IApplicationBuilder app)
+        public static void CultureServiceBuilder(this IApplicationBuilder app)
         {
-            app.UseMiddleware<ResourcesCulture>();
+            app.UseMiddleware<CultureService>();
         }
     }
 }

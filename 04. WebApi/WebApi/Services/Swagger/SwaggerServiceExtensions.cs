@@ -10,7 +10,7 @@ namespace WebApi.Services.Swagger
 {
     public static class SwaggerServiceExtensions
     {
-        public static void AddSwaggerService(this IServiceCollection services)
+        public static void Add_Swagger_Service(this IServiceCollection services)
         {
             #region AddSwaggerExamples
             var mainAssembly = Assembly.GetEntryAssembly();

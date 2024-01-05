@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Controllers.Base;
 using WebApi.Model;
+using WebApi.Services;
 
 namespace WebApi.Controllers.V1
 {
@@ -11,9 +12,14 @@ namespace WebApi.Controllers.V1
     public class HomeController : BaseController
     {
         private readonly IJwtService iwJwtService;
-        public HomeController(IJwtService _iwJwtService)
+
+        private readonly ISharedViewLocalizer _localizer;
+
+
+        public HomeController(IJwtService _iwJwtService, ISharedViewLocalizer localizer)
         {
             this.iwJwtService = _iwJwtService;
+            this._localizer = localizer;
         }
 
         [HttpPost("[action]")]
@@ -46,6 +52,9 @@ namespace WebApi.Controllers.V1
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginCommand command)
         {
+            var trans = _localizer.Locale("String1");
+
+
             var result = await Mediator.Send(command);
             return Ok(result);
         }

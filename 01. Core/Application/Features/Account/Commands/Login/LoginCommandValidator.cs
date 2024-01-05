@@ -12,18 +12,22 @@ namespace Application.Features.Account.Commands.Login
         {
             _productRepository = productRepository;
 
-            When(x => x.Input.UserName.Length == 2, () =>
+            When(x => x.UserName.Length == 2, () =>
             {
-                RuleFor(p => p.Input.UserName)
+                RuleFor(p => p.UserName)
                     .Must(b => false)
                     .WithMessage("{PropertyName} is required. testing")
                     .WithMessage("دو کاراکتر وارد نکنید");
             });
 
-            RuleFor(p => p.Input.UserName)
+            RuleFor(p => p.UserName)
                 .NotNull().NotEmpty().WithMessage("نام کاربردی را وارد کنید.")
                 .Must(p => p.IsValidName()).WithMessage("مقدار test را وارد نکنید")
                 .MustAsync(IsValidName2).WithMessage("مقدار test2 را وارد نکنید");
+
+
+            RuleFor(p => p.Password)
+                .NotNull().NotEmpty().WithMessage("پسورد را وارد کنید.");
         }
 
 

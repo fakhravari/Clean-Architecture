@@ -2,7 +2,6 @@
 using Domain.Enum;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Text.RegularExpressions;
 
 namespace Domain.Exception
 {
@@ -22,30 +21,34 @@ namespace Domain.Exception
             }
             else if (context.Result is BadRequestObjectResult bad)
             {
-                string message = bad.Value.ToString();
                 var Errors = new List<string>();
-
-                if (bad.Value is ValidationProblemDetails error)
+                if (bad.Value is ValidationProblemDetails validationProblemDetails)
                 {
-                    foreach (var trace in error.Errors.SelectMany(p => (string[])p.Value).Distinct().ToList())
+                    foreach (var keyValuePair in validationProblemDetails.Errors)
                     {
-                        Match match = Regex.Match(trace, @"\$\.(\w+)");
-                        if (match.Success)
+                        var propertyName = keyValuePair.Key;
+
+                        if ((new List<string>() { "command", "" }).Contains(propertyName) == false)
                         {
-                            Errors.Add(match.Groups[1].Value + " The field is required.");
+                            foreach (var errorMessage in keyValuePair.Value)
+                            {
+                                Errors.Add($"مقادیر {propertyName} را بررسی کنید");
+                            }
                         }
                     }
+
+                    Errors = Errors.Distinct().ToList();
+
+                    var Response = new BaseResponse
+                    {
+                        Success = false,
+                        StatusCode = (int)ApiStatusCode.BadRequest,
+                        ValidationErrors = Errors,
+                        Message = "مقادیر ورودی را بررسی کنید"
+                    };
+
+                    context.Result = new JsonResult(Response) { StatusCode = Response.StatusCode };
                 }
-
-                var Response = new BaseResponse()
-                {
-                    Success = false,
-                    StatusCode = (int)ApiStatusCode.BadRequest,
-                    ValidationErrors = Errors,
-                    Message = message
-                };
-
-                context.Result = new JsonResult(Response) { StatusCode = Response.StatusCode };
             }
             else
             {

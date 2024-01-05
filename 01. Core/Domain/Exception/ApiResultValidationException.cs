@@ -3,6 +3,7 @@ using Domain.Enum;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Domain.Exception
 {
@@ -30,7 +31,19 @@ namespace Domain.Exception
                     Success = false,
                     StatusCode = (int)ApiStatusCode.BadRequest,
                     ValidationErrors = Errors,
-                    Message = "zzzzzz"
+                    Message = "مقادیر ورودی را بررسی کنید"
+                };
+
+                context.Result = new JsonResult(Response) { StatusCode = Response.StatusCode };
+                context.ExceptionHandled = false;
+            }
+            else
+            {
+                var Response = new BaseResponse()
+                {
+                    Success = false,
+                    StatusCode = (int)ApiStatusCode.BadRequest,
+                    Message = context.Exception.Message.ToString()
                 };
 
                 context.Result = new JsonResult(Response) { StatusCode = Response.StatusCode };

@@ -1,24 +1,41 @@
-﻿using Application.Services.Jwt;
+﻿using Application.Contracts.Persistence;
+using Application.Services.Jwt;
 using Application.Services.MediatR;
+using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 using Persistence;
-using Shared.Resources;
+using Persistence.Repository;
+using System.Reflection;
+using WebApi.Services;
+using WebApi.Services.Culture;
 using WebApi.Services.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options => { options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; });
 
-builder.Services.AddControllers().AddNewtonsoftJson(options => { options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; });
-builder.Services.AddSwaggerService();
-
-
+builder.Services.Add_Swagger_Service();
 builder.Services.Add_JwtIdentity_Service(builder);
 builder.Services.Add_Persistence_Services(builder.Configuration);
-
-
 builder.Services.Add_MediatR_Fluent_ApiResult_Service();
+
+
+builder.Services.AddScoped<ISharedViewLocalizer, SharedViewLocalizer>();
+
+builder.Services.AddControllersWithViews().AddViewLocalization();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddSingleton<IStringLocalizerFactory, ResourceManagerStringLocalizerFactory>();
+builder.Services.AddSingleton(typeof(IStringLocalizer<>), typeof(StringLocalizer<>));
+
+ 
+
+
+
+
+
+
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
@@ -31,7 +48,7 @@ else
     app.UseHsts();
 }
 
-app.ResourcesBuilder();
+app.CultureServiceBuilder();
 
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();

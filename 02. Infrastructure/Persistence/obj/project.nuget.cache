@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5KwRt0YoUWFVths5320/NMc/+nC1OEIKbPLVgodMFs+2/NtyTCaP3TS+ATyf4XXxFTMSh4vJI7kvMod5Lf+9Kw==",
+  "dgSpecHash": "j7ZmgEJ3rCt218y8665iBGNZ2ZACazSdMAqlFsD1Tm/kPGa34nbsNZNAdmWMHm++BxRdxEFyyisxP5EXFeYYsg==",
   "success": true,
   "projectFilePath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Fakhravari\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\Fakhravari\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\Fakhravari\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\Fakhravari\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\Fakhravari\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\Fakhravari\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Fakhravari\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Fakhravari\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
