@@ -29,22 +29,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Core\Application\obj
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Core\Application\obj\Debug\net8.0\refint\Application.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Core\Application\obj\Debug\net8.0\Application.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Core\Application\obj\Debug\net8.0\ref\Application.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.deps.json
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.pdb
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Domain.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Domain.pdb
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.sourcelink.json
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
@@ -63,5 +47,31 @@ D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Application.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Domain.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Shared.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Shared.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Domain.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.fa-IR.resources
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\ar-SA\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\fa-IR\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\ar-SA\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\en-US\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.ar-SA.resources
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.en-US.resources

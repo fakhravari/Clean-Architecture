@@ -1,8 +1,8 @@
-﻿using Domain.Exception;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Application.Services.ExceptionHandling;
 
 namespace Application.Services.MediatR
 {

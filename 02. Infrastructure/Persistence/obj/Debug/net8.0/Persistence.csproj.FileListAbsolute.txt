@@ -38,3 +38,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\P
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-SA\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Application.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Application.resources.dll

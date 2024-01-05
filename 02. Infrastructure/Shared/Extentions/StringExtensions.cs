@@ -1,9 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace Shared.Extentions
 {
     public static class StringExtensions
     {
+        public static string GetDisplayName(object instance, string propertyName)
+        {
+            Type type = instance.GetType();
+
+            DisplayAttribute displayAttribute = type.GetProperty(propertyName).GetCustomAttribute<DisplayAttribute>();
+            return displayAttribute?.Name ?? propertyName;
+        }
         public static bool IsValidName(this string obj)
         {
             return (obj).Trim()==("test") == false;

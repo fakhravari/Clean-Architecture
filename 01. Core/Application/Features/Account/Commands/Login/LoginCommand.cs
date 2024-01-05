@@ -6,11 +6,6 @@ namespace Application.Features.Account.Commands.Login
 {
     public sealed class LoginCommand : IRequest<LoginResponseDto>
     {
-        // public LoginRequestDto Input { get; set; }
-
-        [Display(Name = "نام کاربری")]
-        public string UserName { get; set; }
-        [Display(Name = "رمز عبور")]
-        public string Password { get; set; }
+        public LoginRequestDto Input { get; set; }
     }
 }

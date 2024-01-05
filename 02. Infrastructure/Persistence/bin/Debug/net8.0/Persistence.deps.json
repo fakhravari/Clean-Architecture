@@ -938,6 +938,17 @@
         },
         "runtime": {
           "Application.dll": {}
+        },
+        "resources": {
+          "ar-SA/Application.resources.dll": {
+            "locale": "ar-SA"
+          },
+          "en-US/Application.resources.dll": {
+            "locale": "en-US"
+          },
+          "fa-IR/Application.resources.dll": {
+            "locale": "fa-IR"
+          }
         }
       },
       "Domain/1.0.0": {

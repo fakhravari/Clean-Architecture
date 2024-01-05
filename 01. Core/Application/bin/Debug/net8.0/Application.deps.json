@@ -16,6 +16,17 @@
         },
         "runtime": {
           "Application.dll": {}
+        },
+        "resources": {
+          "fa-IR/Application.resources.dll": {
+            "locale": "fa-IR"
+          },
+          "ar-SA/Application.resources.dll": {
+            "locale": "ar-SA"
+          },
+          "en-US/Application.resources.dll": {
+            "locale": "en-US"
+          }
         }
       },
       "Azure.Core/1.25.0": {

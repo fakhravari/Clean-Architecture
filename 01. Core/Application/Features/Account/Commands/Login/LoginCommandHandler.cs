@@ -18,7 +18,7 @@ namespace Application.Features.Account.Commands.Login
 
         public async Task<LoginResponseDto> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await personelRepository.Login(request.UserName, request.Password);
+            var user = await personelRepository.Login(request.Input.UserName, request.Input.Password);
 
             if (user.IsLogin)
             {

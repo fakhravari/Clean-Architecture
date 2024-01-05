@@ -31,20 +31,4 @@
 		<ProjectReference Include="..\..\02. Infrastructure\Shared\Shared.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <EmbeddedResource Update="Resources\Resources.ar-SA.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Resources\Resources.en-US.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Resources\Resources.fa-IR.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Services\ActionFilter\" />
-	</ItemGroup>
-
 </Project>

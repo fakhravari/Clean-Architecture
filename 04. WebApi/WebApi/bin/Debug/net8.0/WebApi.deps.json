@@ -23,17 +23,6 @@
         },
         "runtime": {
           "WebApi.dll": {}
-        },
-        "resources": {
-          "ar-SA/WebApi.resources.dll": {
-            "locale": "ar-SA"
-          },
-          "en-US/WebApi.resources.dll": {
-            "locale": "en-US"
-          },
-          "fa-IR/WebApi.resources.dll": {
-            "locale": "fa-IR"
-          }
         }
       },
       "Azure.Core/1.25.0": {
@@ -941,6 +930,17 @@
         },
         "runtime": {
           "Application.dll": {}
+        },
+        "resources": {
+          "ar-SA/Application.resources.dll": {
+            "locale": "ar-SA"
+          },
+          "en-US/Application.resources.dll": {
+            "locale": "en-US"
+          },
+          "fa-IR/Application.resources.dll": {
+            "locale": "fa-IR"
+          }
         }
       },
       "Domain/1.0.0": {

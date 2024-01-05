@@ -1,33 +1,30 @@
 ﻿using Application.Contracts.Persistence;
+using Application.Resource;
 using FluentValidation;
-using Shared.Extentions;
+
 
 namespace Application.Features.Account.Commands.Login
 {
     public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
     {
         private readonly IPersonelRepository _productRepository;
+        private readonly ISharedViewLocalizer localizer;
 
-        public LoginCommandValidator(IPersonelRepository productRepository)
+        public LoginCommandValidator(IPersonelRepository productRepository, ISharedViewLocalizer viewLocalizer)
         {
             _productRepository = productRepository;
+            localizer = viewLocalizer;
 
-            When(x => x.UserName.Length == 2, () =>
+            When(x => x.Input.UserName.Length == 2, () =>
             {
-                RuleFor(p => p.UserName)
-                    .Must(b => false)
-                    .WithMessage("{PropertyName} is required. testing")
-                    .WithMessage("دو کاراکتر وارد نکنید");
+                RuleFor(p => p.Input.UserName).Must(b => false).WithMessage("Dont_Enter_Two_Characters");
             });
 
-            RuleFor(p => p.UserName)
-                .NotNull().NotEmpty().WithMessage("نام کاربردی را وارد کنید.")
-                .Must(p => p.IsValidName()).WithMessage("مقدار test را وارد نکنید")
-                .MustAsync(IsValidName2).WithMessage("مقدار test2 را وارد نکنید");
+            RuleFor(p => p.Input.UserName).NotNull().NotEmpty().WithMessage(string.Format(localizer.Locale("Do_Not_Enter_a_PropertyName_Value"), localizer.Locale("UserName")));
+            RuleFor(p => p.Input.Password).NotNull().NotEmpty().WithMessage(string.Format(localizer.Locale("Do_Not_Enter_a_PropertyName_Value"), localizer.Locale("Password")));
 
-
-            RuleFor(p => p.Password)
-                .NotNull().NotEmpty().WithMessage("پسورد را وارد کنید.");
+            // RuleFor(p => p.Input.UserName).Must(v => false).WithMessage(localizer.Locale("Do_Not_Enter_a_PropertyName_Value"));
+            // RuleFor(p => p.Input.UserName).MustAsync(IsValidName2).WithMessage(localizer.Locale("Do_Not_Enter_a_PropertyName_Value"));
         }
 
 
@@ -38,7 +35,7 @@ namespace Application.Features.Account.Commands.Login
 
             if (Name == "test2")
             {
-                return false ;
+                return false;
             }
             else
             {
@@ -46,4 +43,6 @@ namespace Application.Features.Account.Commands.Login
             }
         }
     }
+
+
 }
