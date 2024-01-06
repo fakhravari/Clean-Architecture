@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {}
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\Application.csproj": {
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Fakhravari\\.nuget\\packages\\",
-        "outputPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\obj\\",
+        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fakhravari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +34,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj"
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj"
               },
-              "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
               }
             }
           }
@@ -63,6 +64,30 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.12.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Enrichers.ClientInfo": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.3.0, )"
             }
           },
           "imports": [
@@ -85,20 +110,21 @@
         }
       }
     },
-    "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj": {
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Fakhravari\\.nuget\\packages\\",
-        "outputPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\obj\\",
+        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fakhravari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -169,20 +195,21 @@
         }
       }
     },
-    "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\Fakhravari\\.nuget\\packages\\",
-        "outputPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Persistence\\obj\\",
+        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fakhravari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -198,14 +225,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\Application.csproj": {
-                "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Application\\Application.csproj"
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj"
               },
-              "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj"
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj"
               },
-              "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
+              "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
               }
             }
           }
@@ -309,20 +336,21 @@
         }
       }
     },
-    "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
+    "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
+        "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Fakhravari\\.nuget\\packages\\",
-        "outputPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\obj\\",
+        "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fakhravari\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

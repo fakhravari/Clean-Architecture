@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G1u0S1GdADI6EXsYiWZaH6tZIGC4TKQMR3OhhGRVmHfmY/wxiLlBp3YoAXbk5wGNys4/GAP89wz9vm80i43p0g==",
+  "dgSpecHash": "sOYQj6NUYiDIoPRqqJXCp81S7MlFtLswosS2tfauiTQ8qNBEo5DTDMG4Tt2e/xoCpKXA8nSgAbIAdt7NVmDlIw==",
   "success": true,
-  "projectFilePath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

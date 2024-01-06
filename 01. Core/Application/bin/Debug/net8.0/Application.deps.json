@@ -18,14 +18,14 @@
           "Application.dll": {}
         },
         "resources": {
-          "fa-IR/Application.resources.dll": {
-            "locale": "fa-IR"
-          },
           "ar-SA/Application.resources.dll": {
             "locale": "ar-SA"
           },
           "en-US/Application.resources.dll": {
             "locale": "en-US"
+          },
+          "fa-IR/Application.resources.dll": {
+            "locale": "fa-IR"
           }
         }
       },

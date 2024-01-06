@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Services.ExceptionHandling
+namespace Application.ExceptionsHandler
 {
     public class ApiResultValidationException : ExceptionFilterAttribute
     {

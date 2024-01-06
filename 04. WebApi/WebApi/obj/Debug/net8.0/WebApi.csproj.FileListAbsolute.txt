@@ -318,3 +318,8 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\ob
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-SA\Application.resources.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Application.resources.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.Core.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-SA\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Application.resources.dll

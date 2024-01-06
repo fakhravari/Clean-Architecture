@@ -1,8 +1,8 @@
-﻿using FluentValidation;
+﻿using Application.ExceptionsHandler;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using Application.Services.ExceptionHandling;
 
 namespace Application.Services.MediatR
 {
@@ -34,6 +34,9 @@ namespace Application.Services.MediatR
                 }
             }
             #endregion
+
+            #endregion
+
             #region یکسان سازی خروجی
             // اعمال Exception Validation در خروجی سمت Api
             services.AddScoped<ApiResultValidationException>();
@@ -42,7 +45,6 @@ namespace Application.Services.MediatR
             // اعمال Exception در خروجی سمت Api
             services.AddScoped<ApiResultException>();
             services.AddControllers(options => { options.Filters.AddService<ApiResultException>(); });
-            #endregion
             #endregion
         }
     }

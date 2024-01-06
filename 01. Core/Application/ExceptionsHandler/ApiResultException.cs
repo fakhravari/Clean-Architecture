@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Services.ExceptionHandling
+namespace Application.ExceptionsHandler
 {
     public class ApiResultException : ActionFilterAttribute
     {
@@ -24,7 +24,7 @@ namespace Application.Services.ExceptionHandling
             else if (context.Result is BadRequestObjectResult bad)
             {
                 var Localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedViewLocalizer>();
-                
+
                 var Errors = new List<string>();
                 if (bad.Value is ValidationProblemDetails validationProblemDetails)
                 {
@@ -32,7 +32,7 @@ namespace Application.Services.ExceptionHandling
                     {
                         var propertyName = keyValuePair.Key;
 
-                        if ((new List<string>() { "command"}).Contains(propertyName) == false)
+                        if (new List<string>() { "command" }.Contains(propertyName) == false)
                         {
                             foreach (var errorMessage in keyValuePair.Value)
                             {
