@@ -3,21 +3,12 @@ using Application.Services.Jwt;
 using Application.Services.MediatR;
 using Newtonsoft.Json;
 using Persistence;
-using Serilog;
-using Serilog.Events;
 using WebApi.Services.Culture;
 using WebApi.Services.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options => { options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; });
-
-
-#region Configure serilog
-
- 
-
-#endregion
 
 
 builder.Services.Add_Swagger_Service();
