@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DfZnzqD8xlodpk4OfSxQMyAD3jPHJLNpOWFm8uAK376/3NyxanopP4V2MAQ7j+ekqWPJ0pa0kEgzucVSLfY7aw==",
+  "dgSpecHash": "cAaWY224AKEO9mb0bpWwCi1o+9tqocuJRbOuCmVKMiqaaRArh0NpyFGViRdOV7j9H7JYj7A4j/e3BfE7vGorvQ==",
   "success": true,
   "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
   "expectedPackageFiles": [

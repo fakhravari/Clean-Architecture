@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|d:\\repositories\\github\\clean-architecture\\02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|solutionrelative:02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\AppData\\Local\\SourceServer\\97263a098afbdaf6e8ae5292691432462a71db5315435d90757848fe2f5692da\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{027FC2B1-3A11-4842-AA71-F78B624F3846}|04. WebApi\\WebApi\\WebApi.csproj|d:\\repositories\\github\\clean-architecture\\04. webapi\\webapi\\controllers\\v1\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{027FC2B1-3A11-4842-AA71-F78B624F3846}|04. WebApi\\WebApi\\WebApi.csproj|solutionrelative:04. webapi\\webapi\\controllers\\v1\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|d:\\repositories\\github\\clean-architecture\\01. core\\application\\contracts\\persistence\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|solutionrelative:01. core\\application\\contracts\\persistence\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|d:\\repositories\\github\\clean-architecture\\01. core\\application\\features\\product\\queries\\getlistproducts2\\getlistproducts2queriehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|solutionrelative:01. core\\application\\features\\product\\queries\\getlistproducts2\\getlistproducts2queriehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|d:\\repositories\\github\\clean-architecture\\01. core\\application\\features\\product\\queries\\getlistproducts2\\getlistproducts2querievalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|solutionrelative:01. core\\application\\features\\product\\queries\\getlistproducts2\\getlistproducts2querievalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AppData\\Local\\SourceServer\\97263a098afbdaf6e8ae5292691432462a71db5315435d90757848fe2f5692da\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\user\\AppData\\Local\\SourceServer\\97263a098afbdaf6e8ae5292691432462a71db5315435d90757848fe2f5692da\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:08:30.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:06:41.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Contracts\\Persistence\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "01. Core\\Application\\Contracts\\Persistence\\IProductRepository.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Contracts\\Persistence\\IProductRepository.cs",
+              "RelativeToolTip": "01. Core\\Application\\Contracts\\Persistence\\IProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:07:07.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "RelativeDocumentMoniker": "04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "RelativeToolTip": "04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:05:03.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetListProducts2QuerieValidator.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieValidator.cs",
+              "RelativeDocumentMoniker": "01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieValidator.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieValidator.cs",
+              "RelativeToolTip": "01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:04:56.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetListProducts2QuerieHandler.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieHandler.cs",
+              "RelativeDocumentMoniker": "01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieHandler.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieHandler.cs",
+              "RelativeToolTip": "01. Core\\Application\\Features\\Product\\Queries\\GetListProducts2\\GetListProducts2QuerieHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T08:04:54.796Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

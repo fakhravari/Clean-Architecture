@@ -208,7 +208,6 @@ D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\sta
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApi.props
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\scopedcss\bundle\WebApi.styles.css
-D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.csproj.CopyComplete
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\refint\WebApi.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.pdb
@@ -323,3 +322,16 @@ D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Map
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-SA\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Enrichers.ClientInfo.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.MSSqlServer.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.PeriodicBatching.dll
+D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.csproj.Up2Date

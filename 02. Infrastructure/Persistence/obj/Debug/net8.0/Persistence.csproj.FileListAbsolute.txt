@@ -13,7 +13,6 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Deb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CopyComplete
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
@@ -44,3 +43,4 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\P
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-SA\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date

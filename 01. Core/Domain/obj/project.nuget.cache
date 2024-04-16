@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KRbQP2RgHWyve1+QTtU9shYUyJzIRYYB5XwQknGNu4Fzi/apn2qOXxNkedravt+rtuwdBGaUTyU4wvXZk/bQPw==",
+  "dgSpecHash": "wdLBE2yYc6uRvzOwpSrwAnDJaQ8c9Xdz1hVHTPzThP0Gsz64REjhTejsAKWQgSnyTeYYdKoMW+6aXAxgogKngQ==",
   "success": true,
   "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
