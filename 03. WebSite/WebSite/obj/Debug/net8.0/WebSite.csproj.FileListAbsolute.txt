@@ -1,0 +1,216 @@
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\appsettings.Development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\appsettings.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.exe
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\bin\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\appsettings.Development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\appsettings.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.exe
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\bin\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Web\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\appsettings.Development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\appsettings.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.exe
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\bin\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\UI\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\appsettings.Development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\appsettings.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.exe
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\bin\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\Presentation\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.Development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.exe
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\03. WebSite\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.Development.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.exe
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.deps.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.dll
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.pdb
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.sourcelink.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.dll
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.pdb
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+D:\Repositories\GitHub\Clean-Architecture\03. WebSite\WebSite\obj\Debug\net8.0\ref\WebSite.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\appsettings.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.staticwebassets.runtime.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.exe
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.deps.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.runtimeconfig.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\bin\Debug\net8.0\WebSite.pdb
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.AssemblyInfo.cs
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.RazorAssemblyInfo.cs
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.WebSite.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.build.WebSite.props
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebSite.props
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebSite.props
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\bundle\WebSite.styles.css
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\scopedcss\projectbundle\WebSite.bundle.scp.css
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\refint\WebSite.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.pdb
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\WebSite.genruntimeconfig.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\03. WebSite\WebSite\obj\Debug\net8.0\ref\WebSite.dll

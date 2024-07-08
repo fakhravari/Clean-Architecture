@@ -1,0 +1,38 @@
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.deps.json
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\refint\Shared.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\ref\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\refint\Shared.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Shared\obj\Debug\net8.0\ref\Shared.dll

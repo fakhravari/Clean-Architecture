@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.V1.HomeController.GetVersion">
+            <summary>
+            ورژن موبایل
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
