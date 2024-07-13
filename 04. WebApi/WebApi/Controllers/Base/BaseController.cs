@@ -1,4 +1,4 @@
-using Application.Resource;
+using Application.Localization;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

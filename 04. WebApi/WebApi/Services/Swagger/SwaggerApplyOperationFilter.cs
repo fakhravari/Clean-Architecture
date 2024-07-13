@@ -115,18 +115,18 @@ namespace WebApi.Services.Swagger
             {
                 operation.Parameters.Add(new OpenApiParameter
                 {
-                    Name = "IdLanguage",
+                    Name = "culture",
                     In = ParameterLocation.Header,
                     Description = "Persian = 1, English = 2, Arabic = 3",
                     Required = true,
                     Schema = new OpenApiSchema
                     {
-                        Type = "integer",
+                        Type = "string",
                         Enum = new List<IOpenApiAny>
                         {
-                            new OpenApiString("1"),
-                            new OpenApiString("2"),
-                            new OpenApiString("3")
+                            new OpenApiString("fa"),
+                            new OpenApiString("en"),
+                            new OpenApiString("ar")
                         }
                     }
                 });
@@ -134,7 +134,6 @@ namespace WebApi.Services.Swagger
                 var allowAnonymous = context.ApiDescription.ActionDescriptor.EndpointMetadata.OfType<AuthorizeAttribute>().Any();
                 if (allowAnonymous)
                     operation.Summary = "Authorization Needed";
-
             }
         }
         public class SwaggerJsonIgnore : IOperationFilter

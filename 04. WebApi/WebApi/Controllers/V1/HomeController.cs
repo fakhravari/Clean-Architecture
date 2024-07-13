@@ -1,6 +1,6 @@
 ﻿using Application.Features.Account.Commands.Login;
-using Application.Services.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Controllers.Base;
 using WebApi.Model;
@@ -10,12 +10,9 @@ namespace WebApi.Controllers.V1
     [ApiVersion("1")]
     public class HomeController : BaseController
     {
-        private readonly IJwtService iwJwtService;
-
-        public HomeController(IJwtService _iwJwtService)
+        public HomeController()
         {
-            this.iwJwtService = _iwJwtService;
-           
+        
         }
 
         [HttpPost("[action]")]
@@ -48,8 +45,10 @@ namespace WebApi.Controllers.V1
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginCommand command)
         {
-            // var trans = Localizer.Locale("Dont_Enter_Two_Characters");
-
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var uiCulture = rqf.RequestCulture.UICulture;
+            var translation2 = Localizer.Check_The_Input_Values;
 
             var result = await Mediator.Send(command);
             return Ok(result);

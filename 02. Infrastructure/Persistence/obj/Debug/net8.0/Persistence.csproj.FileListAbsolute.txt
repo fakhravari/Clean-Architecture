@@ -40,9 +40,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\P
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-SA\Application.resources.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Application.resources.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-SA\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.deps.json
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.dll
@@ -66,3 +63,28 @@ C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-ma
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.deps.json
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Application.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Shared.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Application.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Domain.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Shared.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll

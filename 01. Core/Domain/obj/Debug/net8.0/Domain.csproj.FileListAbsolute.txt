@@ -65,3 +65,17 @@ C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-ma
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.runtimeconfig.json
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\Domain.genruntimeconfig.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Domain\obj\Debug\net8.0\ref\Domain.dll

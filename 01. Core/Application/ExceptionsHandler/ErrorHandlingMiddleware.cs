@@ -1,17 +1,17 @@
-﻿using Application.Resource;
+﻿using Application.Localization;
+using Azure.Core;
 using Domain.Common;
 using Domain.Enum;
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Net;
 
 namespace Application.ExceptionsHandler
 {
-    using Microsoft.AspNetCore.Http;
-    using Newtonsoft.Json;
-    using System.Net;
-    using System.Threading.Tasks;
-
     public class ExceptionHandlingMiddleware
     {
         private readonly RequestDelegate _next;
@@ -42,22 +42,29 @@ namespace Application.ExceptionsHandler
             get { return new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new DefaultContractResolver { NamingStrategy = new DefaultNamingStrategy() } }; }
         }
 
-
-
-
-
-
-
         private static async Task HandleValidationException(HttpContext context, ValidationException exception)
         {
             var localizer = context.RequestServices.GetRequiredService<ISharedViewLocalizer>();
+
+
+
+            var rqf = context.Features.Get<IRequestCultureFeature>();
+            var culture = rqf.RequestCulture.Culture;
+            var uiCulture = rqf.RequestCulture.UICulture;
+            var translation2 = localizer.Check_The_Input_Values;
+
+
+
+
+
+
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.OK;
 
             var validationErrors = exception.Errors
                 .GroupBy(e => e.PropertyName ?? "General")
-                .ToDictionary(g => g.Key, g => g.Select(e => localizer.Locale(e.ErrorMessage)).ToArray());
+                .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray());
 
             var response = new BaseResponse
             {

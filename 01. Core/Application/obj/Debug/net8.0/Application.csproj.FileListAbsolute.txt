@@ -74,16 +74,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\en-US\Application.resources.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.ar-SA.resources
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.en-US.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar-SA\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.ar-SA.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.en-US.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.fa-IR.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ar-SA\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\en-US\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\fa-IR\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\bin\Debug\net8.0\Application.deps.json
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\bin\Debug\net8.0\Application.dll
@@ -112,3 +102,40 @@ C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-ma
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\Application.pdb
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.deps.json
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Domain.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Shared.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Shared.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Domain.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ar\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\en\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\fa\Application.resources.dll
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.ar.resources
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.en.resources
+C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.fa.resources
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.ar.resources
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.en.resources
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.fa.resources
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ar\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\en\Application.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\fa\Application.resources.dll

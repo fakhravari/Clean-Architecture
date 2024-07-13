@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4RwlSOp0W7M=",
+  "dgSpecHash": "AWhYusuwPvE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Downloads\\Compressed\\Clean-Architecture-main\\Clean-Architecture-main\\02. Infrastructure\\Persistence\\Persistence.csproj",
+  "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
