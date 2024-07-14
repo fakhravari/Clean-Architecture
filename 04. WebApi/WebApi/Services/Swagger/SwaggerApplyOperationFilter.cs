@@ -115,7 +115,7 @@ namespace WebApi.Services.Swagger
             {
                 operation.Parameters.Add(new OpenApiParameter
                 {
-                    Name = "culture",
+                    Name = "Accept-Language",
                     In = ParameterLocation.Header,
                     Description = "Persian = fa-IR, English = en-US, Arabic = ar-IQ",
                     Required = true,

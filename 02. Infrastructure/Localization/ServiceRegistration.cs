@@ -21,13 +21,9 @@ public static class ServiceRegistration
             options.DefaultRequestCulture = new RequestCulture(cultures[0]);
             options.SupportedCultures = supportedCultures;
             options.SupportedUICultures = supportedCultures;
-
-            options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
-            {
-                var culture = context.Request.Headers["culture"].ToString();
-                return new ProviderCultureResult(culture, culture);
-            }));
         });
+
+        // Header > Accept-Language
 
         return services;
     }
