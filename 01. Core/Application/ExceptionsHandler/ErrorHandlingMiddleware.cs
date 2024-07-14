@@ -1,5 +1,4 @@
 ﻿using Application.Localization;
-using Azure.Core;
 using Domain.Common;
 using Domain.Enum;
 using FluentValidation;
@@ -7,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using System.Net;
 
 namespace Application.ExceptionsHandler
@@ -37,10 +35,7 @@ namespace Application.ExceptionsHandler
         }
 
 
-        private static JsonSerializerSettings JsonSettings
-        {
-            get { return new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new DefaultContractResolver { NamingStrategy = new DefaultNamingStrategy() } }; }
-        }
+        
 
         private static async Task HandleValidationException(HttpContext context, ValidationException exception)
         {
@@ -52,11 +47,6 @@ namespace Application.ExceptionsHandler
             var culture = rqf.RequestCulture.Culture;
             var uiCulture = rqf.RequestCulture.UICulture;
             var translation2 = localizer.Check_The_Input_Values;
-
-
-
-
-
 
 
             context.Response.ContentType = "application/json";
@@ -71,27 +61,30 @@ namespace Application.ExceptionsHandler
                 Success = false,
                 StatusCode = (int)ApiStatusCode.BadRequest,
                 ValidationErrors = validationErrors.SelectMany(kvp => kvp.Value).ToList(),
-                Message = localizer.Check_The_Input_Values
+                Message = localizer.Exception
             };
 
-            var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings);
+            var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);
             await context.Response.WriteAsync(jsonResponse);
         }
 
         private static Task HandleException(HttpContext context, Exception exception)
         {
+            var localizer = context.RequestServices.GetRequiredService<ISharedViewLocalizer>();
             string controllerName = context.Request.RouteValues["controller"]?.ToString();
             string actionName = context.Request.RouteValues["action"]?.ToString();
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            var response = new
+            var response = new BaseResponse
             {
-                error = "An unexpected error occurred."
+                Success = false,
+                StatusCode = (int)ApiStatusCode.ServerError,
+                Message = localizer.Exception
             };
 
-            var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings);
+            var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);
             return context.Response.WriteAsync(jsonResponse);
         }
     }

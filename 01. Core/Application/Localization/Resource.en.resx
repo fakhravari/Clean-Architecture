@@ -129,6 +129,9 @@
   <data name="Do_Not_Enter_a_PropertyName_Value" xml:space="preserve">
     <value>Do not enter a {0} value</value>
   </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Exception</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>

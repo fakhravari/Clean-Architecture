@@ -1,4 +1,5 @@
-﻿using Domain.Common;
+﻿using Application.Localization;
+using Domain.Common;
 using Domain.Enum;
 using Domain.Model.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -100,15 +101,16 @@ namespace Application.Services.Jwt
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;
 
+                        var localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedViewLocalizer>();
                         var Response = new BaseResponse()
                         {
                             Success = false,
                             StatusCode = context.Response.StatusCode,
-                            Message = "You are not authorized! (or some other custom message)"
+                            Message = localizer.Exception
                         };
 
-                        var apiResult = JsonConvert.SerializeObject(Response);
-                        return context.Response.WriteAsync(apiResult);
+                        var jsonResponse = JsonConvert.SerializeObject(Response, JsonSettings.Settings);
+                        return context.Response.WriteAsync(jsonResponse);
                     }
                 };
             });

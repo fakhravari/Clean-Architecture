@@ -14,6 +14,7 @@ namespace Application.Localization
 
 
         string Check_The_Input_Values { get; }
+        string Exception { get; }
     }
     public class SharedViewLocalizer : ISharedViewLocalizer
     {
@@ -29,6 +30,7 @@ namespace Application.Localization
         }
 
         public string Check_The_Input_Values { get { return GetTranslation("Check_The_Input_Values"); } }
+        public string Exception { get { return GetTranslation("Exception"); } }
     }
 
 
