@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
@@ -106,7 +107,7 @@ namespace Application.Services.Jwt
                         {
                             Success = false,
                             StatusCode = context.Response.StatusCode,
-                            Message = localizer.Exception
+                            Message = localizer.Exception + " | " + context.Response.StatusCode
                         };
 
                         var jsonResponse = JsonConvert.SerializeObject(Response, JsonSettings.Settings);

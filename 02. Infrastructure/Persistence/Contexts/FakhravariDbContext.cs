@@ -9,9 +9,9 @@ namespace Persistence.Contexts
         {
         }
 
-        public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options)
-            : base(options)
+        public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options) : base(options)
         {
+
         }
 
         public virtual DbSet<Category> Categories { get; set; }
@@ -24,7 +24,7 @@ namespace Persistence.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=185.55.224.117;Initial Catalog=technos6_cafe;User ID=technos6_cafe;Password=cn*6s6I52;TrustServerCertificate=True");
+            // optionsBuilder.UseSqlServer("Server=185.55.224.117;Initial Catalog=technos6_cafe;User ID=technos6_cafe;Password=cn*6s6I52;TrustServerCertificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

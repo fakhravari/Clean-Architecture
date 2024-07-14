@@ -35,7 +35,7 @@ namespace Application.ExceptionsHandler
         }
 
 
-        
+
 
         private static async Task HandleValidationException(HttpContext context, ValidationException exception)
         {
@@ -81,7 +81,7 @@ namespace Application.ExceptionsHandler
             {
                 Success = false,
                 StatusCode = (int)ApiStatusCode.ServerError,
-                Message = localizer.Exception
+                Message = localizer.Exception + " | " + exception.ToString()
             };
 
             var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);

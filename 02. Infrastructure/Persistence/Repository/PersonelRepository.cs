@@ -1,38 +1,41 @@
 ﻿using Application.Contracts.Persistence;
 using Application.Model.Personel;
-using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
 
 namespace Persistence.Repository
 {
-    public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
+    public class PersonelRepository : IPersonelRepository
     {
-        public PersonelRepository(FakhravariDbContext dbContext) : base(dbContext)
+        private readonly IApplicationDbContextFactory _dbContext;
+        public PersonelRepository(IApplicationDbContextFactory dbContext)
         {
-
+            _dbContext = dbContext;
         }
 
         public async Task<LoginDto> Login(string UserName, string Password)
         {
-            var matches = await _dbContext.Personels.AsNoTracking().FirstOrDefaultAsync(e => e.UserName == UserName && e.Password == Password);
+            using (var context = _dbContext.CreateDbContext(true))
+            {
+                var matches = await context.Personels.AsNoTracking().FirstOrDefaultAsync(e => e.UserName == UserName && e.Password == Password);
 
-            if (matches == null)
-            {
-                return new LoginDto()
+                if (matches == null)
                 {
-                    IsLogin = false
-                };
-            }
-            else
-            {
-                return new LoginDto()
+                    return new LoginDto()
+                    {
+                        IsLogin = false
+                    };
+                }
+                else
                 {
-                    IsLogin = true,
-                    FirstName = matches.FirstName,
-                    Id = matches.Id,
-                    LastName = matches.LastName
-                };
+                    return new LoginDto()
+                    {
+                        IsLogin = true,
+                        FirstName = matches.FirstName,
+                        Id = matches.Id,
+                        LastName = matches.LastName
+                    };
+                }
             }
         }
     }

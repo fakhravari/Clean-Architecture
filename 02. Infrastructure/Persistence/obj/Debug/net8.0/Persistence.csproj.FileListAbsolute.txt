@@ -88,3 +88,25 @@ C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bi
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.deps.json
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.pdb
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Application.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Domain.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Shared.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Application.pdb
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Domain.pdb
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Shared.pdb
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.AssemblyReference.cache
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfoInputs.cache
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
+D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll

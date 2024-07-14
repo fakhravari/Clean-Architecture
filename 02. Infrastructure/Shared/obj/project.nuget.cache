@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m+US3dDNhkY=",
+  "dgSpecHash": "Fvf4BGU2PCs=",
   "success": true,
-  "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj",
+  "projectFilePath": "D:\\Repositories\\GitHub\\New folder\\02. Infrastructure\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

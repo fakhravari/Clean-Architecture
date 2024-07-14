@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NZMFQKbIqLw=",
+  "dgSpecHash": "TDq4C/B0s1w=",
   "success": true,
-  "projectFilePath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Application.csproj",
+  "projectFilePath": "D:\\Repositories\\GitHub\\New folder\\01. Core\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

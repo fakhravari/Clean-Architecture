@@ -1,5 +1,4 @@
-﻿using Application.Contracts.Persistence;
-using Application.Localization;
+﻿using Application.Localization;
 using FluentValidation;
 
 
@@ -7,12 +6,10 @@ namespace Application.Features.Account.Commands.Login
 {
     public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
     {
-        private readonly IPersonelRepository _productRepository;
         private readonly ISharedViewLocalizer localizer;
 
-        public LoginCommandValidator(IPersonelRepository productRepository, ISharedViewLocalizer viewLocalizer)
+        public LoginCommandValidator(ISharedViewLocalizer viewLocalizer)
         {
-            _productRepository = productRepository;
             localizer = viewLocalizer;
 
             When(x => x.Input.UserName.Length == 2, () =>
@@ -31,8 +28,6 @@ namespace Application.Features.Account.Commands.Login
 
         private async Task<bool> IsValidName2(string Name, CancellationToken cancellationToken)
         {
-            var tt = await _productRepository.ListAllAsync();
-
             if (Name == "test2")
             {
                 return false;
