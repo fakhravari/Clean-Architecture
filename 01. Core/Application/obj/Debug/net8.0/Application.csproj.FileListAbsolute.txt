@@ -102,7 +102,6 @@ C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-ma
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\Application.pdb
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.deps.json
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.dll
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Application.pdb
@@ -130,15 +129,6 @@ C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\ne
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.ar.resources
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.en.resources
 C:\Users\Fakhravari\Desktop\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.fa.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.ar.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.en.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Application.Localization.Resource.fa.resources
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\ar\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\en\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\fa\Application.resources.dll
 D:\Repositories\GitHub\New folder\01. Core\Application\bin\Debug\net8.0\Application.deps.json
 D:\Repositories\GitHub\New folder\01. Core\Application\bin\Debug\net8.0\Application.dll
 D:\Repositories\GitHub\New folder\01. Core\Application\bin\Debug\net8.0\Application.pdb
@@ -166,3 +156,8 @@ D:\Repositories\GitHub\New folder\01. Core\Application\obj\Debug\net8.0\Applicat
 D:\Repositories\GitHub\New folder\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 D:\Repositories\GitHub\New folder\01. Core\Application\obj\Debug\net8.0\Application.pdb
 D:\Repositories\GitHub\New folder\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Localization.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\Localization.pdb
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Localization.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Localization.resources.dll

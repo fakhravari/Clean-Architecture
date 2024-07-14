@@ -1,14 +1,14 @@
-﻿using Application.Localization;
-using FluentValidation;
+﻿using FluentValidation;
+using Localization.Resources;
 
 
 namespace Application.Features.Account.Commands.Login
 {
     public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
     {
-        private readonly ISharedViewLocalizer localizer;
+        private readonly ISharedResource localizer;
 
-        public LoginCommandValidator(ISharedViewLocalizer viewLocalizer)
+        public LoginCommandValidator(ISharedResource viewLocalizer)
         {
             localizer = viewLocalizer;
 

@@ -1,23 +1,29 @@
 ﻿using Application.ExceptionsHandler;
-using Application.Localization;
 using Application.Services.Jwt;
 using Application.Services.MediatR;
 using Application.Services.NewtonSoft;
+using Localization;
 using Persistence;
 using WebApi.Services.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpContextAccessor();
+builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddHttpContextAccessor();
+
+
+
 
 builder.Services.AddService_Localizer();
-
 builder.Services.AddService_Swagger();
 builder.Services.AddService_JwtIdentity(builder);
-builder.Services.AddServices_Persistence(builder.Configuration);
+builder.Services.AddServices_Persistence();
 builder.Services.AddService_MediatR_Fluent();
 builder.Services.Add_NewtonsoftJsonSettings();
+
+
+
 
 var app = builder.Build();
 
@@ -32,8 +38,6 @@ else
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseCultureMiddleware();
-
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();
 app.UseRouting();
@@ -42,4 +46,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.UseStatusCodePages();
+app.UseRequestLocalization();
+
 app.Run();

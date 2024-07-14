@@ -1,9 +1,8 @@
-﻿using Application.Localization;
-using Domain.Common;
+﻿using Domain.Common;
 using Domain.Enum;
 using FluentValidation;
+using Localization.Resources;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using System.Net;
@@ -39,14 +38,14 @@ namespace Application.ExceptionsHandler
 
         private static async Task HandleValidationException(HttpContext context, ValidationException exception)
         {
-            var localizer = context.RequestServices.GetRequiredService<ISharedViewLocalizer>();
+            var localizer = context.RequestServices.GetRequiredService<ISharedResource>();
 
 
 
-            var rqf = context.Features.Get<IRequestCultureFeature>();
-            var culture = rqf.RequestCulture.Culture;
-            var uiCulture = rqf.RequestCulture.UICulture;
-            var translation2 = localizer.Check_The_Input_Values;
+            //var rqf = context.Features.Get<IRequestCultureFeature>();
+            //var culture = rqf.RequestCulture.Culture;
+            //var uiCulture = rqf.RequestCulture.UICulture;
+            //var translation2 = localizer.CheckTheInputValues;
 
 
             context.Response.ContentType = "application/json";
@@ -70,7 +69,7 @@ namespace Application.ExceptionsHandler
 
         private static Task HandleException(HttpContext context, Exception exception)
         {
-            var localizer = context.RequestServices.GetRequiredService<ISharedViewLocalizer>();
+            var localizer = context.RequestServices.GetRequiredService<ISharedResource>();
             string controllerName = context.Request.RouteValues["controller"]?.ToString();
             string actionName = context.Request.RouteValues["action"]?.ToString();
 

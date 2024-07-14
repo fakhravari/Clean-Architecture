@@ -1,7 +1,7 @@
-﻿using Application.Localization;
-using Domain.Common;
+﻿using Domain.Common;
 using Domain.Enum;
 using Domain.Model.Jwt;
+using Localization.Resources;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
@@ -102,7 +101,7 @@ namespace Application.Services.Jwt
                         context.Response.ContentType = "application/json";
                         context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;
 
-                        var localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedViewLocalizer>();
+                        var localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedResource>();
                         var Response = new BaseResponse()
                         {
                             Success = false,

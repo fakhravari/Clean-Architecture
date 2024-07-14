@@ -8,7 +8,7 @@ namespace Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddServices_Persistence(this IServiceCollection services, IConfiguration configuration)
+        public static void AddServices_Persistence(this IServiceCollection services)
         {
             services.AddSingleton<IApplicationDbContextFactory, ApplicationDbContextFactory>();
             services.AddScoped<IPersonelRepository, PersonelRepository>();

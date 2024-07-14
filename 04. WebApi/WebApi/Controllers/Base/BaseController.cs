@@ -1,4 +1,4 @@
-using Application.Localization;
+using Localization.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,8 +8,8 @@ namespace WebApi.Controllers.Base
     [ApiController]
     public class BaseController : Controller
     {
-        private ISharedViewLocalizer? _localizer;
-        protected ISharedViewLocalizer Localizer => HttpContext.RequestServices.GetRequiredService<ISharedViewLocalizer>();
+        private ISharedResource? _localizer;
+        protected ISharedResource Localizer => HttpContext.RequestServices.GetRequiredService<ISharedResource>();
 
         public BaseController()
         {

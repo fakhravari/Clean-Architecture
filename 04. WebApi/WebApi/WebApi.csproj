@@ -27,6 +27,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\01. Core\Application\Application.csproj" />
+		<ProjectReference Include="..\..\02. Infrastructure\Localization\Localization.csproj" />
 		<ProjectReference Include="..\..\02. Infrastructure\Persistence\Persistence.csproj" />
 		<ProjectReference Include="..\..\02. Infrastructure\Shared\Shared.csproj" />
 	</ItemGroup>

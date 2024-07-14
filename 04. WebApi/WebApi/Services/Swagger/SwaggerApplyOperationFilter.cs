@@ -117,16 +117,16 @@ namespace WebApi.Services.Swagger
                 {
                     Name = "culture",
                     In = ParameterLocation.Header,
-                    Description = "Persian = 1, English = 2, Arabic = 3",
+                    Description = "Persian = fa-IR, English = en-US, Arabic = ar-IQ",
                     Required = true,
                     Schema = new OpenApiSchema
                     {
                         Type = "string",
                         Enum = new List<IOpenApiAny>
                         {
-                            new OpenApiString("fa"),
-                            new OpenApiString("en"),
-                            new OpenApiString("ar")
+                            new OpenApiString("fa-IR"),
+                            new OpenApiString("en-US"),
+                            new OpenApiString("ar-IQ")
                         }
                     }
                 });

@@ -85,9 +85,6 @@ C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\ob
 C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
 C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
 C:\Users\Fakhravari\Desktop\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en\Application.resources.dll
-D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa\Application.resources.dll
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.deps.json
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.dll
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.pdb
@@ -110,3 +107,8 @@ D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
 D:\Repositories\GitHub\New folder\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Localization.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Localization.pdb
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Localization.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Localization.resources.dll
