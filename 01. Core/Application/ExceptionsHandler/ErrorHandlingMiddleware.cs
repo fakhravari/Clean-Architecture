@@ -5,6 +5,7 @@ using Localization.Resources;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 
 namespace Application.ExceptionsHandler
@@ -23,7 +24,7 @@ namespace Application.ExceptionsHandler
             {
                 await _next(context);
             }
-            catch (ValidationException ex)
+            catch (FluentValidation.ValidationException ex)
             {
                 await HandleValidationException(context, ex);
             }
@@ -36,7 +37,7 @@ namespace Application.ExceptionsHandler
 
 
 
-        private static async Task HandleValidationException(HttpContext context, ValidationException exception)
+        private static async Task HandleValidationException(HttpContext context, FluentValidation.ValidationException exception)
         {
             var localizer = context.RequestServices.GetRequiredService<ISharedResource>();
 

@@ -112,3 +112,5 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Deb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.runtimeconfig.json
+D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.genruntimeconfig.cache

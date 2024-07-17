@@ -16,11 +16,9 @@ namespace Persistence.Repository
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
         {
-            string SQL = $"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}";
-
             using (var context = _dbContext.CreateDbContext(false))
             {
-                return await context.Database.SqlQueryRaw<GetListProductsDto>(SQL).ToListAsync();
+                return await context.Database.SqlQueryRaw<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}").ToListAsync();
             }
         }
 

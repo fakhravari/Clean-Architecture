@@ -7,6 +7,7 @@ namespace Persistence.Contexts
     {
         public FakhravariDbContext()
         {
+
         }
 
         public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options) : base(options)

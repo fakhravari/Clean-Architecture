@@ -20,12 +20,9 @@ namespace Persistence.Contexts
         public FakhravariDbContext CreateDbContext(bool isReadOnly)
         {
             var optionsBuilder = new DbContextOptionsBuilder<FakhravariDbContext>();
-            var connectionString = isReadOnly
-                ? _configuration.GetConnectionString("ReadDatabase")
-                : _configuration.GetConnectionString("WriteDatabase");
+            var connectionString = isReadOnly ? _configuration.GetConnectionString("ReadDatabase") : _configuration.GetConnectionString("WriteDatabase");
 
             optionsBuilder.UseSqlServer(connectionString);
-
             return new FakhravariDbContext(optionsBuilder.Options);
         }
     }
