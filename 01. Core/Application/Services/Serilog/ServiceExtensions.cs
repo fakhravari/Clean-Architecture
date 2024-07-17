@@ -30,7 +30,7 @@ namespace Application.Services.SeriLog
                         .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
                         .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Error)
                         .MinimumLevel.Override("Serilog", LogEventLevel.Error)
-                        .Enrich.FromLogContext().Enrich.WithClientIp().Enrich.WithClientAgent().CreateLogger();
+                        .Enrich.FromLogContext().Enrich.WithClientIp().CreateLogger();
 
                     Log.Logger = logger;
                     app.UseSerilogRequestLogging();
