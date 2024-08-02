@@ -998,6 +998,7 @@
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.7",
+          "Microsoft.EntityFrameworkCore": "8.0.7",
           "Serilog.AspNetCore": "8.0.1",
           "Serilog.Enrichers.ClientInfo": "2.0.3",
           "Serilog.Sinks.MSSqlServer": "6.6.1",

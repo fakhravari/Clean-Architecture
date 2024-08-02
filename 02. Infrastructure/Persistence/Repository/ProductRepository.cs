@@ -1,42 +1,42 @@
 ﻿using Application.Contracts.Persistence;
 using Application.Model.Product;
+using Domain.Entities;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
-using Persistence.Contexts;
 
 namespace Persistence.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly IApplicationDbContextFactory _dbContext;
-        public ProductRepository(IApplicationDbContextFactory dbContext)
+        private readonly IUnitOfWork _unitOfWork;
+        public ProductRepository(IUnitOfWork unitOfWork)
         {
-            _dbContext = dbContext;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
         {
-            using (var context = _dbContext.CreateDbContext(false))
-            {
-                return await context.Database.SqlQueryRaw<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}").ToListAsync();
-            }
+            _unitOfWork.CreateContext(isReadOnly: true);
+
+            var product = await _unitOfWork.QueryListRawAsync<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}");
+            return product;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts1(string Title)
         {
-            using (var context = _dbContext.CreateDbContext(true))
-            {
-                var producvts = await context.Products.ToListAsync();
-                var products = await context.Products
-                    .Where(v => EF.Functions.Like(v.Title, $"%{Title}%")).ToListAsync();
-                var products1 = await context.Products.Where(v => v.Title.Contains(Title))
-                    .ToListAsync();
+            _unitOfWork.CreateContext(isReadOnly: true);
 
-                var productsDto = products.Adapt<List<GetListProductsDto>>();
-                var productsDto1 = products1.Adapt<List<GetListProductsDto>>();
+            Func<IQueryable<Product>, IQueryable<Product>> query = q => q.Where(p => EF.Functions.Like(p.Title, $"%{Title}%"));
+            var products = await _unitOfWork.QueryListAsync<Product>(query);
 
-                return productsDto;
-            }
+            Func<IQueryable<Product>, IQueryable<Product>> query2 = q => q.Where(p => p.Title.Contains(Title));
+            var products1 = await _unitOfWork.QueryListAsync<Product>(query2);
+
+
+            var productsDto = products.Adapt<List<GetListProductsDto>>();
+            var productsDto1 = products1.Adapt<List<GetListProductsDto>>();
+
+            return productsDto;
         }
     }
 }

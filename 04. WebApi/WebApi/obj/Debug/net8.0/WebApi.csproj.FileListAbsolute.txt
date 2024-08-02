@@ -221,8 +221,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bi
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Azure.Core.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Azure.Identity.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\FluentValidation.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.Core.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\MediatR.dll
@@ -257,7 +255,6 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bi
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Annotations.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Newtonsoft.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.ReDoc.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -305,15 +302,11 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\ob
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApi.props
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\staticwebassets.pack.json
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\scopedcss\bundle\WebApi.styles.css
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.csproj.CopyComplete
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\refint\WebApi.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\ref\WebApi.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-SA\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Mapster.Core.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.dll
@@ -687,3 +680,27 @@ D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Loc
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.AspNetCore.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Enrichers.ClientInfo.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.File.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.MSSqlServer.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Serilog.Sinks.PeriodicBatching.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\Localization.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\en-US\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\04. WebApi\WebApi\obj\Debug\net8.0\WebApi.csproj.Up2Date

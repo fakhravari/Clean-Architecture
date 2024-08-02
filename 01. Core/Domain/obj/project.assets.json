@@ -149,25 +149,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Fakhravari\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
+      "projectUniqueName": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Domain\\obj\\",
+      "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\Fakhravari\\.nuget\\packages\\",
+      "outputPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\01. Core\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Fakhravari\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -177,15 +175,14 @@
       "sources": {
         "C:\\2021.1.1": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
-              "projectPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
+            "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj": {
+              "projectPath": "E:\\MOHAMAD\\Sourse KD Ha\\Asp.Net MVC Core\\Clean Architecture\\02. Infrastructure\\Shared\\Shared.csproj"
             }
           }
         }

@@ -32,14 +32,10 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\P
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.AssemblyInfo.cs
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CoreCompileInputs.cache
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.csproj.CopyComplete
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\refint\Persistence.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\ref\Persistence.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-SA\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Application.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.deps.json
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.dll
@@ -114,3 +110,11 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Deb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.runtimeconfig.json
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.genruntimeconfig.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Persistence.runtimeconfig.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\Localization.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\en-US\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persiste.61C28332.Up2Date
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Persistence\obj\Debug\net8.0\Persistence.genruntimeconfig.cache

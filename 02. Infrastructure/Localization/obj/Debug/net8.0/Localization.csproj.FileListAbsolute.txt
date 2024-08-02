@@ -31,3 +31,26 @@ D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Localization\obj\De
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\refint\Localization.dll
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.pdb
 D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\ref\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\Localization.deps.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\Localization.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\en-US\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.csproj.AssemblyReference.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.Resources.SharedResource.ar-IQ.resources
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.Resources.SharedResource.en-US.resources
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.Resources.SharedResource.fa-IR.resources
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.csproj.GenerateResource.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.GeneratedMSBuildEditorConfig.editorconfig
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.AssemblyInfoInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.AssemblyInfo.cs
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.csproj.CoreCompileInputs.cache
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.sourcelink.json
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\ar-IQ\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\en-US\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\refint\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\Localization.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\02. Infrastructure\Localization\obj\Debug\net8.0\ref\Localization.dll

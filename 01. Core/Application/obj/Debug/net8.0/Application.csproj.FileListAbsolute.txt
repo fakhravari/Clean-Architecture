@@ -59,21 +59,10 @@ E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.sourcelink.json
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\refint\Application.dll
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.pdb
 E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\ref\Application.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.fa-IR.resources
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.csproj.GenerateResource.cache
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\ar-SA\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\fa-IR\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\ar-SA\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\en-US\Application.resources.dll
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.ar-SA.resources
-E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Application.Resource.SharedResource.en-US.resources
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\bin\Debug\net8.0\Application.deps.json
 C:\Users\user\Downloads\Compressed\Clean-Architecture-main\Clean-Architecture-main\01. Core\Application\bin\Debug\net8.0\Application.dll
@@ -161,3 +150,9 @@ D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Localization.resources.dll
 D:\Repositories\GitHub\Clean-Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Localization.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\Localization.pdb
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\ar-IQ\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\en-US\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\bin\Debug\net8.0\fa-IR\Localization.resources.dll
+E:\MOHAMAD\Sourse KD Ha\Asp.Net MVC Core\Clean Architecture\01. Core\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date

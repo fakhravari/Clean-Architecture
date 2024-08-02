@@ -1,9 +1,11 @@
-﻿using Domain.Entities;
+﻿using Application.Contracts.Persistence;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Persistence.Contexts
 {
-    public partial class FakhravariDbContext : DbContext
+    public partial class FakhravariDbContext : DbContext, IDbContext
     {
         public FakhravariDbContext()
         {
@@ -26,6 +28,18 @@ namespace Persistence.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseSqlServer("Server=185.55.224.117;Initial Catalog=technos6_cafe;User ID=technos6_cafe;Password=cn*6s6I52;TrustServerCertificate=True");
+        }
+
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
+
+        DatabaseFacade IDbContext.Database => base.Database;
+        public async ValueTask Dispose()
+        {
+            await base.DisposeAsync();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

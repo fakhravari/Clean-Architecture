@@ -10,6 +10,8 @@ namespace Persistence
         public static void AddServices_Persistence(this IServiceCollection services)
         {
             services.AddSingleton<IApplicationDbContextFactory, ApplicationDbContextFactory>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
             services.AddScoped<IPersonelRepository, PersonelRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
         }
