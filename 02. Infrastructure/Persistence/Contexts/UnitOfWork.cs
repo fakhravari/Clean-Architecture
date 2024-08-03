@@ -17,7 +17,16 @@ namespace Persistence.Contexts
 
         public void CreateContext(bool isReadOnly)
         {
+            DisposeContext();
             _context = _contextFactory.CreateDbContext(isReadOnly);
+        }
+        private void DisposeContext()
+        {
+            if (_context != null)
+            {
+                _context.Dispose();
+                _context = null;
+            }
         }
 
         public DbContext Context => _context;

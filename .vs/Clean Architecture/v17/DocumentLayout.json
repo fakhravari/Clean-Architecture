@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|d:\\repositories\\github\\clean-architecture\\02. infrastructure\\persistence\\contexts\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|solutionrelative:02. infrastructure\\persistence\\contexts\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|d:\\repositories\\github\\clean-architecture\\01. core\\application\\contracts\\persistence\\contexts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|solutionrelative:01. core\\application\\contracts\\persistence\\contexts\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|d:\\repositories\\github\\clean-architecture\\02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|solutionrelative:02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
+              "RelativeToolTip": "02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAYwBYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T07:58:23.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T06:12:31.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Contracts\\Persistence\\Contexts\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "01. Core\\Application\\Contracts\\Persistence\\Contexts\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Contracts\\Persistence\\Contexts\\IUnitOfWork.cs",
+              "RelativeToolTip": "01. Core\\Application\\Contracts\\Persistence\\Contexts\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T06:11:00.304Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
