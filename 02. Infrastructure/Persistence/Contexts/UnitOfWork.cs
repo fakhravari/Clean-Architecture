@@ -1,6 +1,8 @@
 ﻿using Application.Contracts.Persistence.Contexts;
+using Application.Services.Serilog;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Logging;
 
 namespace Persistence.Contexts
 {
@@ -9,10 +11,12 @@ namespace Persistence.Contexts
         private readonly IDbContextFactory _contextFactory;
         private DbContext _context;
         private IDbContextTransaction _transaction;
+        private readonly ISerilogService _logger;
 
-        public UnitOfWork(IDbContextFactory contextFactory)
+        public UnitOfWork(IDbContextFactory contextFactory, ISerilogService logger)
         {
             _contextFactory = contextFactory;
+            _logger = logger;
         }
 
         public void CreateContext(bool isReadOnly)
@@ -20,6 +24,7 @@ namespace Persistence.Contexts
             DisposeContext();
             _context = _contextFactory.CreateDbContext(isReadOnly);
         }
+
         private void DisposeContext()
         {
             if (_context != null)
@@ -31,105 +36,178 @@ namespace Persistence.Contexts
 
         public DbContext Context => _context;
 
-
-
-
         public async Task<T> QuerySingleAsync<T>(Func<IQueryable<T>, IQueryable<T>> query) where T : class
         {
-            return await query(_context.Set<T>()).AsNoTracking().FirstOrDefaultAsync();
+            try
+            {
+                return await query(_context.Set<T>()).AsNoTracking().FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task<List<T>> QueryListAsync<T>(Func<IQueryable<T>, IQueryable<T>> query = null) where T : class
         {
-            var dbSet = _context.Set<T>().AsNoTracking();
-            var result = query != null ? await query(dbSet).ToListAsync() : await dbSet.ToListAsync();
-            return result;
+            try
+            {
+                var dbSet = _context.Set<T>().AsNoTracking();
+                return query != null ? await query(dbSet).ToListAsync() : await dbSet.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task<T> QuerySingleRawAsync<T>(string sql, params object[] parameters) where T : class
         {
-            return await _context.Set<T>().FromSqlRaw(sql, parameters).AsNoTracking().FirstOrDefaultAsync();
+            try
+            {
+                return await _context.Set<T>().FromSqlRaw(sql, parameters).AsNoTracking().FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task<List<T>> QueryListRawAsync<T>(string sql, params object[] parameters) where T : class
         {
-            return await _context.Set<T>().FromSqlRaw(sql, parameters).AsNoTracking().ToListAsync();
+            try
+            {
+                return await _context.Set<T>().FromSqlRaw(sql, parameters).AsNoTracking().ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
-
-
-
-
 
         public async Task AddAsync<T>(T entity) where T : class
         {
-            _context.Set<T>().Add(entity);
-            await SaveChangesAsync();
+            try
+            {
+                _context.Set<T>().Add(entity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task UpdateAsync<T>(T entity) where T : class
         {
-            _context.Set<T>().Update(entity);
-            await SaveChangesAsync();
+            try
+            {
+                _context.Set<T>().Update(entity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task DeleteAsync<T>(T entity) where T : class
         {
-            _context.Set<T>().Remove(entity);
-            await SaveChangesAsync();
+            try
+            {
+                _context.Set<T>().Remove(entity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
-
-
-
-
-
 
         public async Task BeginTransactionAsync()
         {
-            if (_transaction != null)
+            try
             {
-                throw new InvalidOperationException("A transaction is already in progress.");
+                _transaction = await _context.Database.BeginTransactionAsync();
             }
-            _transaction = await _context.Database.BeginTransactionAsync();
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task CommitTransactionAsync()
         {
-            if (_transaction == null)
+            try
             {
-                throw new InvalidOperationException("No transaction is in progress.");
+                await _transaction.CommitAsync();
+                await _transaction.DisposeAsync();
+                _transaction = null;
             }
-            await _transaction.CommitAsync();
-            _transaction.Dispose();
-            _transaction = null;
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
-        public async Task RollbackTransactionAsync()
+        public async Task RollbackTransactionAsync(Exception? ex)
         {
-            if (_transaction == null)
+            try
             {
-                throw new InvalidOperationException("No transaction is in progress.");
+                if (ex != null)
+                {
+                    _logger.LogSystem(ex);
+                }
+
+                await _transaction.RollbackAsync();
+                await _transaction.DisposeAsync();
+                _transaction = null;
             }
-            await _transaction.RollbackAsync();
-            _transaction.Dispose();
-            _transaction = null;
+            catch (Exception e)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async Task<int> SaveChangesAsync()
         {
-            return await _context.SaveChangesAsync();
+            try
+            {
+                return await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogSystem(ex);
+                throw;
+            }
         }
 
         public async ValueTask DisposeAsync()
         {
-            if (_context != null)
+            try
             {
-                await _context.DisposeAsync();
-                _context = null;
+                if (_context != null)
+                {
+                    await _context.DisposeAsync();
+                    _context = null;
+                }
+                if (_transaction != null)
+                {
+                    await _transaction.DisposeAsync();
+                    _transaction = null;
+                }
             }
-            if (_transaction != null)
+            catch (Exception ex)
             {
-                await _transaction.DisposeAsync();
-                _transaction = null;
+                _logger.LogSystem(ex);
+                throw;
             }
         }
     }

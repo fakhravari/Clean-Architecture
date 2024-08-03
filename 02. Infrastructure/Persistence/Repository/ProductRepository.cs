@@ -1,18 +1,22 @@
 ﻿using Application.Contracts.Persistence;
 using Application.Contracts.Persistence.Contexts;
 using Application.Model.Product;
+using Application.Services.Serilog;
 using Domain.Entities;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Persistence.Repository
 {
     public class ProductRepository : IProductRepository
     {
         private readonly IUnitOfWork _unitOfWork;
-        public ProductRepository(IUnitOfWork unitOfWork)
+        private readonly ISerilogService _logger;
+        public ProductRepository(IUnitOfWork unitOfWork, ISerilogService logger)
         {
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
@@ -28,8 +32,6 @@ namespace Persistence.Repository
         public async Task<List<GetListProductsDto>> GetListProducts1(string Title)
         {
             _unitOfWork.CreateContext(isReadOnly: false);
-
-            var tttt = _unitOfWork.Context.Database.GetConnectionString();
 
             Func<IQueryable<Product>, IQueryable<Product>> query = q => q.Where(p => EF.Functions.Like(p.Title, $"%{Title}%"));
             var products = await _unitOfWork.QueryListAsync<Product>(query);
@@ -55,22 +57,31 @@ namespace Persistence.Repository
 
             try
             {
-                await _unitOfWork.BeginTransactionAsync();
-
-                var addenty = new Product() { IdCategory = 1, Price = 100, Title = "test" };
-
-                await _unitOfWork.AddAsync(addenty);
-                var res1 = await _unitOfWork.SaveChangesAsync();
-                var newId = addenty.Id;
-
                 int tt = int.Parse("4445kh");
-
-                await _unitOfWork.CommitTransactionAsync();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                await _unitOfWork.RollbackTransactionAsync();
+                _logger.LogSystem(ex);
             }
+
+
+
+            //try
+            //{
+            //    await _unitOfWork.BeginTransactionAsync();
+
+            //    var addenty = new Product() { IdCategory = 1, Price = 100, Title = "test" };
+
+            //    await _unitOfWork.AddAsync(addenty);
+            //    var res1 = await _unitOfWork.SaveChangesAsync();
+            //    var newId = addenty.Id;
+
+            //    await _unitOfWork.CommitTransactionAsync();
+            //}
+            //catch (Exception ex)
+            //{
+            //    await _unitOfWork.RollbackTransactionAsync(ex);
+            //}
 
             return 1;
         }

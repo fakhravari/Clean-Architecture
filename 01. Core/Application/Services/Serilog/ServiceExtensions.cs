@@ -1,8 +1,6 @@
 ﻿using Application.Services.Serilog;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
@@ -12,31 +10,23 @@ namespace Application.Services.SeriLog
 {
     public static class ServiceExtensions
     {
-        public static void Add_SeriLogService(this IHostBuilder builder)
+        public static void Add_SerilogLogging(this WebApplicationBuilder builder)
         {
-            builder.ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.ConfigureServices(services =>
-                {
-                    services.AddSingleton<ILoggerProvider, SerilogLoggerProvider>();
-                    services.AddScoped<ISerilogService, SerilogService>();
-                });
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(builder.Configuration)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
+                .MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Error)
+                .MinimumLevel.Override("System", LogEventLevel.Error)
+                .MinimumLevel.Override("System.Net.Http.HttpClient", LogEventLevel.Error)
+                .Enrich.FromLogContext()
+                .Enrich.WithClientIp()
+                .CreateLogger();
 
-                webBuilder.Configure(app =>
-                {
-                    var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
-                    var logger = new LoggerConfiguration()
-                        .ReadFrom.Configuration(configuration)
-                        .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
-                        .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Error)
-                        .MinimumLevel.Override("Serilog", LogEventLevel.Error)
-                        .Enrich.FromLogContext().Enrich.WithClientIp().CreateLogger();
+            builder.Logging.ClearProviders();
+            builder.Logging.AddSerilog();
 
-                    Log.Logger = logger;
-                    app.UseSerilogRequestLogging();
-                });
-            });
+            builder.Services.AddSingleton<ILoggerProvider, SerilogLoggerProvider>();
+            builder.Services.AddScoped<ISerilogService, SerilogService>();
         }
-
     }
 }

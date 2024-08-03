@@ -4,22 +4,21 @@ namespace Application.Services.Serilog
 {
     public interface ISerilogService
     {
-        void LogSystem(object ex);
+        void LogSystem(Exception ex);
     }
 
-    public class SerilogService: ISerilogService
+    public class SerilogService : ISerilogService
     {
-        private readonly ILogger logger;
+        private readonly ILogger<SerilogService> _logger;
 
-        public SerilogService(ILogger _logger)
+        public SerilogService(ILogger<SerilogService> logger)
         {
-            logger = _logger;
+            _logger = logger;
         }
 
-        public void LogSystem(object ex)
+        public void LogSystem(Exception ex)
         {
-            var data = ex as Exception;
-            logger.LogError(data, data.Message);
+            _logger.LogError(ex, ex.Message);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Application.Services.Jwt;
 using Application.Services.MediatR;
 using Application.Services.NewtonSoft;
+using Application.Services.SeriLog;
 using Localization;
 using Persistence;
 using WebApi.Services.Swagger;
@@ -13,8 +14,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpContextAccessor();
 
 
-
-
 builder.Services.AddService_Localizer();
 builder.Services.AddService_Swagger();
 builder.Services.AddService_JwtIdentity(builder);
@@ -22,8 +21,7 @@ builder.Services.AddServices_Persistence();
 builder.Services.AddService_MediatR_Fluent();
 builder.Services.Add_NewtonsoftJsonSettings();
 
-
-
+builder.Add_SerilogLogging(); // پیکربندی Serilog
 
 var app = builder.Build();
 
@@ -38,6 +36,7 @@ else
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();
 app.UseRouting();

@@ -21,7 +21,7 @@ namespace Application.Contracts.Persistence.Contexts
 
         Task BeginTransactionAsync();
         Task CommitTransactionAsync();
-        Task RollbackTransactionAsync();
+        Task RollbackTransactionAsync(Exception? ex);
         Task<int> SaveChangesAsync();
     }
 }
