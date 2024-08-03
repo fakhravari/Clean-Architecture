@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace Application.Contracts.Persistence
+namespace Application.Contracts.Persistence.Contexts
 {
     public interface IDbContext
     {

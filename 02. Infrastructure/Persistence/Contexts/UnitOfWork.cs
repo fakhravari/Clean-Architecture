@@ -1,4 +1,4 @@
-﻿using Application.Contracts.Persistence;
+﻿using Application.Contracts.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -6,11 +6,11 @@ namespace Persistence.Contexts
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IApplicationDbContextFactory _contextFactory;
+        private readonly IDbContextFactory _contextFactory;
         private DbContext _context;
         private IDbContextTransaction _transaction;
 
-        public UnitOfWork(IApplicationDbContextFactory contextFactory)
+        public UnitOfWork(IDbContextFactory contextFactory)
         {
             _contextFactory = contextFactory;
         }
@@ -48,6 +48,26 @@ namespace Persistence.Contexts
         }
 
 
+
+
+
+        public async Task AddAsync<T>(T entity) where T : class
+        {
+            _context.Set<T>().Add(entity);
+            await SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync<T>(T entity) where T : class
+        {
+            _context.Set<T>().Update(entity);
+            await SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync<T>(T entity) where T : class
+        {
+            _context.Set<T>().Remove(entity);
+            await SaveChangesAsync();
+        }
 
 
 

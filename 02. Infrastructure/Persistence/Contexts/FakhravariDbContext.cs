@@ -1,4 +1,4 @@
-﻿using Application.Contracts.Persistence;
+﻿using Application.Contracts.Persistence.Contexts;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -31,16 +31,14 @@ namespace Persistence.Contexts
         }
 
 
+
         public Task<int> SaveChangesAsync()
         {
             return base.SaveChangesAsync();
         }
-
         DatabaseFacade IDbContext.Database => base.Database;
-        public async ValueTask Dispose()
-        {
-            await base.DisposeAsync();
-        }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

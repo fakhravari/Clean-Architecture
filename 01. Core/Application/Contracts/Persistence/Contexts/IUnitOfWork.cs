@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Application.Contracts.Persistence
+namespace Application.Contracts.Persistence.Contexts
 {
     public interface IUnitOfWork : IAsyncDisposable
     {
@@ -13,6 +13,10 @@ namespace Application.Contracts.Persistence
         Task<T> QuerySingleRawAsync<T>(string sql, params object[] parameters) where T : class;
         Task<List<T>> QueryListRawAsync<T>(string sql, params object[] parameters) where T : class;
 
+
+        Task AddAsync<T>(T entity) where T : class;
+        Task UpdateAsync<T>(T entity) where T : class;
+        Task DeleteAsync<T>(T entity) where T : class;
 
 
         Task BeginTransactionAsync();

@@ -3,16 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Persistence.Contexts
 {
-    public interface IApplicationDbContextFactory
+    public interface IDbContextFactory
     {
         FakhravariDbContext CreateDbContext(bool isReadOnly);
     }
 
-    public class ApplicationDbContextFactory : IApplicationDbContextFactory
+    public class DbContextFactory : IDbContextFactory
     {
         private readonly IConfiguration _configuration;
 
-        public ApplicationDbContextFactory(IConfiguration configuration)
+        public DbContextFactory(IConfiguration configuration)
         {
             _configuration = configuration;
         }
