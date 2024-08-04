@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Repositories\\GitHub\\Clean-Architecture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|d:\\repositories\\github\\clean-architecture\\01. core\\application\\services\\serilog\\serilogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16C83483-2DF5-42F6-8956-A38C60D09E4F}|01. Core\\Application\\Application.csproj|solutionrelative:01. core\\application\\services\\serilog\\serilogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|d:\\repositories\\github\\clean-architecture\\02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|solutionrelative:02. infrastructure\\persistence\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|d:\\repositories\\github\\clean-architecture\\02. infrastructure\\persistence\\contexts\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{273EF4EA-61A0-4FCC-9CC4-698D569FF8AD}|02. Infrastructure\\Persistence\\Persistence.csproj|solutionrelative:02. infrastructure\\persistence\\contexts\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{027FC2B1-3A11-4842-AA71-F78B624F3846}|04. WebApi\\WebApi\\WebApi.csproj|d:\\repositories\\github\\clean-architecture\\04. webapi\\webapi\\controllers\\v1\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{027FC2B1-3A11-4842-AA71-F78B624F3846}|04. WebApi\\WebApi\\WebApi.csproj|solutionrelative:04. webapi\\webapi\\controllers\\v1\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -79,40 +71,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SerilogService.cs",
-              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Services\\Serilog\\SerilogService.cs",
-              "RelativeDocumentMoniker": "01. Core\\Application\\Services\\Serilog\\SerilogService.cs",
-              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\01. Core\\Application\\Services\\Serilog\\SerilogService.cs",
-              "RelativeToolTip": "01. Core\\Application\\Services\\Serilog\\SerilogService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAPAAAA",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "RelativeDocumentMoniker": "04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "RelativeToolTip": "04. WebApi\\WebApi\\Controllers\\V1\\ProductController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T12:11:56.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
-              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
-              "RelativeToolTip": "02. Infrastructure\\Persistence\\Repository\\ProductRepository.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAUwC4AAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T12:10:31.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
-              "ToolTip": "D:\\Repositories\\GitHub\\Clean-Architecture\\02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
-              "RelativeToolTip": "02. Infrastructure\\Persistence\\Contexts\\UnitOfWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T12:09:30.945Z",
+              "WhenOpened": "2024-08-04T08:15:50.555Z",
               "EditorCaption": ""
             }
           ]

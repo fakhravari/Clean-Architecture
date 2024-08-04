@@ -5,7 +5,6 @@ using Application.Services.Serilog;
 using Domain.Entities;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace Persistence.Repository
 {
