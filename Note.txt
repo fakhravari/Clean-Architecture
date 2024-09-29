@@ -1,0 +1,15 @@
+﻿use domain
+
+dotnet ef dbcontext scaffold "Server=185.55.224.117;Initial Catalog=technos6_cafe;User ID=technos6_cafe;Password=cn*6s6I52;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --context-dir "D:\Repositories\GitHub\Clean-Architecture\02. Infrastructure\Persistence\Contexts" -c FakhravariDbContext --output-dir "D:\Repositories\GitHub\Clean-Architecture\01. Core\Domain\Entities" --namespace Persistence.Contexts -f
+
+
+
+namespace Domain.Entities;
+
+FakhravariDbContext.cs
+namespace Persistence.Contexts;
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+   optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+}

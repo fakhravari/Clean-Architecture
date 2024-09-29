@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Service\**" />
+		<EmbeddedResource Remove="Service\**" />
+		<None Remove="Service\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\02. Infrastructure\Localization\Localization.csproj" />
+		<ProjectReference Include="..\..\02. Infrastructure\Shared\Shared.csproj" />
+		<ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Features\Account\Queries\" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<!--EF-->
+		<PackageReference Include="EFCore.BulkExtensions" Version="8.1.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+		<!--MediatR & Fluent-->
+		<PackageReference Include="FluentValidation" Version="11.10.0" />
+		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+		<!--Serilog-->
+		<PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+		<PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.1.1" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="7.0.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="8.0.0" />
+		<!--Other-->
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+	</ItemGroup>
+</Project>
