@@ -17,7 +17,7 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddService_Localizer();
 builder.Services.AddService_Swagger();
-builder.Services.AddServices_Persistence();
+builder.Services.AddServices_Persistence(builder.Configuration);
 builder.Services.AddService_MediatR_FluentValidation();
 builder.Services.Add_NewtonsoftJsonSettings();
 

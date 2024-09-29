@@ -1,45 +1,44 @@
-﻿using Application.Contracts.Persistence.Contexts;
-using Application.Contracts.Persistence.IRepository;
+﻿using Application.Contracts.Persistence.IRepository;
 using Application.Model.Product;
 using Application.Services.Serilog;
 using Domain.Entities;
+using Domain.Enum;
 using EFCore.BulkExtensions;
 using Mapster;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Contexts;
 using System.Data;
 
 namespace Persistence.Repository
 {
-    public class ProductRepository : IProductRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly ISerilogService _logger;
-        public ProductRepository(IUnitOfWork unitOfWork, ISerilogService logger)
+
+        public ProductRepository(IDbContextFactory contextFactory, ISerilogService logger, IUnitOfWork unitOfWork)
+            : base(contextFactory, logger)
         {
             _unitOfWork = unitOfWork;
-            _logger = logger;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            var tttt = _unitOfWork.Context.Database.GetConnectionString();
-
-            var product = await _unitOfWork.QueryListRawAsync<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}");
+            var product = await QueryListRawAsync<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}");
             return product;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts1(string Title)
         {
-            _unitOfWork.CreateContext(isReadOnly: false);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
             Func<IQueryable<Product>, IQueryable<Product>>? query = q => q.Where(p => EF.Functions.Like(p.Title, $"%{Title}%"));
-            var products = await _unitOfWork.QueryListAsync<Product>(query);
+            var products = await QueryListAsync<Product>(query);
 
             Func<IQueryable<Product>, IQueryable<Product>>? query2 = q => q.Where(p => p.Title.Contains(Title));
-            var products1 = await _unitOfWork.QueryListAsync<Product>(query2);
+            var products1 = await QueryListAsync<Product>(query2);
 
 
             var productsDto = products.Adapt<List<GetListProductsDto>>();
@@ -49,7 +48,7 @@ namespace Persistence.Repository
             // await Trans();
 
 
-            var p2 = await _unitOfWork.QueryListAsync<Product>(
+            var p2 = await QueryListAsync<Product>(
                 query => query
                     .Include(e => e.Images)
                     .Include(e => e.IdCategoryNavigation)
@@ -66,18 +65,16 @@ namespace Persistence.Repository
                 Title = v.Title
             }).ToList();
 
-
-
             return data;
         }
 
 
         public async Task BulkInsertAsync()
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
 
             var lst = new List<Product>();
-            for (int i = 0; i < 5000; i++)
+            for (int i = 0; i < 200; i++)
             {
                 lst.Add(new Product()
                 {
@@ -99,15 +96,15 @@ namespace Persistence.Repository
                 SetOutputIdentity = true
             };
 
-            await _unitOfWork.BulkInsertAsync(lst, bulkConfig);
+            await BulkInsertAsync(lst, bulkConfig);
         }
 
         public async Task InsertAsync()
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
 
             var lst = new List<Product>();
-            for (int i = 0; i < 5000; i++)
+            for (int i = 0; i < 200; i++)
             {
                 lst.Add(new Product()
                 {
@@ -122,21 +119,19 @@ namespace Persistence.Repository
                     }
                 });
             }
-            await _unitOfWork.AddRangeAsync(lst);
+            await AddRangeAsync(lst);
             await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<int> Trans()
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
-
             try
             {
                 int tt = int.Parse("4445kh");
             }
             catch (Exception ex)
             {
-                _logger.LogSystem(ex);
+                // _logger.LogSystem(ex);
             }
 
 
@@ -165,9 +160,9 @@ namespace Persistence.Repository
 
         public async Task<object> MultipleResults()
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            var results = await _unitOfWork.MultipleResultsAsync(
+            var results = await MultipleResultsAsync(
                 "exec [SpGeneral].[GetListMultiple] @IdCategory",
                 new List<Type> { typeof(MyClass1), typeof(MyClass2), typeof(MyClass3) },
                 new List<SqlParameter>
@@ -179,11 +174,10 @@ namespace Persistence.Repository
             var images = results[1].Cast<MyClass2>().ToList();
             var products = results[2].Cast<MyClass3>().ToList();
 
-            
-            
+
             // کنترل بسته نشدن کانکشن
             Func<IQueryable<Product>, IQueryable<Product>>? query = q => q.Where(p => EF.Functions.Like(p.Title, $"%{""}%"));
-            var products33 = await _unitOfWork.QueryListAsync<Product>(query);
+            var products33 = await QueryListAsync<Product>(query);
 
             return new { categories, images, products };
         }

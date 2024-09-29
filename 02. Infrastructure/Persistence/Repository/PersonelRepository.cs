@@ -1,21 +1,27 @@
-﻿using Application.Contracts.Persistence.Contexts;
-using Application.Contracts.Persistence.IRepository;
+﻿using Application.Contracts.Persistence.IRepository;
 using Application.Model.Personel;
+using Application.Services.Serilog;
 using Domain.Entities;
+using Domain.Enum;
+using Persistence.Contexts;
 
 namespace Persistence.Repository
 {
-    public class PersonelRepository : IPersonelRepository
+    public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
     {
         private readonly IUnitOfWork _unitOfWork;
-        public PersonelRepository(IUnitOfWork unitOfWork)
+
+        public PersonelRepository(IDbContextFactory contextFactory, ISerilogService logger, IUnitOfWork unitOfWork)
+            : base(contextFactory, logger)
         {
             _unitOfWork = unitOfWork;
         }
+
         public async Task<LoginDto> Login(string UserName, string Password)
         {
-            _unitOfWork.CreateContext(isReadOnly: true);
-            var matches = await _unitOfWork.QuerySingleAsync<Personel>(query => query.Where(e => e.UserName == UserName && e.Password == Password));
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+
+            var matches = await QuerySingleAsync<Personel>(query => query.Where(e => e.UserName == UserName && e.Password == Password));
             if (matches == null)
             {
                 return new LoginDto()
