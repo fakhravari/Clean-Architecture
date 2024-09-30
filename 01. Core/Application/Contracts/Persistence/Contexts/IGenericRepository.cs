@@ -6,7 +6,7 @@ namespace Application.Contracts.Persistence.Contexts
 {
     public interface IGenericRepository<TEntity> : IAsyncDisposable where TEntity : class
     {
-        Task<T?> QuerySingleAsync<T>(Func<IQueryable<T>, IQueryable<T>>? query = null, bool asNoTracking = true) where T : class;
+        Task<TEntity?> QuerySingleAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>? query = null, bool asNoTracking = true);
         Task<List<T>> QueryListAsync<T>(Func<IQueryable<T>, IQueryable<T>>? query = null, bool asNoTracking = true) where T : class;
         Task<List<IList>> MultipleResultsAsync(string query, List<Type> resultTypes, IEnumerable<SqlParameter>? parameters = null);
 

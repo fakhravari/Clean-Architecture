@@ -11,26 +11,24 @@ namespace Persistence.Contexts
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private readonly IDbContextFactory _contextFactory;
         private readonly ISerilogService _logger;
         private IDbContextTransaction? _transaction;
         private FakhravariDbContext Context;
 
 
-        public GenericRepository(IDbContextFactory contextFactory, ISerilogService logger)
+        public GenericRepository(IUnitOfWork iUnitOfWork, ISerilogService logger)
         {
-            _contextFactory = contextFactory;
             _logger = logger;
-            Context = _contextFactory.CreateDbContext(DatabaseMode.Read);
+            Context = iUnitOfWork.SetDatabaseMode(DatabaseMode.Read);
         }
 
         #region Query
 
-        public async Task<T?> QuerySingleAsync<T>(Func<IQueryable<T>, IQueryable<T>>? query, bool asNoTracking = true) where T : class
+        public async Task<TEntity?> QuerySingleAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>? query, bool asNoTracking = true)
         {
             try
             {
-                var queryable = query(Context.Set<T>());
+                var queryable = query(Context.Set<TEntity>());
                 return await (asNoTracking ? queryable.AsNoTracking() : queryable.AsTracking()).FirstOrDefaultAsync();
             }
             catch (Exception ex)

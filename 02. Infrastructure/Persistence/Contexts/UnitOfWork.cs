@@ -1,54 +1,54 @@
 ﻿using Application.Services.Serilog;
 using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Persistence.Contexts
 {
     public interface IUnitOfWork
     {
-        void SetDatabaseMode(DatabaseMode mode);
+        FakhravariDbContext SetDatabaseMode(DatabaseMode mode);
         Task<int> SaveChangesAsync();
     }
 
     public sealed class UnitOfWork : IUnitOfWork
     {
-        private readonly IDbContextFactory _contextFactory;
+        private readonly IConfiguration _configuration;
         private readonly ISerilogService _logger;
         private FakhravariDbContext _context;
-        private DatabaseMode _currentMode;
+        private DatabaseMode? _currentMode = null;
 
-        public UnitOfWork(IDbContextFactory contextFactory, ISerilogService logger)
+        public UnitOfWork(ISerilogService logger, IConfiguration configuration)
         {
-            _contextFactory = contextFactory;
             _logger = logger;
+            _configuration = configuration;
         }
 
-        private FakhravariDbContext Context
-        {
-            get
-            {
-                if (_context == null)
-                    throw new InvalidOperationException("Context is not set. Please call SetDatabaseMode first.");
-                return _context;
-            }
-        }
 
-        public void SetDatabaseMode(DatabaseMode mode)
+        public FakhravariDbContext SetDatabaseMode(DatabaseMode mode)
         {
-            if (_context == null || _currentMode != mode)
+            if (mode == _currentMode)
             {
-                _currentMode = mode;
-                _context = _contextFactory.CreateDbContext(mode);
+                return this._context;
             }
+
+            var optionsBuilder = new DbContextOptionsBuilder<FakhravariDbContext>();
+            var connectionString = mode == DatabaseMode.Read ? _configuration.GetConnectionString("ReadDatabase") : _configuration.GetConnectionString("WriteDatabase");
+
+            optionsBuilder.UseSqlServer(connectionString);
+            _context = new FakhravariDbContext(optionsBuilder.Options);
+            _currentMode = mode;
+
+            return _context;
         }
 
         public async Task<int> SaveChangesAsync()
         {
             try
             {
-                var con = Context.Database.GetConnectionString();
+                var con = _context.Database.GetConnectionString();
 
-                return await Context.SaveChangesAsync();
+                return await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

@@ -11,8 +11,7 @@ namespace Persistence.Repository
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public PersonelRepository(IDbContextFactory contextFactory, ISerilogService logger, IUnitOfWork unitOfWork)
-            : base(contextFactory, logger)
+        public PersonelRepository(IUnitOfWork iUnitOfWork, ISerilogService logger, IUnitOfWork unitOfWork) : base(iUnitOfWork, logger)
         {
             _unitOfWork = unitOfWork;
         }
@@ -21,7 +20,7 @@ namespace Persistence.Repository
         {
             _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            var matches = await QuerySingleAsync<Personel>(query => query.Where(e => e.UserName == UserName && e.Password == Password));
+            var matches = await QuerySingleAsync(query => query.Where(e => e.UserName == UserName && e.Password == Password));
             if (matches == null)
             {
                 return new LoginDto()
