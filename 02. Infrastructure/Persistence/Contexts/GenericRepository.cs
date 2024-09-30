@@ -1,6 +1,5 @@
 ﻿using Application.Contracts.Persistence.Contexts;
 using Application.Services.Serilog;
-using Domain.Enum;
 using EFCore.BulkExtensions;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -13,13 +12,12 @@ namespace Persistence.Contexts
     {
         private readonly ISerilogService _logger;
         private IDbContextTransaction? _transaction;
-        private FakhravariDbContext Context;
-
+        private IUnitOfWork _unitOfWork;
 
         public GenericRepository(IUnitOfWork iUnitOfWork, ISerilogService logger)
         {
             _logger = logger;
-            Context = iUnitOfWork.SetDatabaseMode(DatabaseMode.Read);
+            _unitOfWork = iUnitOfWork;
         }
 
         #region Query
@@ -28,7 +26,9 @@ namespace Persistence.Contexts
         {
             try
             {
-                var queryable = query(Context.Set<TEntity>());
+                var con = _unitOfWork.Context.Database.GetConnectionString();
+
+                var queryable = query(_unitOfWork.Context.Set<TEntity>());
                 return await (asNoTracking ? queryable.AsNoTracking() : queryable.AsTracking()).FirstOrDefaultAsync();
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                var dbSet = query != null ? query(Context.Set<T>()) : Context.Set<T>().AsQueryable();
+                var dbSet = query != null ? query(_unitOfWork.Context.Set<T>()) : _unitOfWork.Context.Set<T>().AsQueryable();
                 return await (asNoTracking ? dbSet.AsNoTracking() : dbSet.AsTracking()).ToListAsync();
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                return await Context.Set<T>().FromSqlRaw(tSql, parameters).AsNoTracking().FirstOrDefaultAsync();
+                return await _unitOfWork.Context.Set<T>().FromSqlRaw(tSql, parameters).AsNoTracking().FirstOrDefaultAsync();
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                return await Context.Set<T>().FromSqlRaw(tSql, parameters).AsNoTracking().ToListAsync();
+                return await _unitOfWork.Context.Set<T>().FromSqlRaw(tSql, parameters).AsNoTracking().ToListAsync();
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace Persistence.Contexts
             try
             {
                 var results = new List<IList>();
-                var connection = Context.Database.GetDbConnection();
+                var connection = _unitOfWork.Context.Database.GetDbConnection();
                 await connection.OpenAsync();
 
                 var command = connection.CreateCommand();
@@ -132,7 +132,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                await Context.AddAsync(entity);
+                await _unitOfWork.Context.AddAsync(entity);
             }
             catch (Exception ex)
             {
@@ -145,7 +145,9 @@ namespace Persistence.Contexts
         {
             try
             {
-                await Context.AddRangeAsync(entities);
+                var con = _unitOfWork.Context.Database.GetConnectionString();
+
+                await _unitOfWork.Context.AddRangeAsync(entities);
             }
             catch (Exception ex)
             {
@@ -158,7 +160,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                Context.Update(entity);
+                _unitOfWork.Context.Update(entity);
             }
             catch (Exception ex)
             {
@@ -173,7 +175,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                Context.UpdateRange(entities);
+                _unitOfWork.Context.UpdateRange(entities);
             }
             catch (Exception ex)
             {
@@ -188,7 +190,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                Context.Remove(entity);
+                _unitOfWork.Context.Remove(entity);
             }
             catch (Exception ex)
             {
@@ -203,7 +205,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                Context.RemoveRange(entities);
+                _unitOfWork.Context.RemoveRange(entities);
             }
             catch (Exception ex)
             {
@@ -220,10 +222,10 @@ namespace Persistence.Contexts
 
         public async Task BulkInsertAsync(IList<TEntity> entities, BulkConfig? config)
         {
-            using var transaction = await Context.Database.BeginTransactionAsync();
+            using var transaction = await _unitOfWork.Context.Database.BeginTransactionAsync();
             try
             {
-                await Context.BulkInsertAsync(entities, config);
+                await _unitOfWork.Context.BulkInsertAsync(entities, config);
                 await transaction.CommitAsync();
             }
             catch (Exception ex)
@@ -236,10 +238,10 @@ namespace Persistence.Contexts
 
         public async Task BulkUpdateAsync(IList<TEntity> entities, BulkConfig? config)
         {
-            using var transaction = await Context.Database.BeginTransactionAsync();
+            using var transaction = await _unitOfWork.Context.Database.BeginTransactionAsync();
             try
             {
-                await Context.BulkUpdateAsync(entities, config);
+                await _unitOfWork.Context.BulkUpdateAsync(entities, config);
                 await transaction.CommitAsync();
             }
             catch (Exception ex)
@@ -252,10 +254,10 @@ namespace Persistence.Contexts
 
         public async Task BulkDeleteAsync(IList<TEntity> entities, BulkConfig? config)
         {
-            using var transaction = await Context.Database.BeginTransactionAsync();
+            using var transaction = await _unitOfWork.Context.Database.BeginTransactionAsync();
             try
             {
-                await Context.BulkDeleteAsync(entities, config);
+                await _unitOfWork.Context.BulkDeleteAsync(entities, config);
                 await transaction.CommitAsync();
             }
             catch (Exception ex)
@@ -268,10 +270,10 @@ namespace Persistence.Contexts
 
         public async Task BulkInsertOrUpdateAsync(IList<TEntity> entities, BulkConfig? config)
         {
-            await using var transaction = await Context.Database.BeginTransactionAsync();
+            await using var transaction = await _unitOfWork.Context.Database.BeginTransactionAsync();
             try
             {
-                await Context.BulkInsertOrUpdateAsync(entities, config);
+                await _unitOfWork.Context.BulkInsertOrUpdateAsync(entities, config);
                 await transaction.CommitAsync();
             }
             catch (Exception ex)
@@ -290,7 +292,7 @@ namespace Persistence.Contexts
         {
             try
             {
-                _transaction = await Context.Database.BeginTransactionAsync();
+                _transaction = await _unitOfWork.Context.Database.BeginTransactionAsync();
             }
             catch (Exception ex)
             {
@@ -333,31 +335,30 @@ namespace Persistence.Contexts
 
         #endregion
 
-        #region Dispose
+        //#region Dispose
 
-        public async ValueTask DisposeAsync()
-        {
-            try
-            {
-                if (Context != null)
-                {
-                    await Context.DisposeAsync();
-                    Context = null!;
-                }
+        //public async ValueTask DisposeAsync()
+        //{
+        //    try
+        //    {
+        //        if (_unitOfWork.Context != null)
+        //        {
+        //            await _unitOfWork.Context.DisposeAsync();
+        //        }
 
-                if (_transaction != null)
-                {
-                    await _transaction.DisposeAsync();
-                    _transaction = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogSystem(ex);
-                throw;
-            }
-        }
+        //        if (_transaction != null)
+        //        {
+        //            await _transaction.DisposeAsync();
+        //            _transaction = null;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogSystem(ex);
+        //        throw;
+        //    }
+        //}
 
-        #endregion
+        //#endregion
     }
 }

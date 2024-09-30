@@ -19,12 +19,11 @@ namespace Persistence.Repository
         public ProductRepository(IUnitOfWork iUnitOfWork, ISerilogService logger, IUnitOfWork unitOfWork) : base(iUnitOfWork, logger)
         {
             _unitOfWork = unitOfWork;
-            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
         {
-            // _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
             var product = await QueryListRawAsync<GetListProductsDto>($"EXEC SpGeneral.GetListProducts @IdCategory={IdCategory}");
             return product;
         }

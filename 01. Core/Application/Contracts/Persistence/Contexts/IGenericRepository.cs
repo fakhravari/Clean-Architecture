@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace Application.Contracts.Persistence.Contexts
 {
-    public interface IGenericRepository<TEntity> : IAsyncDisposable where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : class
     {
         Task<TEntity?> QuerySingleAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>? query = null, bool asNoTracking = true);
         Task<List<T>> QueryListAsync<T>(Func<IQueryable<T>, IQueryable<T>>? query = null, bool asNoTracking = true) where T : class;
