@@ -1,23 +1,16 @@
-﻿using Application.Services.Serilog;
+﻿using Application.Contracts.Persistence.Contexts;
+using Application.Services.Serilog;
 using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace Persistence.Contexts
 {
-    public interface IUnitOfWork
-    {
-        void SetDatabaseMode(DatabaseMode mode);
-        DatabaseMode Mode { get; }
-        FakhravariDbContext Context { get; }
-        Task<int> SaveChangesAsync();
-    }
-
-    public sealed class UnitOfWork : IUnitOfWork
+    public sealed class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
     {
         private readonly IConfiguration _configuration;
         private readonly ISerilogService _logger;
-        private FakhravariDbContext _context;
+        private TContext _context;
         public DatabaseMode? _currentMode;
 
         public UnitOfWork(ISerilogService logger, IConfiguration configuration)
@@ -32,7 +25,7 @@ namespace Persistence.Contexts
         }
 
         public DatabaseMode Mode => _currentMode.Value;
-        public FakhravariDbContext Context => _context;
+        public TContext Context => _context;
 
         public void SetDatabaseMode(DatabaseMode mode)
         {
@@ -41,11 +34,13 @@ namespace Persistence.Contexts
                 return;
             }
 
-            var optionsBuilder = new DbContextOptionsBuilder<FakhravariDbContext>();
-            var connectionString = mode == DatabaseMode.Read ? _configuration.GetConnectionString("ReadDatabase") : _configuration.GetConnectionString("WriteDatabase");
+            var optionsBuilder = new DbContextOptionsBuilder<TContext>();
+            var connectionString = mode == DatabaseMode.Read
+                ? _configuration.GetConnectionString("ReadDatabase")
+                : _configuration.GetConnectionString("WriteDatabase");
 
             optionsBuilder.UseSqlServer(connectionString);
-            _context = new FakhravariDbContext(optionsBuilder.Options);
+            _context = (TContext)Activator.CreateInstance(typeof(TContext), optionsBuilder.Options)!;
             _currentMode = mode;
         }
 

@@ -15,7 +15,7 @@ namespace DI.Persistence
             services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ReadDatabase")));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork<FakhravariDbContext>, UnitOfWork<FakhravariDbContext>>();
 
             services.AddScoped<IPersonelRepository, PersonelRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();

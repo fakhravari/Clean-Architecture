@@ -1,4 +1,5 @@
 ﻿using Application.Contracts.Persistence.Contexts;
+using Application.Contracts.Persistence.IRepository;
 using Application.Services.Serilog;
 using EFCore.BulkExtensions;
 using Microsoft.Data.SqlClient;
@@ -12,9 +13,9 @@ namespace Persistence.Contexts
     {
         private readonly ISerilogService _logger;
         private IDbContextTransaction? _transaction;
-        private IUnitOfWork _unitOfWork;
+        private IUnitOfWork<FakhravariDbContext> _unitOfWork;
 
-        public GenericRepository(IUnitOfWork iUnitOfWork, ISerilogService logger)
+        public GenericRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger)
         {
             _logger = logger;
             _unitOfWork = iUnitOfWork;

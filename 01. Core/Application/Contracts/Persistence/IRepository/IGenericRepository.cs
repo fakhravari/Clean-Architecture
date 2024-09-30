@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System.Collections;
 
-namespace Application.Contracts.Persistence.Contexts
+namespace Application.Contracts.Persistence.IRepository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {

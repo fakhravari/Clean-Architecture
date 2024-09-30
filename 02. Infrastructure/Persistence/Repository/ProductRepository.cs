@@ -1,4 +1,5 @@
-﻿using Application.Contracts.Persistence.IRepository;
+﻿using Application.Contracts.Persistence.Contexts;
+using Application.Contracts.Persistence.IRepository;
 using Application.Model.Product;
 using Application.Services.Serilog;
 using Domain.Entities;
@@ -14,11 +15,11 @@ namespace Persistence.Repository
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork<FakhravariDbContext> _unitOfWork;
 
-        public ProductRepository(IUnitOfWork iUnitOfWork, ISerilogService logger, IUnitOfWork unitOfWork) : base(iUnitOfWork, logger)
+        public ProductRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger) : base(iUnitOfWork, logger)
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWork = iUnitOfWork;
         }
 
         public async Task<List<GetListProductsDto>> GetListProducts(string IdCategory)
