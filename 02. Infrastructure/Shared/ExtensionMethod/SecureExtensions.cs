@@ -12,54 +12,43 @@ namespace Shared.ExtensionMethod
         {
             try
             {
-                using (var aes = Aes.Create())
+                using var aes = Aes.Create();
+                aes.Key = Encoding.UTF8.GetBytes(AesKey);
+                aes.IV = Encoding.UTF8.GetBytes(AesIV);
+
+                var encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+                using var msEncrypt = new MemoryStream();
+                using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                 {
-                    aes.Key = Encoding.UTF8.GetBytes(AesKey);
-                    aes.IV = Encoding.UTF8.GetBytes(AesIV);
-
-                    var encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
-                    using (var msEncrypt = new MemoryStream())
+                    using (var swEncrypt = new StreamWriter(csEncrypt))
                     {
-                        using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                        {
-                            using (var swEncrypt = new StreamWriter(csEncrypt))
-                            {
-                                swEncrypt.Write(text);
-                            }
-                        }
-
-                        var encryptedData = msEncrypt.ToArray();
-                        return Convert.ToBase64String(encryptedData);
+                        swEncrypt.Write(text);
                     }
                 }
+
+                var encryptedData = msEncrypt.ToArray();
+                return Convert.ToBase64String(encryptedData);
             }
             catch (Exception ex)
             {
                 return string.Empty;
             }
         }
-
         public static string Decrypt(this string encryptedText)
         {
             try
             {
-                using (var aes = Aes.Create())
-                {
-                    aes.Key = Encoding.UTF8.GetBytes(AesKey);
-                    aes.IV = Encoding.UTF8.GetBytes(AesIV);
+                using var aes = Aes.Create();
+                encryptedText = encryptedText.Replace("Bearer ", string.Empty).Trim();
 
-                    var decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-                    using (var msDecrypt = new MemoryStream(Convert.FromBase64String(encryptedText)))
-                    {
-                        using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                        {
-                            using (var srDecrypt = new StreamReader(csDecrypt))
-                            {
-                                return srDecrypt.ReadToEnd();
-                            }
-                        }
-                    }
-                }
+                aes.Key = Encoding.UTF8.GetBytes(AesKey);
+                aes.IV = Encoding.UTF8.GetBytes(AesIV);
+
+                var decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+                using var msDecrypt = new MemoryStream(Convert.FromBase64String(encryptedText));
+                using var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read);
+                using var srDecrypt = new StreamReader(csDecrypt);
+                return srDecrypt.ReadToEnd();
             }
             catch (Exception ex)
             {

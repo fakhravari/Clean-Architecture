@@ -8,5 +8,8 @@
         public string Audience { get; set; }
         public int NotBeforeMinutes { get; set; }
         public int ExpirationYear { get; set; }
+
+
+        public string X_Token_JWT { get; set; }
     }
 }

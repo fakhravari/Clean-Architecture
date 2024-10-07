@@ -22,30 +22,46 @@ public static class JwtExtensions
         {
             OnMessageReceived = context =>
             {
-                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-                if (!string.IsNullOrWhiteSpace(token))
-                {
-                    var decryptedToken = token.Decrypt();
-                    context.Token = decryptedToken;
+                string token = (context.HttpContext.Request.Headers["Authorization"].FirstOrDefault()
+                                ?? context.HttpContext.Request.Query["Authorization"].FirstOrDefault() ?? "").Trim();
 
-                    context.HttpContext.Items["DecryptedToken"] = decryptedToken;
+                string xToken = (context.HttpContext.Request.Headers["X-Token-JWT"].FirstOrDefault()
+                                  ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
+
+                string culture = (context.HttpContext.Request.Headers["Accept-Language"].FirstOrDefault()
+                                  ?? context.HttpContext.Request.Query["Accept-Language"].FirstOrDefault()
+                                  ?? context.HttpContext.Request.Headers["culture"].FirstOrDefault()
+                                  ?? context.HttpContext.Request.Query["culture"].FirstOrDefault() ?? "fa-IR").Trim();
+
+                if (string.IsNullOrWhiteSpace(token) || xToken != jwtService.X_Token_JWT)
+                {
+                    context.HttpContext.Items["DecryptedToken"] = "";
+                    context.HttpContext.Items["X_Token"] = "";
+                    context.HttpContext.Items["culture"] = culture;
+                    return Task.CompletedTask;
                 }
+
+                var decryptedToken = token.Decrypt();
+                context.Token = decryptedToken;
+
+                context.HttpContext.Items["DecryptedToken"] = decryptedToken;
+                context.HttpContext.Items["X_Token"] = xToken;
+                context.HttpContext.Items["culture"] = culture;
+
                 return Task.CompletedTask;
             },
             OnTokenValidated = context =>
             {
-                string culture = (context.HttpContext.Request.Headers["culture"].FirstOrDefault()
-                                 ?? context.HttpContext.Request.Query["culture"].FirstOrDefault()
-                                 ?? "fa").Trim();
+                var culture = context.HttpContext.Items["culture"]?.ToString();
+                var token = context.HttpContext.Items["DecryptedToken"]?.ToString();
+                var xToken = context.HttpContext.Items["X_Token"]?.ToString();
 
-                var Token = context.HttpContext.Items["DecryptedToken"] as string;
-
-                if (string.IsNullOrWhiteSpace(Token) == false)
+                if (xToken == jwtService.X_Token_JWT && string.IsNullOrWhiteSpace(token) == false)
                 {
-                    var MyJwt = context.HttpContext.RequestServices.GetRequiredService<IJwtService>();
-                    bool IsFail = MyJwt.ValidateToken(Token);
+                    var myJwt = context.HttpContext.RequestServices.GetRequiredService<IJwtService>();
+                    var isFail = myJwt.ValidateToken(token);
 
-                    if (IsFail == false)
+                    if (isFail == false)
                     {
                         context.Fail("error");
                     }
@@ -64,14 +80,14 @@ public static class JwtExtensions
 
                 var localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedResource>();
 
-                var Response = new BaseResponse()
+                var response = new BaseResponse()
                 {
                     Success = false,
                     StatusCode = context.Response.StatusCode,
                     Message = localizer.Exception + " | " + context.Response.StatusCode
                 };
 
-                var jsonResponse = JsonConvert.SerializeObject(Response, JsonSettings.Settings);
+                var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);
                 return context.Response.WriteAsync(jsonResponse);
             }
         };

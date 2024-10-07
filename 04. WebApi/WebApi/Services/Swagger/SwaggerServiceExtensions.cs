@@ -38,11 +38,11 @@ namespace WebApi.Services.Swagger
 
                     #region Filters
                     options.ExampleFilters();
-
                     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                     {
                         Type = SecuritySchemeType.Http,
-                        Name = "Bearer",
+                        Description = "JWT Authorization header using the Bearer scheme.",
+                        Name = "X-Token-JWT",
                         Scheme = "bearer",
                         BearerFormat = "JWT",
                         In = ParameterLocation.Header
@@ -55,10 +55,10 @@ namespace WebApi.Services.Swagger
                                 Reference = new OpenApiReference
                                 {
                                     Type = ReferenceType.SecurityScheme,
-                                    Id = "JWT"
+                                    Id = "Bearer"
                                 }
                             },
-                            new string[] {}
+                            new List<string>()
                         }
                     });
 

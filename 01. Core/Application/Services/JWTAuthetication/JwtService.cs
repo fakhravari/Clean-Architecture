@@ -13,20 +13,23 @@ public interface IJwtService
     string GenerateJwtToken(long Id);
     bool ValidateToken(string token);
     TokenValidationParameters TokenValidationParameters { get; }
+    string X_Token_JWT { get; }
 }
 
 public class JwtService : IJwtService
 {
     private readonly JwtSettingModel jwtSettings;
     public TokenValidationParameters TokenValidationParameters { get; private set; }
+    public string X_Token_JWT { get; }
 
     public JwtService(IOptionsSnapshot<JwtSettingModel> _jwtSettings)
     {
         jwtSettings = _jwtSettings.Value;
 
+
+        X_Token_JWT = jwtSettings.X_Token_JWT;
         var secretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
         var encryptionKey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
-        
         TokenValidationParameters = new TokenValidationParameters
         {
             ClockSkew = TimeSpan.Zero,
