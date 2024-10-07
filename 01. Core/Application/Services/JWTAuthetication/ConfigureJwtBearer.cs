@@ -58,17 +58,15 @@ public static class JwtExtensions
 
                 if (xToken == jwtService.X_Token_JWT && string.IsNullOrWhiteSpace(token) == false)
                 {
-                    var myJwt = context.HttpContext.RequestServices.GetRequiredService<IJwtService>();
-                    var isFail = myJwt.ValidateToken(token);
-
+                    var isFail = jwtService.ValidateToken(token);
                     if (isFail == false)
                     {
-                        context.Fail("error");
+                        context.Fail("error OnTokenValidated");
                     }
                 }
                 else
                 {
-                    context.Fail("error");
+                    context.Fail("error OnTokenValidated");
                 }
                 return Task.CompletedTask;
             },
@@ -84,7 +82,7 @@ public static class JwtExtensions
                 {
                     Success = false,
                     StatusCode = context.Response.StatusCode,
-                    Message = localizer.Exception + " | " + context.Response.StatusCode
+                    Message = localizer.Exception + " | OnChallenge | " + context.Response.StatusCode
                 };
 
                 var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);

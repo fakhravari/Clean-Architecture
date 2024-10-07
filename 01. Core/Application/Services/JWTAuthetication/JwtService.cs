@@ -14,18 +14,21 @@ public interface IJwtService
     bool ValidateToken(string token);
     TokenValidationParameters TokenValidationParameters { get; }
     string X_Token_JWT { get; }
+
+
+    string? IdUser { get; }
 }
 
 public class JwtService : IJwtService
 {
     private readonly JwtSettingModel jwtSettings;
-    public TokenValidationParameters TokenValidationParameters { get; private set; }
+    public TokenValidationParameters TokenValidationParameters { get; }
     public string X_Token_JWT { get; }
+    public string IdUser { get; private set; } = string.Empty;
 
     public JwtService(IOptionsSnapshot<JwtSettingModel> _jwtSettings)
     {
         jwtSettings = _jwtSettings.Value;
-
 
         X_Token_JWT = jwtSettings.X_Token_JWT;
         var secretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
@@ -45,7 +48,6 @@ public class JwtService : IJwtService
             ValidIssuer = jwtSettings.Issuer
         };
     }
-
 
     public string GenerateJwtToken(long Id)
     {
@@ -94,17 +96,12 @@ public class JwtService : IJwtService
             tokenHandler.ValidateToken(NewToken, this.TokenValidationParameters, out SecurityToken validatedToken);
             var jwtToken = (JwtSecurityToken)validatedToken;
 
-            var user1 = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToString().Trim();
-            var user2 = jwtToken.Claims.First(claim => claim.Type == "unique_name").Value.ToString().Trim();
+            IdUser = jwtToken.Claims.First(claim => claim.Type == "nameid").Value;
+            var user2 = jwtToken.Claims.First(claim => claim.Type == "unique_name").Value;
 
-            if (user1.Length <= 0 && user2.Length <= 0)
-            {
-                return false;
-            }
-
-            return true;
+            return IdUser.Length > 0 || user2.Length > 0;
         }
-        catch (Exception a)
+        catch (Exception ex)
         {
             return false;
         }
