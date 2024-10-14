@@ -35,15 +35,16 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseSwaggerAndUI();
 }
 else
 {
     app.UseHsts();
 }
 
-app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseSwaggerAndUI();
 
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseStaticFiles();
 app.UseRouting();
@@ -53,5 +54,4 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseStatusCodePages();
 app.UseRequestLocalization();
-
 app.Run();

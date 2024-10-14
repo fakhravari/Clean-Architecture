@@ -85,5 +85,18 @@ namespace WebApi.Controllers.V1
 
             return Ok("Seconds: " + ts.Seconds);
         }
+
+
+
+
+
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> WorkManager(string data)
+        {
+            var result = await iProductRepository.WorkManager(data);
+            return Ok(result);
+        }
+
     }
 }

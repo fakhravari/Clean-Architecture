@@ -13,5 +13,8 @@ namespace Application.Contracts.Persistence.IRepository
 
 
         Task<object> MultipleResults();
+
+
+        Task<Guid> WorkManager(string data);
     }
 }

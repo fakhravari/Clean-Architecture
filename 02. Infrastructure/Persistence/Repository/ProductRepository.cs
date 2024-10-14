@@ -180,6 +180,26 @@ namespace Persistence.Repository
 
             return new { categories, images, products };
         }
+
+
+
+
+
+
+
+
+
+        public async Task<Guid> WorkManager(string data)
+        {
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
+
+            var Id = Guid.NewGuid();
+
+            string sql = $" INSERT Security.Tokens(Id, Idconnection, IdPersonel, Token, DateTime, Ip, IsActive) SELECT '{Id}',CAST(GETDATE() AS DATE),1,N'{data}',GETDATE(),'--',1; SELECT 'ok'";
+            int res = _unitOfWork.Context.Database.ExecuteSqlRaw(sql);
+
+            return Id;
+        }
     }
 }
 
