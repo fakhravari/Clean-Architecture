@@ -97,6 +97,41 @@ namespace WebApi.Controllers.V1
             var result = await iProductRepository.WorkManager(data);
             return Ok(result);
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> WorkManager2(string data)
+        {
+            var result = await iProductRepository.WorkManager(data);
+            return Ok(result);
+        }
 
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> UploadFile(IFormFile file)
+        {
+            try
+            {
+                if (file != null && file.Length > 0)
+                {
+                    var newFileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                    var uploadsFolder =
+                        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Uploads", newFileName);
+
+                    using (var stream = new FileStream(uploadsFolder, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    return Ok($"https://ef2.noyankesht.ir/Uploads/{newFileName}");
+                }
+                else
+                {
+                    return Ok(null);
+                }
+            }
+            catch (Exception e)
+            {
+                return Ok(null);
+            }
+        }
     }
 }
