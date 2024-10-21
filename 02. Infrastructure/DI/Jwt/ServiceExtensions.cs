@@ -13,15 +13,31 @@ public static class ServiceExtensions
         services.Configure<JwtSettingModel>(configuration.GetSection("JwtSettings"));
         services.AddScoped<IJwtService, JwtService>();
 
+
+
         services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
-            {
-                var serviceProvider = services.BuildServiceProvider();
-                options.ConfigureJwtBearer(serviceProvider);
-            });
+            }).AddJwtBearer();
+
+        services.PostConfigure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
+        {
+            var serviceProvider = services.BuildServiceProvider();
+            options.ConfigureJwtBearer(serviceProvider);
+        });
+
+
+        //services.AddAuthentication(options =>
+        //    {
+        //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        //        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        //    }).AddJwtBearer(options =>
+        //    {
+        //        var serviceProvider = services.BuildServiceProvider();
+        //        options.ConfigureJwtBearer(serviceProvider);
+        //    });
     }
 }
