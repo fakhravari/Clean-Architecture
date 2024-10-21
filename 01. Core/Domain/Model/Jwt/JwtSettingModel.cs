@@ -12,4 +12,11 @@
 
         public string X_Token_JWT { get; set; }
     }
+
+    public class GenerateJwtTokenModel
+    {
+        public bool Status { get; set; }
+        public string Token { get; set; }
+        public string RefreshToken { get; set; }
+    }
 }

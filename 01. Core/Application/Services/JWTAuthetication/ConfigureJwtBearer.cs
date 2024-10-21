@@ -50,7 +50,7 @@ public static class JwtExtensions
 
                 return Task.CompletedTask;
             },
-            OnTokenValidated = context =>
+            OnTokenValidated = async context =>
             {
                 var culture = context.HttpContext.Items["culture"]?.ToString();
                 var token = context.HttpContext.Items["DecryptedToken"]?.ToString();
@@ -58,7 +58,7 @@ public static class JwtExtensions
 
                 if (xToken == jwtService.X_Token_JWT && string.IsNullOrWhiteSpace(token) == false)
                 {
-                    var isFail = jwtService.ValidateToken(token);
+                    var isFail = await jwtService.ValidateToken(token);
                     if (isFail == false)
                     {
                         context.Fail("error OnTokenValidated");
@@ -68,7 +68,6 @@ public static class JwtExtensions
                 {
                     context.Fail("error OnTokenValidated");
                 }
-                return Task.CompletedTask;
             },
             OnChallenge = context =>
             {

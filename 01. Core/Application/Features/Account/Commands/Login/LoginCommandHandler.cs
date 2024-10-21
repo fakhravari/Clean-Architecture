@@ -23,14 +23,15 @@ namespace Application.Features.Account.Commands.Login
 
             if (user.IsLogin)
             {
-                string GetToken = jwt.GenerateJwtToken(user.Id);
+                var GetToken = await jwt.GenerateJwtToken(user);
 
                 return new BaseResponse<LoginResponseDto>()
                 {
                     Data = new LoginResponseDto()
                     {
-                        IsLogin = string.IsNullOrWhiteSpace(GetToken) == false,
-                        Token = GetToken
+                        IsLogin = GetToken.Status,
+                        Token = GetToken.Token,
+                        RefreshToken = GetToken.RefreshToken
                     }
                 };
             }
