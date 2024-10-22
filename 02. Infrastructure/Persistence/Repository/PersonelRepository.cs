@@ -6,6 +6,7 @@ using Domain.Entities;
 using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
+using Shared.Utils;
 
 namespace Persistence.Repository
 {
@@ -91,7 +92,7 @@ namespace Persistence.Repository
             {
                 _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
 
-                var add = new Token() { DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-", Ip = "-", Id = Guid.NewGuid() };
+                var add = new Token() { DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-", Ip = InternetUtils.GetIp, Id = Guid.NewGuid() };
                 await _unitOfWork.Context.Tokens.AddAsync(add);
                 await _unitOfWork.SaveChangesAsync();
 
