@@ -6,9 +6,9 @@ namespace Application.Features.Account.Commands.Login.Dto
     {
         public bool IsLogin { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Token { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string RefreshToken { get; set; }
     }
 }

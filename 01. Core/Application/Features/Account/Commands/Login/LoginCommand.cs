@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Application.Features.Account.Commands.Login.Dto;
+﻿using Application.Features.Account.Commands.Login.Dto;
 using Domain.Common;
 using MediatR;
 

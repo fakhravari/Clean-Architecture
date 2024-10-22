@@ -43,19 +43,31 @@ namespace Persistence.Repository
             }
         }
 
-        public async Task<bool> ValidateRefreshToken(string Token, Guid RefreshToken)
+        public async Task<LoginDto> ValidateRefreshToken(string Token, Guid RefreshToken)
         {
             _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            var item = await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c => c.Id == RefreshToken && c.Token1 == Token);
+            var matches = await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c => c.Id == RefreshToken && c.Token1 == Token);
 
-            if (item == null)
+            if (matches == null)
             {
-                return false;
+                return new LoginDto()
+                {
+                    IsLogin = false
+                };
             }
             else
             {
-                return true;
+                var item = await QuerySingleAsync(query => query.Where(e => e.Id == matches.IdPersonel));
+
+                return new LoginDto()
+                {
+                    IsLogin = true,
+                    FirstName = item.FirstName,
+                    Id = item.Id,
+                    LastName = item.LastName,
+                    NationalCode = item.NationalCode
+                };
             }
         }
         public async Task<bool> ValidateToken(string Token, long IdPersonel)
@@ -79,7 +91,7 @@ namespace Persistence.Repository
             {
                 _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
 
-                var add = new Token() { DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-", Ip = "-", Id = Guid.NewGuid()};
+                var add = new Token() { DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-", Ip = "-", Id = Guid.NewGuid() };
                 await _unitOfWork.Context.Tokens.AddAsync(add);
                 await _unitOfWork.SaveChangesAsync();
 

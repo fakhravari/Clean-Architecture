@@ -18,10 +18,6 @@
 		<ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="Features\Account\Queries\" />
-	</ItemGroup>
-
 
 	<ItemGroup>
 		<!--EF-->
