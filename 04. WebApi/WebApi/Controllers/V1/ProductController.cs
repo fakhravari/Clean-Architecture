@@ -4,6 +4,7 @@ using Application.Features.Product.Queries.GetListProducts2;
 using Application.Services.JWTAuthetication;
 using Application.Services.Serilog;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using WebApi.Controllers.Base;
 
@@ -91,12 +92,31 @@ namespace WebApi.Controllers.V1
 
 
 
-        [HttpPost("[action]")]
-        public async Task<IActionResult> WorkManager(string data)
+        public class Root
         {
-            var result = await iProductRepository.WorkManager(data);
-            return Ok(result);
+            public DateTime id { get; set; }
+            public double latitude { get; set; }
+            public double longitude { get; set; }
+            public DateTime timestamp { get; set; }
         }
+
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> WorkManager([FromBody] List<Root> data)
+        {
+            var ids = new List<Guid>();
+
+            foreach (var root in data)
+            {
+                var result = await iProductRepository.WorkManager(JsonConvert.SerializeObject(root));
+                ids.Add(result);
+            }
+
+            return Ok(ids.Count == data.Count);
+        }
+
+
+
         [HttpGet("[action]")]
         public async Task<IActionResult> WorkManager2(string data)
         {

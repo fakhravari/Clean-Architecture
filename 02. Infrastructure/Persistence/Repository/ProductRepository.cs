@@ -195,8 +195,10 @@ namespace Persistence.Repository
 
             var Id = Guid.NewGuid();
 
-            string sql = $" INSERT Security.Tokens(Id, Idconnection, IdPersonel, Token, DateTime, Ip, IsActive) SELECT '{Id}',CAST(GETDATE() AS DATE),1,N'{data}',GETDATE(),'--',1; SELECT 'ok'";
-            int res = _unitOfWork.Context.Database.ExecuteSqlRaw(sql);
+            var columnValue = new SqlParameter("columnValue", data);
+
+            string sql = $" INSERT Security.Tokens(Id, Idconnection, IdPersonel, Token, DateTime, Ip, IsActive) SELECT '{Id}',CAST(GETDATE() AS DATE),1,@columnValue,GETDATE(),'--',1; SELECT 'ok'";
+            int res = _unitOfWork.Context.Database.ExecuteSqlRaw(sql, columnValue);
 
             return Id;
         }
