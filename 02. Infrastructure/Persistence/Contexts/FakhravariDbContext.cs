@@ -9,8 +9,7 @@ public partial class FakhravariDbContext : DbContext
     {
     }
 
-    public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options)
-        : base(options)
+    public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options) : base(options)
     {
     }
 

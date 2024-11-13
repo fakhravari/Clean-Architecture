@@ -27,8 +27,6 @@ namespace Persistence.Contexts
         {
             try
             {
-                var con = _unitOfWork.Context.Database.GetConnectionString();
-
                 var queryable = query(_unitOfWork.Context.Set<TEntity>());
                 return await (asNoTracking ? queryable.AsNoTracking() : queryable.AsTracking()).FirstOrDefaultAsync();
             }
