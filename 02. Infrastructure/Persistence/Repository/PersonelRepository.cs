@@ -13,16 +13,18 @@ namespace Persistence.Repository
     public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
     {
         private readonly IUnitOfWork<FakhravariDbContext> _unitOfWork;
+        private readonly IProductRepository productRepository;
 
-        public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger) : base(iUnitOfWork, logger)
+        public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger, IProductRepository productRepository) : base(iUnitOfWork, logger)
         {
             _unitOfWork = iUnitOfWork;
+            this.productRepository = productRepository;
         }
 
         public async Task<LoginDto> Login(string UserName, string Password)
         {
             _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
-
+            
             var matches = await QuerySingleAsync(query => query.Where(e => e.UserName == UserName && e.Password == Password));
             if (matches == null)
             {
