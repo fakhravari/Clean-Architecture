@@ -173,7 +173,6 @@ namespace Persistence.Repository
             var images = results[1].Cast<MyClass2>().ToList();
             var products = results[2].Cast<MyClass3>().ToList();
 
-
             // کنترل بسته نشدن کانکشن
             Func<IQueryable<Product>, IQueryable<Product>>? query = q => q.Where(p => EF.Functions.Like(p.Title, $"%{""}%"));
             var products33 = await QueryListAsync<Product>(query);

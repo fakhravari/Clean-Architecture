@@ -9,11 +9,13 @@ namespace Infrastructure;
 
 public class FileService : IFileService
 {
-    private readonly IConfiguration _configuration;
+    private readonly string _ftpAddress;
+    private readonly NetworkCredential _ftpCredentials;
 
     public FileService(IConfiguration configuration)
     {
-        _configuration = configuration;
+        _ftpAddress = configuration["FTP:FTPAddress"];
+        _ftpCredentials = new NetworkCredential(configuration["FTP:FTPUsername"], configuration["FTP:FTPPassword"]);
     }
 
     private static string GetReadableFileSize(long fileSizeInBytes)
@@ -30,32 +32,35 @@ public class FileService : IFileService
 
         return $"{size:0.##} {sizeUnits[unitIndex]}";
     }
+
+    private FtpWebRequest ConfigureFtpRequest(string path, string method)
+    {
+        var request = (FtpWebRequest)WebRequest.Create(new Uri($"{_ftpAddress}/Content/Academy/{path}"));
+        request.Method = method;
+        request.Credentials = _ftpCredentials;
+        request.UseBinary = true;
+        request.UsePassive = true;
+        request.KeepAlive = false;
+        return request;
+    }
+
     public async Task<UploadResultModel> UploadFile(IFormFile file)
     {
+        if (file.Length == 0)
+        {
+            return new UploadResultModel() { IsError = true, Message = "فایل انتخابی مشکل دارد" };
+        }
+
+        var fileType = file.ContentType;
+        var fileSize = file.Length;
+        var aliasName = file.FileName;
+        var fileName = (Guid.NewGuid() + Path.GetExtension(file.FileName)).ToLower();
+
+        var request = ConfigureFtpRequest(fileName, WebRequestMethods.Ftp.UploadFile);
+
         try
         {
-            if (file.Length == 0)
-                return new UploadResultModel() { IsError = true, Message = "فایل انتنخابی مشکل دارد" };
-
-
-            var fileType = file.ContentType;
-            var fileSize = int.Parse(file.Length.ToString());
-            var AliasName = file.FileName;
-
-            var FileName = (Guid.NewGuid() + Path.GetExtension(file.FileName)).ToLower();
-
-            var ftpAddress = _configuration["FTP:FTPAddress"];
-            var ftpUsername = _configuration["FTP:FTPUsername"];
-            var ftpPassword = _configuration["FTP:FTPPassword"];
-
-            var request = (FtpWebRequest)WebRequest.Create(new Uri($"{ftpAddress}/Content/Academy/{FileName}"));
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-            request.UseBinary = true;
-            request.UsePassive = true;
-            request.KeepAlive = false;
-
-            using (var requestStream = request.GetRequestStream())
+            await using (var requestStream = request.GetRequestStream())
             {
                 await file.CopyToAsync(requestStream);
             }
@@ -64,20 +69,20 @@ public class FileService : IFileService
             {
                 if (response.StatusCode != FtpStatusCode.ClosingData)
                 {
-                    return new UploadResultModel() { IsError = true, Message = $"Error uploading file: {response.StatusDescription}" };
+                    return new UploadResultModel() { IsError = true, Message = $"خطا در آپلود فایل: {response.StatusDescription}" };
                 }
             }
 
             return new UploadResultModel()
             {
                 FileType = fileType,
-                FileName = FileName,
-                FileSize = fileSize,
+                FileName = fileName,
+                FileSize = (int)fileSize,
                 FileSizeText = GetReadableFileSize(fileSize),
-                Url = $"/Content/Academy/{FileName}",
+                Url = $"/Content/Academy/{fileName}",
                 Id = Guid.NewGuid().ToString(),
                 IsError = false,
-                AliasName = AliasName,
+                AliasName = aliasName,
                 DocumentType = fileType.ToLower().Contains("pdf") ? DocumentType.Pdf : DocumentType.Image,
             };
         }
@@ -86,36 +91,25 @@ public class FileService : IFileService
             return new UploadResultModel() { IsError = true, ex = e };
         }
     }
+
     public async Task<UploadResultModel> DeleteFile(string fileName)
     {
+        if (string.IsNullOrEmpty(fileName))
+            return new UploadResultModel() { IsError = true, Message = "نام فایل مشخص نشده است" };
+
+        var request = ConfigureFtpRequest(fileName, WebRequestMethods.Ftp.DeleteFile);
+
         try
         {
-            if (string.IsNullOrEmpty(fileName))
-                return new UploadResultModel() { IsError = true, Message = "نام فایل مشخص نشده است" };
-
-            var ftpAddress = _configuration["FTP:FTPAddress"];
-            var ftpUsername = _configuration["FTP:FTPUsername"];
-            var ftpPassword = _configuration["FTP:FTPPassword"];
-
-            var requestUri = new Uri($"{ftpAddress}/Content/Academy/{fileName}");
-            var request = (FtpWebRequest)WebRequest.Create(requestUri);
-            request.Method = WebRequestMethods.Ftp.DeleteFile;
-            request.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-            request.UseBinary = true;
-            request.UsePassive = true;
-            request.KeepAlive = false;
-
             using (var response = (FtpWebResponse)await request.GetResponseAsync())
             {
                 if (response.StatusCode != FtpStatusCode.FileActionOK)
-                {
                     return new UploadResultModel() { IsError = true, Message = $"خطا در حذف فایل: {response.StatusDescription}" };
-                }
             }
 
             return new UploadResultModel()
             {
-                IsError = true,
+                IsError = false,
                 Message = "فایل با موفقیت حذف شد"
             };
         }

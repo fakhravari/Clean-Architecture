@@ -54,7 +54,7 @@ namespace Persistence.Repository
             {
                 return new LoginDto()
                 {
-                    IsLogin = false
+                    IsLogin = false,
                 };
             }
             else

@@ -12,7 +12,8 @@ namespace DI.Persistence
     {
         public static void AddServices_Persistence(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ReadDatabase")));
+            services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ReadDatabase"), 
+                sqlServerOptionsAction: sqlOptions => { sqlOptions.EnableRetryOnFailure(); }));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUnitOfWork<FakhravariDbContext>, UnitOfWork<FakhravariDbContext>>();

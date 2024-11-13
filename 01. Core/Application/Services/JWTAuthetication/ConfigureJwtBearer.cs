@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using Shared.ExtensionMethod;
 
 namespace Application.Services.JWTAuthetication;
 
@@ -41,7 +40,7 @@ public static class JwtExtensions
                     return Task.CompletedTask;
                 }
 
-                var decryptedToken = token.Decrypt();
+                var decryptedToken = token;// token.Decrypt();
                 context.Token = decryptedToken;
 
                 context.HttpContext.Items["DecryptedToken"] = decryptedToken;

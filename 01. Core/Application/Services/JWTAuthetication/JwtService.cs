@@ -3,7 +3,6 @@ using Application.Model.Personel;
 using Domain.Model.Jwt;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Shared.ExtensionMethod;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -16,8 +15,6 @@ public interface IJwtService
     Task<bool> ValidateToken(string token);
     TokenValidationParameters TokenValidationParameters { get; }
     string X_Token_JWT { get; }
-
-
     string? IdUser { get; }
 }
 
@@ -85,7 +82,7 @@ public class JwtService : IJwtService
         var securityToken = tokenHandler.CreateToken(descriptor);
         var jwt = tokenHandler.WriteToken(securityToken);
 
-        jwt = jwt.Encrypt();
+        // jwt = jwt.Encrypt();
 
         var Ref = await personelRepository.TokenSave(jwt, model.Id);
 
