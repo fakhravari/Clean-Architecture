@@ -24,12 +24,22 @@ namespace Persistence.Repository.Generic
 
         public void SetDatabaseMode(DatabaseMode mode)
         {
-            if (mode != _currentMode || _context == null)
+            var isChange = false;
+
+            if (_context == null)
             {
-                _context?.Dispose();
-                _context = CreateContext(mode);
-                _currentMode = mode;
+                isChange = true;
             }
+            else if ((mode != _currentMode) && (_configuration.GetConnectionString("ReadDatabase") != _configuration.GetConnectionString("WriteDatabase")))
+            {
+                isChange = true;
+            }
+
+            if (!isChange) return;
+
+            _context?.Dispose();
+            _context = CreateContext(mode);
+            _currentMode = mode;
         }
 
         private TContext CreateContext(DatabaseMode mode)
