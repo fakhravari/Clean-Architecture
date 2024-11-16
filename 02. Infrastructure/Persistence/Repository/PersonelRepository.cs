@@ -6,6 +6,7 @@ using Domain.Entities;
 using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
+using Persistence.Repository.Generic;
 using Shared.Utils;
 
 namespace Persistence.Repository

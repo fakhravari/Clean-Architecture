@@ -4,7 +4,7 @@ using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Persistence.Contexts
+namespace Persistence.Repository.Generic
 {
     public sealed class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
     {

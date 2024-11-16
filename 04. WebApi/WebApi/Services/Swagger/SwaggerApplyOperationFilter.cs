@@ -131,18 +131,18 @@ namespace WebApi.Services.Swagger
                         }
                     }
                 });
-                operation.Parameters.Add(new OpenApiParameter
-                {
-                    Name = "X-Token-JWT",
-                    In = ParameterLocation.Header,
-                    Description = "Access Token Key",
-                    Required = true,
-                    Schema = new OpenApiSchema
-                    {
-                        Type = "string",
-                        Default = new OpenApiString("fakhravari.ir")
-                    }
-                });
+                //operation.Parameters.Add(new OpenApiParameter
+                //{
+                //    Name = "X-Token-JWT",
+                //    In = ParameterLocation.Header,
+                //    Description = "Access Token Key",
+                //    Required = true,
+                //    Schema = new OpenApiSchema
+                //    {
+                //        Type = "string",
+                //        Default = new OpenApiString("fakhravari.ir")
+                //    }
+                //});
 
                 var allowAnonymous = context.ApiDescription.ActionDescriptor.EndpointMetadata.OfType<AuthorizeAttribute>().Any();
                 if (allowAnonymous)

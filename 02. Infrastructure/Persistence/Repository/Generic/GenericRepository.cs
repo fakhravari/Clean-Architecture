@@ -5,9 +5,10 @@ using EFCore.BulkExtensions;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Persistence.Contexts;
 using System.Collections;
 
-namespace Persistence.Contexts
+namespace Persistence.Repository.Generic
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {

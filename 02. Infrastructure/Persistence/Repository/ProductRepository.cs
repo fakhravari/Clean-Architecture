@@ -9,6 +9,7 @@ using Mapster;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts;
+using Persistence.Repository.Generic;
 using System.Data;
 
 namespace Persistence.Repository
