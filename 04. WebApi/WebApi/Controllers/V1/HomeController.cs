@@ -36,30 +36,5 @@ namespace WebApi.Controllers.V1
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(model);
             return Ok(json);
         }
-
-
-        /// <summary>
-        /// ورژن موبایل
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> GetVersion()
-        {
-            return Ok("GetVersion = " + DateTime.Now);
-        }
-
-        [SwaggerOperation(Description = "توضیحات متد اجرایی", Summary = "ورود به اپلیکیشن")]
-        [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginCommand command)
-        {
-            //var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
-            //var culture = rqf.RequestCulture.Culture;
-            //var uiCulture = rqf.RequestCulture.UICulture;
-            var translation2 = Localizer.CheckTheInputValues;
-            var tttt = localizer["Check_The_Input_Values"];
-            var result = await Mediator.Send(command);
-            
-            return Ok(result);
-        }
     }
 }

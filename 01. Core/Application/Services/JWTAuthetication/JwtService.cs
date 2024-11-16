@@ -26,7 +26,7 @@ public class JwtService : IJwtService
     public string X_Token_JWT { get; }
     public string IdUser { get; private set; } = string.Empty;
 
-    public JwtService(IOptionsSnapshot<JwtSettingModel> _jwtSettings, IPersonelRepository personelRepository)
+    public JwtService(IOptions<JwtSettingModel> _jwtSettings, IPersonelRepository personelRepository)
     {
         this.personelRepository = personelRepository;
         jwtSettings = _jwtSettings.Value;
