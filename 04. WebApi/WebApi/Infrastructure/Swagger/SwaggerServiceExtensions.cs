@@ -40,7 +40,7 @@ namespace WebApi.Infrastructure.Swagger
                     options.ExampleFilters();
                     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                     {
-                        Type = SecuritySchemeType.Http,
+                        Type = SecuritySchemeType.ApiKey,
                         Description = "JWT Authorization header using the Bearer scheme.",
                         Name = "X-Token-JWT",
                         Scheme = "bearer",
@@ -122,26 +122,21 @@ namespace WebApi.Infrastructure.Swagger
                 #endregion
             });
 
-            //app.UseReDoc(options =>
-            //{
-            //    options.SpecUrl("../swagger/v1/swagger.json");
-            //    #region Customizing
-            //    options.DocumentTitle = "My API Docs";
-            //    options.EnableUntrustedSpec();
-            //    options.ScrollYOffset(10);
-            //    options.HideHostname();
-            //    options.HideDownloadButton();
-            //    options.ExpandResponses("200,201");
-            //    options.RequiredPropsFirst();
-            //    options.NoAutoAuth();
-            //    options.PathInMiddlePanel();
-            //    options.HideLoading();
-            //    options.NativeScrollbars();
-            //    options.DisableSearch();
-            //    options.OnlyRequiredInSamples();
-            //    options.SortPropsAlphabetically();
-            //    #endregion
-            //});
+            app.UseReDoc(options =>
+            {
+                options.DocumentTitle = "My API Documentation";   // عنوان صفحه
+                options.SpecUrl = "/swagger/v1/swagger.json";     // آدرس فایل JSON
+                options.RoutePrefix = "redoc";                    // مسیر مستندات
+                //options.ExpandResponses("200");                  // نمایش پیش‌فرض پاسخ‌های موفق
+                //options.HideDownloadButton();                    // مخفی کردن دکمه دانلود
+                //options.HideHostname();                          // مخفی کردن هاست
+                //options.NoAutoAuth();                            // جلوگیری از ورود خودکار
+                //options.ScrollYOffset(100);                      // تنظیم میزان اسکرول
+                //options.RequiredPropsFirst();                    // نمایش ویژگی‌های ضروری در ابتدا
+                //options.PathInMiddlePanel();                     // نمایش مسیرها در ستون میانی
+                //options.EnableUntrustedSpec();                   // پذیرش منابع غیرقابل اعتماد
+                //options.NativeScrollbars();                      // استفاده از اسکرول بومی
+            });
         }
     }
 }

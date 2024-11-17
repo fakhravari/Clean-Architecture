@@ -102,12 +102,7 @@ namespace WebApi.Infrastructure.Swagger
                     return;
 
                 var fileParams = context.MethodInfo.GetParameters().Where(p => p.ParameterType == typeof(IFormFile));
-                operation.RequestBody.Content[fileUploadMime].Schema.Properties =
-                    fileParams.ToDictionary(k => k.Name, v => new OpenApiSchema()
-                    {
-                        Type = "string",
-                        Format = "binary"
-                    });
+                operation.RequestBody.Content[fileUploadMime].Schema.Properties = fileParams.ToDictionary(k => k.Name, v => new OpenApiSchema() { Type = "string", Format = "binary" });
             }
         }
         public class SwggerHeaders : IOperationFilter
@@ -153,20 +148,14 @@ namespace WebApi.Infrastructure.Swagger
         {
             public void Apply(OpenApiOperation operation, OperationFilterContext context)
             {
-                var ignoredProperties = context.MethodInfo.GetParameters()
-                    .SelectMany(p => p.ParameterType.GetProperties()
-                        .Where(prop => prop.GetCustomAttribute<JsonIgnoreAttribute>() != null));
+                var ignoredProperties = context.MethodInfo.GetParameters().SelectMany(p => p.ParameterType.GetProperties().Where(prop => prop.GetCustomAttribute<JsonIgnoreAttribute>() != null));
 
                 if (ignoredProperties.Any())
                 {
                     foreach (var property in ignoredProperties)
                     {
-                        operation.Parameters = operation.Parameters
-                            .Where(p => !p.Name.Equals(property.Name, StringComparison.InvariantCulture) &&
-                                        !p.Name.StartsWith(property.Name + ".", StringComparison.InvariantCulture))
-                            .ToList();
-
-
+                        operation.Parameters = operation.Parameters.Where(p => !p.Name.Equals(property.Name, StringComparison.InvariantCulture) 
+                                                                               && !p.Name.StartsWith(property.Name + ".", StringComparison.InvariantCulture)).ToList();
                     }
                 }
             }
