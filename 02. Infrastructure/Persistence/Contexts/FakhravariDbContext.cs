@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts.Configurations;
 
 namespace Persistence.Contexts;
-
 public partial class FakhravariDbContext : DbContext
 {
     public FakhravariDbContext()

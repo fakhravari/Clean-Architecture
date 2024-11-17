@@ -9,12 +9,12 @@ namespace Application.Features.Account.Queries.RefreshToken
     public sealed class GetListProductsQuerieHandler : IRequestHandler<RefreshTokenCommand, BaseResponse<RefreshTokenResponseDto>>
     {
         private readonly IPersonelRepository personelRepository;
-        private readonly IJwtService jwt;
+        private readonly IJwtAuthenticatedService _jwtAuthenticated;
 
-        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtService _jwt)
+        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtAuthenticatedService jwtAuthenticated)
         {
             personelRepository = _personelRepository;
-            jwt = _jwt;
+            _jwtAuthenticated = jwtAuthenticated;
         }
 
         public async Task<BaseResponse<RefreshTokenResponseDto>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
@@ -23,7 +23,7 @@ namespace Application.Features.Account.Queries.RefreshToken
 
             if (user.IsLogin)
             {
-                var GetToken = await jwt.GenerateJwtToken(user);
+                var GetToken = await _jwtAuthenticated.GenerateJwtToken(user);
 
                 return new BaseResponse<RefreshTokenResponseDto>()
                 {

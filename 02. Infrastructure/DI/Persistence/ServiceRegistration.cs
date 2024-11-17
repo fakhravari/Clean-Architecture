@@ -7,20 +7,24 @@ using Persistence.Contexts;
 using Persistence.Repository;
 using Persistence.Repository.Generic;
 
-namespace DI.Persistence
+namespace DI.Persistence;
+
+public static class ServiceRegistration
 {
-    public static class ServiceRegistration
+    public static void AddServices_Persistence(this IServiceCollection services, IConfiguration configuration)
     {
-        public static void AddServices_Persistence(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContext<FakhravariDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ReadDatabase"), 
-                sqlServerOptionsAction: sqlOptions => { sqlOptions.EnableRetryOnFailure(); }));
+        services.AddDbContext<FakhravariDbContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("ReadDatabase"),
+            sqlServerOptionsAction: sqlOptions =>
+            {
+                sqlOptions.EnableRetryOnFailure();
+            }));
 
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IUnitOfWork<FakhravariDbContext>, UnitOfWork<FakhravariDbContext>>();
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped<IUnitOfWork<FakhravariDbContext>, UnitOfWork<FakhravariDbContext>>();
 
-            services.AddScoped<IPersonelRepository, PersonelRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();
-        }
+        services.AddScoped<IPersonelRepository, PersonelRepository>();
+        services.AddScoped<IProductRepository, ProductRepository>();
     }
 }
+

@@ -2,8 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DI.FileService;
-
-
 public static class ServiceExtensions
 {
     public static void Add_FileService(this IServiceCollection services)

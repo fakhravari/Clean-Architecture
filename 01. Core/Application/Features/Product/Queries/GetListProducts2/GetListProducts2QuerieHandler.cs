@@ -9,12 +9,12 @@ namespace Application.Features.Product.Queries.GetListProducts2
     public sealed class GetListProducts2QuerieHandler : IRequestHandler<GetListProducts2Querie, BaseResponse<List<GetListProductsDto>>>
     {
         private readonly IProductRepository productRepository;
-        private readonly IJwtService jwt;
+        private readonly IJwtAuthenticatedService _jwtAuthenticated;
 
-        public GetListProducts2QuerieHandler(IProductRepository _personelRepository, IJwtService _jwt)
+        public GetListProducts2QuerieHandler(IProductRepository _personelRepository, IJwtAuthenticatedService jwtAuthenticated)
         {
             productRepository = _personelRepository;
-            jwt = _jwt;
+            _jwtAuthenticated = jwtAuthenticated;
         }
 
         public async Task<BaseResponse<List<GetListProductsDto>>> Handle(GetListProducts2Querie request, CancellationToken cancellationToken)

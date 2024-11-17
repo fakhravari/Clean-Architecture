@@ -5,13 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DI.Jwt;
-
 public static class ServiceExtensions
 {
     public static void Add_JwtIdentity(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<JwtSettingModel>(configuration.GetSection("JwtSettings"));
-        services.AddScoped<IJwtService, JwtService>();
+        services.AddScoped<IJwtAuthenticatedService, JwtAuthenticatedService>();
 
         services.PostConfigure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
         {

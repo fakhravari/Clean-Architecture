@@ -12,7 +12,7 @@ public static class JwtExtensions
 {
     public static void ConfigureJwtBearer(this JwtBearerOptions options, IServiceProvider serviceProvider)
     {
-        var jwtService = serviceProvider.GetRequiredService<IJwtService>();
+        var jwtService = serviceProvider.GetRequiredService<IJwtAuthenticatedService>();
 
         options.TokenValidationParameters = jwtService.TokenValidationParameters;
         options.RequireHttpsMetadata = false;

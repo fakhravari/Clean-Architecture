@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
-public interface IJwtService
+public interface IJwtAuthenticatedService
 {
     Task<GenerateJwtTokenModel> GenerateJwtToken(LoginDto Id);
     Task<bool> ValidateToken(string token);
@@ -18,7 +18,7 @@ public interface IJwtService
     string? IdUser { get; }
 }
 
-public class JwtService : IJwtService
+public class JwtAuthenticatedService : IJwtAuthenticatedService
 {
     private readonly IPersonelRepository personelRepository;
     private readonly JwtSettingModel jwtSettings;
@@ -26,7 +26,7 @@ public class JwtService : IJwtService
     public string X_Token_JWT { get; }
     public string IdUser { get; private set; } = string.Empty;
 
-    public JwtService(IOptions<JwtSettingModel> _jwtSettings, IPersonelRepository personelRepository)
+    public JwtAuthenticatedService(IOptions<JwtSettingModel> _jwtSettings, IPersonelRepository personelRepository)
     {
         this.personelRepository = personelRepository;
         jwtSettings = _jwtSettings.Value;
@@ -82,7 +82,7 @@ public class JwtService : IJwtService
         var securityToken = tokenHandler.CreateToken(descriptor);
         var jwt = tokenHandler.WriteToken(securityToken);
 
-        // jwt = jwt.Encrypt();
+        // _jwtAuthenticated = _jwtAuthenticated.Encrypt();
 
         var Ref = await personelRepository.TokenSave(jwt, model.Id);
 

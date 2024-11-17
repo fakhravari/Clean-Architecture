@@ -1,12 +1,11 @@
-﻿namespace Application.Model.Personel
-{
-    public class LoginDto
-    {
-        public bool IsLogin { get; set; }
+﻿namespace Application.Model.Personel;
 
-        public long Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string NationalCode { get; set; }
-    }
+public class LoginDto
+{
+    public bool IsLogin { get; set; }
+
+    public long Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string NationalCode { get; set; }
 }

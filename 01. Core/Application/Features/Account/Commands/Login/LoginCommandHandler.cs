@@ -9,12 +9,12 @@ namespace Application.Features.Account.Commands.Login
     public sealed class GetListProductsQuerieHandler : IRequestHandler<LoginCommand, BaseResponse<LoginResponseDto>>
     {
         private readonly IPersonelRepository personelRepository;
-        private readonly IJwtService jwt;
+        private readonly IJwtAuthenticatedService _jwtAuthenticated;
 
-        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtService _jwt)
+        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtAuthenticatedService jwtAuthenticated)
         {
             personelRepository = _personelRepository;
-            jwt = _jwt;
+            _jwtAuthenticated = jwtAuthenticated;
         }
 
         public async Task<BaseResponse<LoginResponseDto>> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -23,7 +23,7 @@ namespace Application.Features.Account.Commands.Login
 
             if (user.IsLogin)
             {
-                var GetToken = await jwt.GenerateJwtToken(user);
+                var GetToken = await _jwtAuthenticated.GenerateJwtToken(user);
 
                 return new BaseResponse<LoginResponseDto>()
                 {
