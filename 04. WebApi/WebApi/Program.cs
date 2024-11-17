@@ -6,7 +6,8 @@ using DI.MediatR_FluentValidation;
 using DI.NewtonSoft;
 using DI.Persistence;
 using DI.Serilog;
-using WebApi.Services.Swagger;
+using WebApi.Infrastructure;
+using WebApi.Infrastructure.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.Add_FileService();
 builder.Add_SerilogLogging(); // پیکربندی Serilog
 
 
+builder.Services.Add_AnyCors();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -46,7 +48,7 @@ app.UseSwaggerAndUI();
 
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+app.Use_AnyCors();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseHttpsRedirection();

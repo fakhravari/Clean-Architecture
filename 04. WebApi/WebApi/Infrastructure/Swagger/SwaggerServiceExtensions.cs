@@ -6,7 +6,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Reflection;
 
-namespace WebApi.Services.Swagger
+namespace WebApi.Infrastructure.Swagger
 {
     public static class SwaggerServiceExtensions
     {

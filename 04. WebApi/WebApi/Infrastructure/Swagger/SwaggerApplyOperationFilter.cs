@@ -8,7 +8,7 @@ using Shared.ExtensionMethod;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 
-namespace WebApi.Services.Swagger
+namespace WebApi.Infrastructure.Swagger
 {
     public class SwaggerApplyOperationFilter
     {
@@ -29,33 +29,33 @@ namespace WebApi.Services.Swagger
 
                 if (IsGetAllAction())
                 {
-                    if (!StringExtensions.HasValue(operation.Summary))
+                    if (!operation.Summary.HasValue())
                         operation.Summary = $"Returns all {pluralizeName}";
                 }
                 else if (IsActionName("Post", "Create"))
                 {
-                    if (!StringExtensions.HasValue(operation.Summary))
+                    if (!operation.Summary.HasValue())
                         operation.Summary = $"Creates a {singularizeName}";
                 }
                 else if (IsActionName("Read", "Get"))
                 {
-                    if (!StringExtensions.HasValue(operation.Summary))
+                    if (!operation.Summary.HasValue())
                         operation.Summary = $"Retrieves a {singularizeName} by unique id";
 
-                    if (!StringExtensions.HasValue(operation.Parameters[0].Description))
+                    if (!operation.Parameters[0].Description.HasValue())
                         operation.Parameters[0].Description = $"a unique id for the {singularizeName}";
                 }
                 else if (IsActionName("Put", "Edit", "Update"))
                 {
-                    if (!StringExtensions.HasValue(operation.Summary))
+                    if (!operation.Summary.HasValue())
                         operation.Summary = $"Updates a {singularizeName} by unique id";
                 }
                 else if (IsActionName("Delete", "Remove"))
                 {
-                    if (!StringExtensions.HasValue(operation.Summary))
+                    if (!operation.Summary.HasValue())
                         operation.Summary = $"Deletes a {singularizeName} by unique id";
 
-                    if (!StringExtensions.HasValue(operation.Parameters[0].Description))
+                    if (!operation.Parameters[0].Description.HasValue())
                         operation.Parameters[0].Description = $"A unique id for the {singularizeName}";
                 }
 
