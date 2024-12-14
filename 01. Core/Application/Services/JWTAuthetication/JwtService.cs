@@ -1,8 +1,8 @@
 ﻿using Application.Contracts.Persistence.IRepository;
-using Application.Model.Personel;
 using Domain.Model.Jwt;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Shared.ExtensionMethod;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -11,29 +11,33 @@ namespace Application.Services.JWTAuthetication;
 
 public interface IJwtAuthenticatedService
 {
-    Task<GenerateJwtTokenModel> GenerateJwtToken(LoginDto Id);
+    string GenerateJwtToken(decimal id);
     Task<bool> ValidateToken(string token);
     TokenValidationParameters TokenValidationParameters { get; }
+
     string X_Token_JWT { get; }
-    string? IdUser { get; }
+    long IdUser { get; }
 }
 
 public class JwtAuthenticatedService : IJwtAuthenticatedService
 {
-    private readonly IPersonelRepository personelRepository;
-    private readonly JwtSettingModel jwtSettings;
+    private readonly Lazy<IPersonelRepository> _authRepository;
+
+    private readonly JwtSettingModel _jwtSetting;
     public TokenValidationParameters TokenValidationParameters { get; }
+
     public string X_Token_JWT { get; }
-    public string IdUser { get; private set; } = string.Empty;
+    public long IdUser { get; private set; } = 0;
 
-    public JwtAuthenticatedService(IOptions<JwtSettingModel> _jwtSettings, IPersonelRepository personelRepository)
+    public JwtAuthenticatedService(IOptions<JwtSettingModel> jwtSettings, Lazy<IPersonelRepository> authRepository)
     {
-        this.personelRepository = personelRepository;
-        jwtSettings = _jwtSettings.Value;
+        _authRepository = authRepository;
 
-        X_Token_JWT = jwtSettings.X_Token_JWT;
-        var secretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
-        var encryptionKey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
+        _jwtSetting = jwtSettings.Value;
+        X_Token_JWT = jwtSettings.Value.X_Token_JWT;
+
+        var secretKey = Encoding.UTF8.GetBytes(jwtSettings.Value.SecretKey);
+        var encryptionKey = Encoding.UTF8.GetBytes(jwtSettings.Value.Encryptkey);
         TokenValidationParameters = new TokenValidationParameters
         {
             ClockSkew = TimeSpan.Zero,
@@ -44,49 +48,43 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
             RequireExpirationTime = true,
             ValidateLifetime = true,
             ValidateAudience = true,
-            ValidAudience = jwtSettings.Audience,
+            ValidAudience = jwtSettings.Value.Audience,
             ValidateIssuer = true,
-            ValidIssuer = jwtSettings.Issuer
+            ValidIssuer = jwtSettings.Value.Issuer
         };
     }
 
-    public async Task<GenerateJwtTokenModel> GenerateJwtToken(LoginDto model)
+    public string GenerateJwtToken(decimal Id)
     {
-        var secretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
+        var secretKey = Encoding.UTF8.GetBytes(_jwtSetting.SecretKey);
         var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKey),
             SecurityAlgorithms.HmacSha256Signature);
 
-        var encryptionkey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
+        var encryptionkey = Encoding.UTF8.GetBytes(_jwtSetting.Encryptkey);
         var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
+        var Claims = new List<Claim>
+        {
+            new(ClaimTypes.NameIdentifier, Id.ToString()),
+            new(ClaimTypes.Name, Id.ToString())
+        };
         var descriptor = new SecurityTokenDescriptor
         {
-            Issuer = jwtSettings.Issuer,
-            Audience = jwtSettings.Audience,
+            Issuer = _jwtSetting.Issuer,
+            Audience = _jwtSetting.Audience,
             IssuedAt = DateTime.Now,
-            NotBefore = DateTime.Now.AddMinutes(jwtSettings.NotBeforeMinutes),
-            Expires = DateTime.Now.AddYears(jwtSettings.ExpirationYear),
+            NotBefore = DateTime.Now.AddMinutes(_jwtSetting.NotBeforeMinutes),
+            Expires = DateTime.Now.AddYears(_jwtSetting.ExpirationYear),
             SigningCredentials = signingCredentials,
             EncryptingCredentials = encryptingCredentials,
-            Subject = new ClaimsIdentity(new List<Claim>
-                {
-                    new(ClaimTypes.NameIdentifier, model.Id.ToString()),
-                    new(ClaimTypes.Name, model.Id.ToString()),
-                    new(ClaimTypes.DateOfBirth, "1369/01/07"),
-                    new(ClaimTypes.Actor, model.FirstName+" "+model.LastName),
-                    new(ClaimTypes.Hash, model.NationalCode)
-                })
+            Subject = new ClaimsIdentity(Claims)
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();
         var securityToken = tokenHandler.CreateToken(descriptor);
         var jwt = tokenHandler.WriteToken(securityToken);
 
-        // _jwtAuthenticated = _jwtAuthenticated.Encrypt();
-
-        var Ref = await personelRepository.TokenSave(jwt, model.Id);
-
-        return new GenerateJwtTokenModel() { Token = jwt, RefreshToken = Ref.ToString(), Status = (Guid.Empty != Ref) };
+        return jwt;
     }
     public async Task<bool> ValidateToken(string token)
     {
@@ -94,16 +92,16 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
 
         try
         {
-            var NewToken = token.Replace("Bearer", string.Empty).Trim();
+            token = token.Replace("Bearer", string.Empty).Trim();
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            tokenHandler.ValidateToken(NewToken, this.TokenValidationParameters, out SecurityToken validatedToken);
+            tokenHandler.ValidateToken(token, this.TokenValidationParameters, out SecurityToken validatedToken);
             var jwtToken = (JwtSecurityToken)validatedToken;
 
-            IdUser = jwtToken.Claims.First(claim => claim.Type == "nameid").Value;
-            var user2 = jwtToken.Claims.First(claim => claim.Type == "unique_name").Value;
+            IdUser = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToInt();
 
-            var item = await personelRepository.ValidateToken(token, long.Parse(IdUser));
+            var item = await _authRepository.Value.ValidateToken(token, IdUser);
+
             return item;
         }
         catch (Exception ex)

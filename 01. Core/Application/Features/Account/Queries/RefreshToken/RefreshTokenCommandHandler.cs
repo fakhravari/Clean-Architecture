@@ -23,13 +23,13 @@ namespace Application.Features.Account.Queries.RefreshToken
 
             if (user.IsLogin)
             {
-                var GetToken = await _jwtAuthenticated.GenerateJwtToken(user);
+                var GetToken = await personelRepository.Login2(user.Id);
 
                 return new BaseResponse<RefreshTokenResponseDto>()
                 {
                     Data = new RefreshTokenResponseDto()
                     {
-                        IsLogin = GetToken.Status,
+                        IsLogin = GetToken.IsLogin,
                         Token = GetToken.Token,
                         RefreshToken = GetToken.RefreshToken
                     }

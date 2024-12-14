@@ -8,4 +8,6 @@ public class LoginDto
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string NationalCode { get; set; }
+    public string Token { get; set; }
+    public Guid RefreshToken { get; set; }
 }

@@ -1,6 +1,7 @@
 ﻿using Application.Contracts.Persistence.Contexts;
 using Application.Contracts.Persistence.IRepository;
 using Application.Model.Personel;
+using Application.Services.JWTAuthetication;
 using Application.Services.Serilog;
 using Domain.Entities;
 using Domain.Enum;
@@ -14,18 +15,17 @@ namespace Persistence.Repository
     public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
     {
         private readonly IUnitOfWork<FakhravariDbContext> _unitOfWork;
-        private readonly IProductRepository productRepository;
-
-        public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger, IProductRepository productRepository) : base(iUnitOfWork, logger)
+        private readonly IJwtAuthenticatedService _jwtAuthenticated;
+        public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger, IJwtAuthenticatedService jwtAuthenticated) : base(iUnitOfWork, logger)
         {
             _unitOfWork = iUnitOfWork;
-            this.productRepository = productRepository;
+            _jwtAuthenticated = jwtAuthenticated;
         }
 
         public async Task<LoginDto> Login(string UserName, string Password)
         {
             _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
-            
+
             var matches = await QuerySingleAsync(query => query.Where(e => e.UserName == UserName && e.Password == Password));
             if (matches == null)
             {
@@ -36,13 +36,47 @@ namespace Persistence.Repository
             }
             else
             {
+                var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
+                var refreshToken = await TokenSave(jwt, matches.Id);
+
                 return new LoginDto()
                 {
                     IsLogin = true,
                     FirstName = matches.FirstName,
                     Id = matches.Id,
                     LastName = matches.LastName,
-                    NationalCode = matches.NationalCode
+                    NationalCode = matches.NationalCode,
+                    RefreshToken = refreshToken,
+                    Token = jwt
+                };
+            }
+        }
+        public async Task<LoginDto> Login2(long IPersonel)
+        {
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+
+            var matches = await QuerySingleAsync(query => query.Where(e => e.Id == IPersonel));
+            if (matches == null)
+            {
+                return new LoginDto()
+                {
+                    IsLogin = false
+                };
+            }
+            else
+            {
+                var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
+                var refreshToken = await TokenSave(jwt, matches.Id);
+
+                return new LoginDto()
+                {
+                    IsLogin = true,
+                    FirstName = matches.FirstName,
+                    Id = matches.Id,
+                    LastName = matches.LastName,
+                    NationalCode = matches.NationalCode,
+                    RefreshToken = refreshToken,
+                    Token = jwt
                 };
             }
         }

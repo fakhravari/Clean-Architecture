@@ -9,6 +9,6 @@ namespace Application.Features.Account.Commands.Login.Dto
         //[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Token { get; set; }
         //[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string RefreshToken { get; set; }
+        public Guid RefreshToken { get; set; }
     }
 }

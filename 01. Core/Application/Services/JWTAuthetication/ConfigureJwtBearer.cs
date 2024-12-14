@@ -1,64 +1,60 @@
 ﻿using Domain.Common;
 using Domain.Enum;
-using Localization.Resources;
+using Domain.Model.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
 public static class JwtExtensions
 {
-    public static void ConfigureJwtBearer(this JwtBearerOptions options, IServiceProvider serviceProvider)
+    public static void ConfigureJwtBearer(this JwtBearerOptions options, JwtSettingModel jwtSettings)
     {
-        var jwtService = serviceProvider.GetRequiredService<IJwtAuthenticatedService>();
+        var secretKey = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
+        var encryptionKey = Encoding.UTF8.GetBytes(jwtSettings.Encryptkey);
 
-        options.TokenValidationParameters = jwtService.TokenValidationParameters;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ClockSkew = TimeSpan.Zero,
+            RequireSignedTokens = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+            TokenDecryptionKey = new SymmetricSecurityKey(encryptionKey),
+            RequireExpirationTime = true,
+            ValidateLifetime = true,
+            ValidateAudience = true,
+            ValidAudience = jwtSettings.Audience,
+            ValidateIssuer = true,
+            ValidIssuer = jwtSettings.Issuer
+        };
+
         options.RequireHttpsMetadata = false;
         options.SaveToken = true;
+
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = context =>
             {
-                string token = (context.HttpContext.Request.Headers["Authorization"].FirstOrDefault()
-                                ?? context.HttpContext.Request.Query["Authorization"].FirstOrDefault() ?? "").Trim();
-
-                string xToken = (context.HttpContext.Request.Headers["X-Token-JWT"].FirstOrDefault()
-                                  ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
-
-                string culture = (context.HttpContext.Request.Headers["Accept-Language"].FirstOrDefault()
-                                  ?? context.HttpContext.Request.Query["Accept-Language"].FirstOrDefault()
-                                  ?? context.HttpContext.Request.Headers["culture"].FirstOrDefault()
-                                  ?? context.HttpContext.Request.Query["culture"].FirstOrDefault() ?? "fa-IR").Trim();
-
-                if (string.IsNullOrWhiteSpace(token) || xToken != jwtService.X_Token_JWT)
+                if (context.Request.Headers.ContainsKey("X-Token-JWT"))
                 {
-                    context.HttpContext.Items["DecryptedToken"] = "";
-                    context.HttpContext.Items["X_Token"] = "";
-                    context.HttpContext.Items["culture"] = culture;
-                    return Task.CompletedTask;
+                    context.Token = context.Request.Headers["X-Token-JWT"];
                 }
-
-                var decryptedToken = token; // token.Decrypt();
-                context.Token = decryptedToken;
-
-                context.HttpContext.Items["DecryptedToken"] = decryptedToken;
-                context.HttpContext.Items["X_Token"] = xToken;
-                context.HttpContext.Items["culture"] = culture;
-
                 return Task.CompletedTask;
             },
             OnTokenValidated = async context =>
             {
-                var culture = context.HttpContext.Items["culture"]?.ToString();
-                var token = context.HttpContext.Items["DecryptedToken"]?.ToString();
-                var xToken = context.HttpContext.Items["X_Token"]?.ToString();
+                var jwtService = context.HttpContext.RequestServices.GetRequiredService<IJwtAuthenticatedService>();
+                var token = (context.HttpContext.Request.Headers["X-Token-JWT"].FirstOrDefault()
+                                ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
 
-                if (xToken == jwtService.X_Token_JWT && string.IsNullOrWhiteSpace(token) == false)
+                if (!string.IsNullOrWhiteSpace(token))
                 {
                     var isFail = await jwtService.ValidateToken(token);
-                    if (isFail == false)
+                    if (!isFail)
                     {
                         context.Fail("error OnTokenValidated");
                     }
@@ -74,13 +70,10 @@ public static class JwtExtensions
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;
 
-                var localizer = context.HttpContext.RequestServices.GetRequiredService<ISharedResource>();
-
                 var response = new BaseResponse()
                 {
-                    Success = false,
-                    StatusCode = context.Response.StatusCode,
-                    Message = localizer.Exception + " | OnChallenge | " + context.Response.StatusCode
+                    Message = "دسترسی غیر مجاز",
+                    ValidationErrors = new List<string>() { "خطا در بررسی توکن" }
                 };
 
                 var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);
