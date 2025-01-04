@@ -7,12 +7,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure;
 
-public class FileService : IFileService
+public class FileRepository : IFileService
 {
     private readonly string _ftpAddress;
     private readonly NetworkCredential _ftpCredentials;
 
-    public FileService(IConfiguration configuration)
+    public FileRepository(IConfiguration configuration)
     {
         _ftpAddress = configuration["FTP:FTPAddress"];
         _ftpCredentials = new NetworkCredential(configuration["FTP:FTPUsername"], configuration["FTP:FTPPassword"]);

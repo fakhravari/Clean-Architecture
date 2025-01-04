@@ -9,7 +9,7 @@ public static class ServiceExtensions
 {
     public static void Add_FileService(this IServiceCollection services)
     {
-        services.AddScoped<IFileService, Infrastructure.FileService>();
+        services.AddScoped<IFileService, Infrastructure.FileRepository>();
 
 
         services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
