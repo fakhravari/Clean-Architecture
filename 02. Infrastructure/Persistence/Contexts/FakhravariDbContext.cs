@@ -3,16 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Persistence.Contexts.Configurations;
 
 namespace Persistence.Contexts;
+
 public partial class FakhravariDbContext : DbContext
 {
     public FakhravariDbContext()
     {
-
     }
 
     public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options) : base(options)
     {
-
     }
 
     public virtual DbSet<Category> Categories { get; set; }

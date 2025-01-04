@@ -15,10 +15,7 @@ public static class ServiceRegistration
     {
         services.AddDbContext<FakhravariDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("ReadDatabase"),
-            sqlServerOptionsAction: sqlOptions =>
-            {
-                sqlOptions.EnableRetryOnFailure();
-            }));
+                sqlOptions => { sqlOptions.EnableRetryOnFailure(); }));
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IUnitOfWork<FakhravariDbContext>, UnitOfWork<FakhravariDbContext>>();
@@ -27,4 +24,3 @@ public static class ServiceRegistration
         services.AddScoped<IProductRepository, ProductRepository>();
     }
 }
-

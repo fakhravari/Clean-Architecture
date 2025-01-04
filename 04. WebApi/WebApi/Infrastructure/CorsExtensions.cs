@@ -14,6 +14,7 @@ public static class CorsExtensions
             });
         });
     }
+
     public static IApplicationBuilder Use_AnyCors(this IApplicationBuilder app)
     {
         return app.UseCors("Any");

@@ -5,8 +5,9 @@ namespace Domain.Common;
 
 public static class JsonSettings
 {
-    public static JsonSerializerSettings Settings
+    public static JsonSerializerSettings Settings => new()
     {
-        get { return new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, ContractResolver = new DefaultContractResolver { NamingStrategy = new DefaultNamingStrategy() } }; }
-    }
+        NullValueHandling = NullValueHandling.Ignore,
+        ContractResolver = new DefaultContractResolver { NamingStrategy = new DefaultNamingStrategy() }
+    };
 }

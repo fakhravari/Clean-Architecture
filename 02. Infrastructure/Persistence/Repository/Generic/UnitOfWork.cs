@@ -4,66 +4,61 @@ using Domain.Enum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Persistence.Repository.Generic
+namespace Persistence.Repository.Generic;
+
+public sealed class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
 {
-    public sealed class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
+    private readonly IConfiguration _configuration;
+    private readonly ISerilogService _logger;
+    private TContext? _context;
+
+    public UnitOfWork(ISerilogService logger, IConfiguration configuration)
     {
-        private readonly IConfiguration _configuration;
-        private readonly ISerilogService _logger;
-        private TContext? _context;
-        private DatabaseMode _currentMode;
+        _logger = logger;
+        _configuration = configuration;
+    }
 
-        public UnitOfWork(ISerilogService logger, IConfiguration configuration)
+    public DatabaseMode Mode { get; private set; }
+
+    public TContext Context => _context ??= CreateContext(DatabaseMode.Read);
+
+    public void SetDatabaseMode(DatabaseMode mode)
+    {
+        var isChange = false;
+
+        if (_context == null)
+            isChange = true;
+        else if (mode != Mode && _configuration.GetConnectionString("ReadDatabase") !=
+                 _configuration.GetConnectionString("WriteDatabase")) isChange = true;
+
+        if (!isChange) return;
+
+        _context?.Dispose();
+        _context = CreateContext(mode);
+        Mode = mode;
+    }
+
+    public async Task<int> SaveChangesAsync()
+    {
+        try
         {
-            _logger = logger;
-            _configuration = configuration;
+            return await Context.SaveChangesAsync();
         }
-
-        public DatabaseMode Mode => _currentMode;
-        public TContext Context => _context ??= CreateContext(DatabaseMode.Read);
-
-        public void SetDatabaseMode(DatabaseMode mode)
+        catch (Exception ex)
         {
-            var isChange = false;
-
-            if (_context == null)
-            {
-                isChange = true;
-            }
-            else if ((mode != _currentMode) && (_configuration.GetConnectionString("ReadDatabase") != _configuration.GetConnectionString("WriteDatabase")))
-            {
-                isChange = true;
-            }
-
-            if (!isChange) return;
-
-            _context?.Dispose();
-            _context = CreateContext(mode);
-            _currentMode = mode;
+            _logger.LogSystem(ex, $"DatabaseMode: {Mode}");
+            throw;
         }
+    }
 
-        private TContext CreateContext(DatabaseMode mode)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<TContext>();
-            var connectionString = mode == DatabaseMode.Read
-                ? _configuration.GetConnectionString("ReadDatabase")
-                : _configuration.GetConnectionString("WriteDatabase");
+    private TContext CreateContext(DatabaseMode mode)
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<TContext>();
+        var connectionString = mode == DatabaseMode.Read
+            ? _configuration.GetConnectionString("ReadDatabase")
+            : _configuration.GetConnectionString("WriteDatabase");
 
-            optionsBuilder.UseSqlServer(connectionString);
-            return (TContext)Activator.CreateInstance(typeof(TContext), optionsBuilder.Options)!;
-        }
-
-        public async Task<int> SaveChangesAsync()
-        {
-            try
-            {
-                return await Context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogSystem(ex, additionalInfo: $"DatabaseMode: {_currentMode}");
-                throw;
-            }
-        }
+        optionsBuilder.UseSqlServer(connectionString);
+        return (TContext)Activator.CreateInstance(typeof(TContext), optionsBuilder.Options)!;
     }
 }

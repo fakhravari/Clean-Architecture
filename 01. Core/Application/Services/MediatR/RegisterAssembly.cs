@@ -1,4 +1,5 @@
-﻿namespace Application.Services.MediatR
+﻿namespace Application.Services.MediatR;
+
+public class RegisterAssembly
 {
-    public class RegisterAssembly { }
 }

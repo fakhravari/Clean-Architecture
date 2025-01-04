@@ -2,5 +2,6 @@
 
 public enum DatabaseMode
 {
-    Read, Write
+    Read,
+    Write
 }

@@ -8,16 +8,23 @@ public static class StringExtensions
 {
     public static string GetDisplayName(object instance, string propertyName)
     {
-        Type type = instance.GetType();
+        var type = instance.GetType();
 
-        DisplayAttribute? displayAttribute = type.GetProperty(propertyName)!.GetCustomAttribute<DisplayAttribute>();
+        var displayAttribute = type.GetProperty(propertyName)!.GetCustomAttribute<DisplayAttribute>();
         return displayAttribute?.Name ?? propertyName;
     }
+
     public static bool IsValidName(this string obj)
     {
         return obj.Trim() == "test" == false;
     }
-    public static string GetCamelCase(this string str) => char.ToLowerInvariant(str[0]) + str[1..]; //str.Substring(1)
+
+    public static string GetCamelCase(this string str)
+    {
+        return char.ToLowerInvariant(str[0]) + str[1..];
+        //str.Substring(1)
+    }
+
     public static bool HasValue(this string value, bool ignoreWhiteSpace = true)
     {
         return ignoreWhiteSpace ? !string.IsNullOrWhiteSpace(value) : !string.IsNullOrEmpty(value);
@@ -104,7 +111,7 @@ public static class StringExtensions
             .Replace("ي", "ی")
             .Replace(" ", " ")
             .Replace("‌", " ")
-            .Replace("ھ", "ه");//.Replace("ئ", "ی");
+            .Replace("ھ", "ه"); //.Replace("ئ", "ی");
     }
 
     public static string? CleanString(this string str)
@@ -119,10 +126,7 @@ public static class StringExtensions
 
     public static bool CheckSheba(this string str, bool checkLenght)
     {
-        if (string.IsNullOrWhiteSpace(str))
-        {
-            return false;
-        }
+        if (string.IsNullOrWhiteSpace(str)) return false;
         str = str.Replace(" ", "").ToLower();
         //بررسی رشته وارد شده برای اینکه در فرمت شبا باشد
         var isSheba = Regex.IsMatch(str, "^[a-zA-Z]{2}\\d{2} ?\\d{4} ?\\d{4} ?\\d{4} ?\\d{4} ?[\\d]{0,2}",
@@ -147,86 +151,59 @@ public static class StringExtensions
         var finalLongData = Convert.ToDecimal(newSheba);
         ////تقسیم عدد نهایی به مقدار 97 - اگر باقیمانده برابر با عدد یک شود این رشته شبا صحیح خواهد بود
         var finalReminder = finalLongData % 97;
-        if (finalReminder == 1)
-        {
-            return true;
-        }
+        if (finalReminder == 1) return true;
         return false;
-
-
     }
 
     public static bool IsIzbSheba(this string str)
     {
-        if (string.IsNullOrWhiteSpace(str))
-        {
-            return false;
-        }
+        if (string.IsNullOrWhiteSpace(str)) return false;
         var codeBank = str.Substring(4, 3);
 
         if (codeBank == "069")
             return true;
-        else
-            return false;
+        return false;
     }
 
     public static bool IsCorrectDateTimeRequest(this string RequestDateTime)
     {
-        if (string.IsNullOrWhiteSpace(RequestDateTime))
-        {
-            return false;
-        }
+        if (string.IsNullOrWhiteSpace(RequestDateTime)) return false;
 
-        DateTime requestDateTime = Convert.ToDateTime(RequestDateTime);
-        DateTime ServerDateTime = DateTime.Now;
+        var requestDateTime = Convert.ToDateTime(RequestDateTime);
+        var ServerDateTime = DateTime.Now;
 
-        DateTime TwoMinBefore = ServerDateTime.Subtract(TimeSpan.FromMinutes(2));
-        DateTime TwoMinAfter = ServerDateTime.AddMinutes(2);
+        var TwoMinBefore = ServerDateTime.Subtract(TimeSpan.FromMinutes(2));
+        var TwoMinAfter = ServerDateTime.AddMinutes(2);
 
         if (requestDateTime.Ticks > TwoMinBefore.Ticks && requestDateTime.Ticks < TwoMinAfter.Ticks)
-        {
             return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
     public static bool IsCorrectDateTimeRequest2(this string RequestDateTime)
     {
-        if (string.IsNullOrWhiteSpace(RequestDateTime))
-        {
-            return false;
-        }
+        if (string.IsNullOrWhiteSpace(RequestDateTime)) return false;
 
-        DateTime requestDateTime = Convert.ToDateTime(RequestDateTime);
-        DateTime ServerDateTime = DateTime.Now;
+        var requestDateTime = Convert.ToDateTime(RequestDateTime);
+        var ServerDateTime = DateTime.Now;
 
-        DateTime TwoMinBefore = ServerDateTime.Subtract(TimeSpan.FromMinutes(5));
-        DateTime TwoMinAfter = ServerDateTime.AddMinutes(5);
+        var TwoMinBefore = ServerDateTime.Subtract(TimeSpan.FromMinutes(5));
+        var TwoMinAfter = ServerDateTime.AddMinutes(5);
 
         if (requestDateTime.Ticks > TwoMinBefore.Ticks && requestDateTime.Ticks < TwoMinAfter.Ticks)
-        {
             return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
     public static string ToMaskedPan(this string value)
     {
         if (value.Length == 16)
         {
-            string maskPan = string.Format("{0}{1}{2}", value.Substring(0, 6), "******", value.Substring(12, 4));
+            var maskPan = string.Format("{0}{1}{2}", value.Substring(0, 6), "******", value.Substring(12, 4));
             return maskPan;
         }
-        else
-        {
-            return "****";
-        }
+
+        return "****";
     }
 
     public static byte[] ToByteArray(this string base64String)

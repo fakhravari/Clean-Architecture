@@ -1,16 +1,18 @@
-﻿using Domain.Common;
+﻿using System.Net;
+using Domain.Common;
 using Domain.Enum;
+using FluentValidation;
 using Localization.Resources;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using System.Net;
 
 namespace Application.ExceptionsHandler;
 
 public class ExceptionHandlingMiddleware
 {
     private readonly RequestDelegate _next;
+
     public ExceptionHandlingMiddleware(RequestDelegate next)
     {
         _next = next;
@@ -22,7 +24,7 @@ public class ExceptionHandlingMiddleware
         {
             await _next(context);
         }
-        catch (FluentValidation.ValidationException ex)
+        catch (ValidationException ex)
         {
             await HandleValidationException(context, ex);
         }
@@ -32,7 +34,7 @@ public class ExceptionHandlingMiddleware
         }
     }
 
-    private static async Task HandleValidationException(HttpContext context, FluentValidation.ValidationException exception)
+    private static async Task HandleValidationException(HttpContext context, ValidationException exception)
     {
         var localizer = context.RequestServices.GetRequiredService<ISharedResource>();
 
@@ -63,8 +65,8 @@ public class ExceptionHandlingMiddleware
     private static Task HandleException(HttpContext context, Exception exception)
     {
         var localizer = context.RequestServices.GetRequiredService<ISharedResource>();
-        string controllerName = context.Request.RouteValues["controller"]?.ToString();
-        string actionName = context.Request.RouteValues["action"]?.ToString();
+        var controllerName = context.Request.RouteValues["controller"]?.ToString();
+        var actionName = context.Request.RouteValues["action"]?.ToString();
 
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -73,7 +75,7 @@ public class ExceptionHandlingMiddleware
         {
             Success = false,
             StatusCode = (int)ApiStatusCode.ServerError,
-            Message = localizer.Exception + " | " + exception.ToString()
+            Message = localizer.Exception + " | " + exception
         };
 
         var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);

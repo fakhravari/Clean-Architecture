@@ -5,7 +5,15 @@ namespace Shared.ExtensionMethod;
 
 public static class EnumExtensions
 {
-    public enum DisplayProperty { Description, GroupName, Name, Prompt, ShortName, Order }
+    public enum DisplayProperty
+    {
+        Description,
+        GroupName,
+        Name,
+        Prompt,
+        ShortName,
+        Order
+    }
 
     public static IEnumerable<T> GetEnumValues<T>(this T input) where T : struct
     {
@@ -21,13 +29,14 @@ public static class EnumExtensions
             throw new NotSupportedException();
 
         foreach (var value in Enum.GetValues(input.GetType()))
-            if (((input as Enum)!).HasFlag((value as Enum)!))
+            if ((input as Enum)!.HasFlag((value as Enum)!))
                 yield return (T)value;
     }
 
     public static string ToDisplay(this Enum value, DisplayProperty property = DisplayProperty.Name)
     {
-        var attribute = value.GetType().GetField(value.ToString())!.GetCustomAttributes<DisplayAttribute>(false).FirstOrDefault();
+        var attribute = value.GetType().GetField(value.ToString())!.GetCustomAttributes<DisplayAttribute>(false)
+            .FirstOrDefault();
 
         if (attribute == null)
             return value.ToString();

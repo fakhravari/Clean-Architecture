@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Persistence.Repository;
 
 namespace DI.Jwt;
+
 public static class ServiceExtensions
 {
     public static void Add_JwtIdentity(this IServiceCollection services, IConfiguration configuration)
@@ -15,7 +16,8 @@ public static class ServiceExtensions
 
         services.AddScoped<IJwtAuthenticatedService, JwtAuthenticatedService>();
         services.AddScoped<IPersonelRepository, PersonelRepository>();
-        services.AddScoped<Lazy<IPersonelRepository>>(provider => new Lazy<IPersonelRepository>(() => provider.GetRequiredService<IPersonelRepository>()));
+        services.AddScoped<Lazy<IPersonelRepository>>(provider =>
+            new Lazy<IPersonelRepository>(() => provider.GetRequiredService<IPersonelRepository>()));
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
         {

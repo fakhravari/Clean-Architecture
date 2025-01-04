@@ -4,11 +4,9 @@ namespace Localization.Resources;
 
 public interface ISharedResource
 {
-    string GetTranslation(string key);
-
-
     string CheckTheInputValues { get; }
     string Exception { get; }
+    string GetTranslation(string key);
 }
 
 public class SharedResource : ISharedResource
@@ -20,7 +18,11 @@ public class SharedResource : ISharedResource
         _localizer = localizer;
     }
 
-    public string GetTranslation(string key) => _localizer[key];
+    public string GetTranslation(string key)
+    {
+        return _localizer[key];
+    }
+
     public string CheckTheInputValues => GetTranslation("Check_The_Input_Values");
     public string Exception => GetTranslation("Exception");
 }

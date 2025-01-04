@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-public partial class PersonnelToChangeRolesActivity
+public class PersonnelToChangeRolesActivity
 {
     public Guid Id { get; set; }
 

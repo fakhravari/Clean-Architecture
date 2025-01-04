@@ -34,6 +34,7 @@ public static class SecureExtensions
             return string.Empty;
         }
     }
+
     public static string Decrypt(this string encryptedText)
     {
         try

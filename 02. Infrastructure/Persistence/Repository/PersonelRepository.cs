@@ -10,135 +10,135 @@ using Persistence.Contexts;
 using Persistence.Repository.Generic;
 using Shared.Utils;
 
-namespace Persistence.Repository
+namespace Persistence.Repository;
+
+public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
 {
-    public class PersonelRepository : GenericRepository<Personel>, IPersonelRepository
+    private readonly IJwtAuthenticatedService _jwtAuthenticated;
+    private readonly IUnitOfWork<FakhravariDbContext> _unitOfWork;
+
+    public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger,
+        IJwtAuthenticatedService jwtAuthenticated) : base(iUnitOfWork, logger)
     {
-        private readonly IUnitOfWork<FakhravariDbContext> _unitOfWork;
-        private readonly IJwtAuthenticatedService _jwtAuthenticated;
-        public PersonelRepository(IUnitOfWork<FakhravariDbContext> iUnitOfWork, ISerilogService logger, IJwtAuthenticatedService jwtAuthenticated) : base(iUnitOfWork, logger)
+        _unitOfWork = iUnitOfWork;
+        _jwtAuthenticated = jwtAuthenticated;
+    }
+
+    public async Task<LoginDto> Login(string UserName, string Password)
+    {
+        _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+
+        var matches =
+            await QuerySingleAsync(query => query.Where(e => e.UserName == UserName && e.Password == Password));
+        if (matches == null)
         {
-            _unitOfWork = iUnitOfWork;
-            _jwtAuthenticated = jwtAuthenticated;
+            return new LoginDto
+            {
+                IsLogin = false
+            };
         }
 
-        public async Task<LoginDto> Login(string UserName, string Password)
+        var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
+        var refreshToken = await TokenSave(jwt, matches.Id);
+
+        return new LoginDto
         {
-            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+            IsLogin = true,
+            FirstName = matches.FirstName,
+            Id = matches.Id,
+            LastName = matches.LastName,
+            NationalCode = matches.NationalCode,
+            RefreshToken = refreshToken,
+            Token = jwt
+        };
+    }
 
-            var matches = await QuerySingleAsync(query => query.Where(e => e.UserName == UserName && e.Password == Password));
-            if (matches == null)
-            {
-                return new LoginDto()
-                {
-                    IsLogin = false
-                };
-            }
-            else
-            {
-                var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
-                var refreshToken = await TokenSave(jwt, matches.Id);
+    public async Task<LoginDto> Login2(long IPersonel)
+    {
+        _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-                return new LoginDto()
-                {
-                    IsLogin = true,
-                    FirstName = matches.FirstName,
-                    Id = matches.Id,
-                    LastName = matches.LastName,
-                    NationalCode = matches.NationalCode,
-                    RefreshToken = refreshToken,
-                    Token = jwt
-                };
-            }
-        }
-        public async Task<LoginDto> Login2(long IPersonel)
+        var matches = await QuerySingleAsync(query => query.Where(e => e.Id == IPersonel));
+        if (matches == null)
         {
-            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
-
-            var matches = await QuerySingleAsync(query => query.Where(e => e.Id == IPersonel));
-            if (matches == null)
+            return new LoginDto
             {
-                return new LoginDto()
-                {
-                    IsLogin = false
-                };
-            }
-            else
-            {
-                var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
-                var refreshToken = await TokenSave(jwt, matches.Id);
-
-                return new LoginDto()
-                {
-                    IsLogin = true,
-                    FirstName = matches.FirstName,
-                    Id = matches.Id,
-                    LastName = matches.LastName,
-                    NationalCode = matches.NationalCode,
-                    RefreshToken = refreshToken,
-                    Token = jwt
-                };
-            }
+                IsLogin = false
+            };
         }
 
-        public async Task<LoginDto> ValidateRefreshToken(string Token, Guid RefreshToken)
+        var jwt = _jwtAuthenticated.GenerateJwtToken(matches.Id);
+        var refreshToken = await TokenSave(jwt, matches.Id);
+
+        return new LoginDto
         {
-            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+            IsLogin = true,
+            FirstName = matches.FirstName,
+            Id = matches.Id,
+            LastName = matches.LastName,
+            NationalCode = matches.NationalCode,
+            RefreshToken = refreshToken,
+            Token = jwt
+        };
+    }
 
-            var matches = await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c => c.Id == RefreshToken && c.Token1 == Token);
+    public async Task<LoginDto> ValidateRefreshToken(string Token, Guid RefreshToken)
+    {
+        _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            if (matches == null)
+        var matches =
+            await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c => c.Id == RefreshToken && c.Token1 == Token);
+
+        if (matches == null)
+        {
+            return new LoginDto
             {
-                return new LoginDto()
-                {
-                    IsLogin = false,
-                };
-            }
-            else
-            {
-                var item = await QuerySingleAsync(query => query.Where(e => e.Id == matches.IdPersonel));
-
-                return new LoginDto()
-                {
-                    IsLogin = true,
-                    FirstName = item.FirstName,
-                    Id = item.Id,
-                    LastName = item.LastName,
-                    NationalCode = item.NationalCode
-                };
-            }
+                IsLogin = false
+            };
         }
-        public async Task<bool> ValidateToken(string Token, long IdPersonel)
+
+        var item = await QuerySingleAsync(query => query.Where(e => e.Id == matches.IdPersonel));
+
+        return new LoginDto
         {
-            _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
+            IsLogin = true,
+            FirstName = item.FirstName,
+            Id = item.Id,
+            LastName = item.LastName,
+            NationalCode = item.NationalCode
+        };
+    }
 
-            var item = await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c => c.Token1 == Token && c.IdPersonel == IdPersonel);
+    public async Task<bool> ValidateToken(string Token, long IdPersonel)
+    {
+        _unitOfWork.SetDatabaseMode(DatabaseMode.Read);
 
-            if (item == null)
+        var item = await _unitOfWork.Context.Tokens.FirstOrDefaultAsync(c =>
+            c.Token1 == Token && c.IdPersonel == IdPersonel);
+
+        if (item == null)
+            return false;
+        return true;
+    }
+
+    public async Task<Guid> TokenSave(string Token, long IdPersonel)
+    {
+        try
+        {
+            _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
+
+            var add = new Token
             {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+                DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-",
+                Ip = InternetUtils.GetIp, Id = Guid.NewGuid()
+            };
+            await _unitOfWork.Context.Tokens.AddAsync(add);
+            await _unitOfWork.SaveChangesAsync();
+
+            return add.Id;
         }
-        public async Task<Guid> TokenSave(string Token, long IdPersonel)
+        catch (Exception e)
         {
-            try
-            {
-                _unitOfWork.SetDatabaseMode(DatabaseMode.Write);
-
-                var add = new Token() { DateTime = DateTime.Now, IdPersonel = IdPersonel, IsActive = true, Token1 = Token, Idconnection = "-", Ip = InternetUtils.GetIp, Id = Guid.NewGuid() };
-                await _unitOfWork.Context.Tokens.AddAsync(add);
-                await _unitOfWork.SaveChangesAsync();
-
-                return add.Id;
-            }
-            catch (Exception e)
-            {
-                return Guid.Empty;
-            }
+            return Guid.Empty;
         }
     }
 }

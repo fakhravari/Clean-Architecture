@@ -1,7 +1,6 @@
-﻿namespace WebApi.Model
+﻿namespace WebApi.Model;
+
+public class PublicActionDto
 {
-    public class PublicActionDto
-    {
-        public string Model { get; set; }
-    }
+    public string Model { get; set; }
 }

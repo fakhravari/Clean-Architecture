@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities;
-
-public partial class Personel
+public class Personel
 {
     public long Id { get; set; }
 
@@ -17,7 +14,8 @@ public partial class Personel
 
     public string Password { get; set; } = null!;
 
-    public virtual ICollection<PersonnelToChangeRolesActivity> PersonnelToChangeRolesActivities { get; set; } = new List<PersonnelToChangeRolesActivity>();
+    public virtual ICollection<PersonnelToChangeRolesActivity> PersonnelToChangeRolesActivities { get; set; } =
+        new List<PersonnelToChangeRolesActivity>();
 
     public virtual ICollection<Token> Tokens { get; set; } = new List<Token>();
 }

@@ -8,4 +8,3 @@ public enum DocumentType
     Image = 4,
     File = 4
 }
-

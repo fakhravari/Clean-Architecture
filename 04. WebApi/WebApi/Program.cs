@@ -27,7 +27,6 @@ builder.Services.Add_JwtIdentity(builder.Configuration);
 builder.Services.Add_FileService();
 
 
-
 builder.Add_SerilogLogging(); // پیکربندی Serilog
 
 

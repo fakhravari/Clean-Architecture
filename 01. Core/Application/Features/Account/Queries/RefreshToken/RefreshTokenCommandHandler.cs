@@ -4,47 +4,47 @@ using Application.Services.JWTAuthetication;
 using Domain.Common;
 using MediatR;
 
-namespace Application.Features.Account.Queries.RefreshToken
+namespace Application.Features.Account.Queries.RefreshToken;
+
+public sealed class
+    GetListProductsQuerieHandler : IRequestHandler<RefreshTokenCommand, BaseResponse<RefreshTokenResponseDto>>
 {
-    public sealed class GetListProductsQuerieHandler : IRequestHandler<RefreshTokenCommand, BaseResponse<RefreshTokenResponseDto>>
+    private readonly IJwtAuthenticatedService _jwtAuthenticated;
+    private readonly IPersonelRepository personelRepository;
+
+    public GetListProductsQuerieHandler(IPersonelRepository _personelRepository,
+        IJwtAuthenticatedService jwtAuthenticated)
     {
-        private readonly IPersonelRepository personelRepository;
-        private readonly IJwtAuthenticatedService _jwtAuthenticated;
+        personelRepository = _personelRepository;
+        _jwtAuthenticated = jwtAuthenticated;
+    }
 
-        public GetListProductsQuerieHandler(IPersonelRepository _personelRepository, IJwtAuthenticatedService jwtAuthenticated)
+    public async Task<BaseResponse<RefreshTokenResponseDto>> Handle(RefreshTokenCommand request,
+        CancellationToken cancellationToken)
+    {
+        var user = await personelRepository.ValidateRefreshToken(request.Token, Guid.Parse(request.RefreshToken));
+
+        if (user.IsLogin)
         {
-            personelRepository = _personelRepository;
-            _jwtAuthenticated = jwtAuthenticated;
+            var GetToken = await personelRepository.Login2(user.Id);
+
+            return new BaseResponse<RefreshTokenResponseDto>
+            {
+                Data = new RefreshTokenResponseDto
+                {
+                    IsLogin = GetToken.IsLogin,
+                    Token = GetToken.Token,
+                    RefreshToken = GetToken.RefreshToken
+                }
+            };
         }
 
-        public async Task<BaseResponse<RefreshTokenResponseDto>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
+        return new BaseResponse<RefreshTokenResponseDto>
         {
-            var user = await personelRepository.ValidateRefreshToken(request.Token, Guid.Parse(request.RefreshToken));
-
-            if (user.IsLogin)
+            Data = new RefreshTokenResponseDto
             {
-                var GetToken = await personelRepository.Login2(user.Id);
-
-                return new BaseResponse<RefreshTokenResponseDto>()
-                {
-                    Data = new RefreshTokenResponseDto()
-                    {
-                        IsLogin = GetToken.IsLogin,
-                        Token = GetToken.Token,
-                        RefreshToken = GetToken.RefreshToken
-                    }
-                };
+                IsLogin = false
             }
-            else
-            {
-                return new BaseResponse<RefreshTokenResponseDto>()
-                {
-                    Data = new RefreshTokenResponseDto()
-                    {
-                        IsLogin = false
-                    }
-                };
-            }
-        }
+        };
     }
 }

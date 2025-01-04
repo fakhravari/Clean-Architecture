@@ -8,4 +8,3 @@ public interface IFileService
     Task<UploadResultModel> UploadFile(IFormFile file);
     Task<UploadResultModel> DeleteFile(string fileName);
 }
-

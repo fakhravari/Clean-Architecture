@@ -4,27 +4,29 @@ using Application.Services.JWTAuthetication;
 using Domain.Common;
 using MediatR;
 
-namespace Application.Features.Product.Queries.GetListProducts
+namespace Application.Features.Product.Queries.GetListProducts;
+
+public sealed class
+    GetListProductsQuerieHandler : IRequestHandler<GetListProductsQuerie, BaseResponse<List<GetListProductsDto>>>
 {
-    public sealed class GetListProductsQuerieHandler : IRequestHandler<GetListProductsQuerie, BaseResponse<List<GetListProductsDto>>>
+    private readonly IJwtAuthenticatedService _jwtAuthenticated;
+    private readonly IProductRepository productRepository;
+
+    public GetListProductsQuerieHandler(IProductRepository _personelRepository,
+        IJwtAuthenticatedService jwtAuthenticated)
     {
-        private readonly IProductRepository productRepository;
-        private readonly IJwtAuthenticatedService _jwtAuthenticated;
+        productRepository = _personelRepository;
+        _jwtAuthenticated = jwtAuthenticated;
+    }
 
-        public GetListProductsQuerieHandler(IProductRepository _personelRepository, IJwtAuthenticatedService jwtAuthenticated)
+    public async Task<BaseResponse<List<GetListProductsDto>>> Handle(GetListProductsQuerie request,
+        CancellationToken cancellationToken)
+    {
+        var getList = await productRepository.GetListProducts(request.IdCategory);
+
+        return new BaseResponse<List<GetListProductsDto>>
         {
-            productRepository = _personelRepository;
-            _jwtAuthenticated = jwtAuthenticated;
-        }
-
-        public async Task<BaseResponse<List<GetListProductsDto>>> Handle(GetListProductsQuerie request, CancellationToken cancellationToken)
-        {
-            var getList = await productRepository.GetListProducts(request.IdCategory);
-
-            return new BaseResponse<List<GetListProductsDto>>()
-            {
-                Data = getList
-            };
-        }
+            Data = getList
+        };
     }
 }

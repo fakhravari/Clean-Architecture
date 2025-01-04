@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence.Contexts.Configurations;
+
 public static class ModelBuilderExtensions
 {
     public static void ConfigureModels(this ModelBuilder modelBuilder)

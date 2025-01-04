@@ -2,11 +2,10 @@
 using Domain.Common;
 using MediatR;
 
-namespace Application.Features.Account.Queries.RefreshToken
+namespace Application.Features.Account.Queries.RefreshToken;
+
+public sealed class RefreshTokenCommand : IRequest<BaseResponse<RefreshTokenResponseDto>>
 {
-    public sealed class RefreshTokenCommand : IRequest<BaseResponse<RefreshTokenResponseDto>>
-    {
-        public string Token { get; set; }
-        public string RefreshToken { get; set; }
-    }
+    public string Token { get; set; }
+    public string RefreshToken { get; set; }
 }

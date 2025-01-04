@@ -2,11 +2,9 @@
 using Domain.Common;
 using MediatR;
 
-namespace Application.Features.Product.Queries.GetListProducts
-{
-    public sealed class GetListProductsQuerie : IRequest<BaseResponse<List<GetListProductsDto>>>
-    {
-        public string IdCategory { get; set; }
-    }
-}
+namespace Application.Features.Product.Queries.GetListProducts;
 
+public sealed class GetListProductsQuerie : IRequest<BaseResponse<List<GetListProductsDto>>>
+{
+    public string IdCategory { get; set; }
+}

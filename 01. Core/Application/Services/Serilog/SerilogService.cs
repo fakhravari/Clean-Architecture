@@ -26,6 +26,5 @@ public class SerilogService : ISerilogService
         //_logger.LogWarning(ex, ex.Message + " LogWarning");
 
         _logger.LogError(ex, "An error occurred. Additional Info: {Info}", additionalInfo);
-
     }
 }

@@ -1,22 +1,22 @@
-﻿using Application.Contracts.Persistence.IRepository;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Application.Contracts.Persistence.IRepository;
 using Domain.Model.Jwt;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Shared.ExtensionMethod;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
 public interface IJwtAuthenticatedService
 {
-    string GenerateJwtToken(decimal id);
-    Task<bool> ValidateToken(string token);
     TokenValidationParameters TokenValidationParameters { get; }
 
     string X_Token_JWT { get; }
     long IdUser { get; }
+    string GenerateJwtToken(decimal id);
+    Task<bool> ValidateToken(string token);
 }
 
 public class JwtAuthenticatedService : IJwtAuthenticatedService
@@ -24,10 +24,6 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
     private readonly Lazy<IPersonelRepository> _authRepository;
 
     private readonly JwtSettingModel _jwtSetting;
-    public TokenValidationParameters TokenValidationParameters { get; }
-
-    public string X_Token_JWT { get; }
-    public long IdUser { get; private set; } = 0;
 
     public JwtAuthenticatedService(IOptions<JwtSettingModel> jwtSettings, Lazy<IPersonelRepository> authRepository)
     {
@@ -54,6 +50,11 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
         };
     }
 
+    public TokenValidationParameters TokenValidationParameters { get; }
+
+    public string X_Token_JWT { get; }
+    public long IdUser { get; private set; }
+
     public string GenerateJwtToken(decimal Id)
     {
         var secretKey = Encoding.UTF8.GetBytes(_jwtSetting.SecretKey);
@@ -61,7 +62,8 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
             SecurityAlgorithms.HmacSha256Signature);
 
         var encryptionkey = Encoding.UTF8.GetBytes(_jwtSetting.Encryptkey);
-        var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
+        var encryptingCredentials = new EncryptingCredentials(new SymmetricSecurityKey(encryptionkey),
+            SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
         var Claims = new List<Claim>
         {
@@ -86,6 +88,7 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
 
         return jwt;
     }
+
     public async Task<bool> ValidateToken(string token)
     {
         if (string.IsNullOrWhiteSpace(token)) return false;
@@ -95,7 +98,7 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
             token = token.Replace("Bearer", string.Empty).Trim();
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            tokenHandler.ValidateToken(token, this.TokenValidationParameters, out SecurityToken validatedToken);
+            tokenHandler.ValidateToken(token, TokenValidationParameters, out var validatedToken);
             var jwtToken = (JwtSecurityToken)validatedToken;
 
             IdUser = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToInt();

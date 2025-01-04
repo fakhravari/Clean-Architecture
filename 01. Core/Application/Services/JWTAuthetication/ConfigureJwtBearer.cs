@@ -1,4 +1,5 @@
-﻿using Domain.Common;
+﻿using System.Text;
+using Domain.Common;
 using Domain.Enum;
 using Domain.Model.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
@@ -40,24 +40,19 @@ public static class JwtExtensions
             OnMessageReceived = context =>
             {
                 if (context.Request.Headers.ContainsKey("X-Token-JWT"))
-                {
                     context.Token = context.Request.Headers["X-Token-JWT"];
-                }
                 return Task.CompletedTask;
             },
             OnTokenValidated = async context =>
             {
                 var jwtService = context.HttpContext.RequestServices.GetRequiredService<IJwtAuthenticatedService>();
                 var token = (context.HttpContext.Request.Headers["X-Token-JWT"].FirstOrDefault()
-                                ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
+                             ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
 
                 if (!string.IsNullOrWhiteSpace(token))
                 {
                     var isFail = await jwtService.ValidateToken(token);
-                    if (!isFail)
-                    {
-                        context.Fail("error OnTokenValidated");
-                    }
+                    if (!isFail) context.Fail("error OnTokenValidated");
                 }
                 else
                 {
@@ -70,10 +65,10 @@ public static class JwtExtensions
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)ApiStatusCode.UnAuthorized;
 
-                var response = new BaseResponse()
+                var response = new BaseResponse
                 {
                     Message = "دسترسی غیر مجاز",
-                    ValidationErrors = new List<string>() { "خطا در بررسی توکن" }
+                    ValidationErrors = new List<string> { "خطا در بررسی توکن" }
                 };
 
                 var jsonResponse = JsonConvert.SerializeObject(response, JsonSettings.Settings);

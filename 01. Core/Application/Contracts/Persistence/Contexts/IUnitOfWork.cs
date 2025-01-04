@@ -5,9 +5,8 @@ namespace Application.Contracts.Persistence.Contexts;
 
 public interface IUnitOfWork<TContext> where TContext : DbContext
 {
-    void SetDatabaseMode(DatabaseMode mode);
     DatabaseMode Mode { get; }
     TContext Context { get; }
+    void SetDatabaseMode(DatabaseMode mode);
     Task<int> SaveChangesAsync();
 }
-

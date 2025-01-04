@@ -2,21 +2,16 @@ using Localization.Resources;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.Controllers.Base
+namespace WebApi.Controllers.Base;
+
+[Route("api/v{version:apiVersion}/[controller]/[action]")]
+[ApiController]
+public class BaseController : Controller
 {
-    [Route("api/v{version:apiVersion}/[controller]/[action]")]
-    [ApiController]
-    public class BaseController : Controller
-    {
-        private ISharedResource? _localizer;
-        protected ISharedResource Localizer => HttpContext.RequestServices.GetRequiredService<ISharedResource>();
+    private ISharedResource? _localizer;
 
-        public BaseController()
-        {
+    private ISender? _mediator;
 
-        }
-
-        private ISender? _mediator;
-        protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
-    }
+    protected ISharedResource Localizer => HttpContext.RequestServices.GetRequiredService<ISharedResource>();
+    protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
 }

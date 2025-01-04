@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 namespace Application.Model.Product;
+
 public class GetListProductsDto
 {
     public Guid Id { get; set; }
@@ -11,5 +12,5 @@ public class GetListProductsDto
 
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public List<string> Images { get; set; } = new List<string>();
+    public List<string> Images { get; set; } = new();
 }

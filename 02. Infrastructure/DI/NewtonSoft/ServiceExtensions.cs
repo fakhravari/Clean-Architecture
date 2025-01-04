@@ -11,7 +11,8 @@ public static class ServiceExtensions
         services.AddControllers().AddNewtonsoftJson(options =>
         {
             options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-            options.SerializerSettings.ContractResolver = new DefaultContractResolver { NamingStrategy = new DefaultNamingStrategy() };
+            options.SerializerSettings.ContractResolver = new DefaultContractResolver
+                { NamingStrategy = new DefaultNamingStrategy() };
         });
     }
 }
