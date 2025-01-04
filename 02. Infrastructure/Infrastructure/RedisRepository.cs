@@ -2,7 +2,7 @@
 using StackExchange.Redis;
 using System.Text.Json;
 
-namespace Infrastructure.Redis;
+namespace Infrastructure;
 
 public class RedisRepository : IRedisRepository
 {

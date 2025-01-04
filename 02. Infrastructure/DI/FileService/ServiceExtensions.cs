@@ -1,5 +1,5 @@
 ﻿using Application.Contracts.Infrastructure;
-using Infrastructure.Redis;
+using Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
