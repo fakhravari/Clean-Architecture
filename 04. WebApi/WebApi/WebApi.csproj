@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 
@@ -15,16 +16,16 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.2.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
-		<PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="7.0.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.0.0">
-		  <TreatAsUsed>true</TreatAsUsed>
+		<PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="7.2.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.2.0">
+			<TreatAsUsed>true</TreatAsUsed>
 		</PackageReference>
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.0.0">
-		  <TreatAsUsed>true</TreatAsUsed>
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0">
+			<TreatAsUsed>true</TreatAsUsed>
 		</PackageReference>
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -2,24 +2,25 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="FileExport\**" />
-	  <EmbeddedResource Remove="FileExport\**" />
-	  <None Remove="FileExport\**" />
+		<Compile Remove="FileExport\**" />
+		<EmbeddedResource Remove="FileExport\**" />
+		<None Remove="FileExport\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
-	  <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\01. Core\Application\Application.csproj" />
-	  <ProjectReference Include="..\..\01. Core\Domain\Domain.csproj" />
+		<ProjectReference Include="..\..\01. Core\Application\Application.csproj" />
+		<ProjectReference Include="..\..\01. Core\Domain\Domain.csproj" />
 	</ItemGroup>
 
 </Project>
