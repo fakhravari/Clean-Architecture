@@ -2,9 +2,11 @@
 
 public interface IRedisRepository
 {
-    Task SetAsync<T>(string key, T value, TimeSpan? expiry = null);
+    Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiry = null);
     Task<T?> GetAsync<T>(string key);
     Task<bool> RemoveAsync(string key);
     Task<bool> ExistsAsync(string key);
+    Task<bool> KeyPersistAsync(string key);
+    Task<TimeSpan?> GetKeyTimeToLiveAsync(string key);
     Task<bool> ClearAllAsync();
 }

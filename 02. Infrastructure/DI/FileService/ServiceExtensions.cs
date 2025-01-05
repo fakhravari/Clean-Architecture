@@ -22,6 +22,6 @@ public static class ServiceExtensions
             DefaultDatabase = redisSettings.DefaultDatabase
         };
         services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(options));
-        services.AddScoped<IRedisRepository, RedisRepository>();
+        services.AddSingleton<IRedisRepository, RedisRepository>();
     }
 }
