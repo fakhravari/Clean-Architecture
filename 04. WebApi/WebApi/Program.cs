@@ -24,7 +24,7 @@ builder.Services.Add_NewtonsoftJsonSettings();
 
 
 builder.Services.Add_JwtIdentity(builder.Configuration);
-builder.Services.Add_FileService();
+builder.Services.Add_FileService(builder.Configuration);
 
 
 builder.Add_SerilogLogging(); // پیکربندی Serilog

@@ -10,7 +10,8 @@ public class RedisRepository : IRedisRepository
 
     public RedisRepository(IConnectionMultiplexer connectionMultiplexer)
     {
-        _database = connectionMultiplexer.GetDatabase();
+        int IndexDb = 0;
+        _database = connectionMultiplexer.GetDatabase(IndexDb);
     }
 
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
@@ -35,16 +36,23 @@ public class RedisRepository : IRedisRepository
         return await _database.KeyExistsAsync(key);
     }
 
+    public async Task<bool> KeyPersistAsync(string key)
+    {
+        return await _database.KeyPersistAsync(key);
+    }
+
+    public async Task<TimeSpan?> GetKeyTimeToLiveAsync(string key)
+    {
+        return await _database.KeyTimeToLiveAsync(key);
+    }
+
     public async Task<bool> ClearAllAsync()
     {
         var endPoint = _database.Multiplexer.GetEndPoints().First();
         var server = _database.Multiplexer.GetServer(endPoint);
 
         var keys = server.Keys(_database.Database).ToArray();
-        foreach (var key in keys)
-        {
-            await _database.KeyDeleteAsync(key);
-        }
+        foreach (var key in keys) await _database.KeyDeleteAsync(key);
 
         return true;
     }

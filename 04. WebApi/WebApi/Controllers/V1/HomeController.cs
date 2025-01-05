@@ -27,8 +27,7 @@ public class HomeController : BaseController
     {
         await _redisRepository.ClearAllAsync();
         await _redisRepository.SetAsync("PublicAction", model, TimeSpan.FromMinutes(10));
-
-
+        await _redisRepository.SetAsync("mhf", "محمدحسین فخرآوری", null);
 
         var json = JsonConvert.SerializeObject(model);
         return Ok(json);
