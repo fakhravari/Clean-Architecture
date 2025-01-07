@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Application.Contracts.Infrastructure;
 
-public interface IFileService
+public interface IFileRepository
 {
     Task<UploadResultModel> UploadFile(IFormFile file);
     Task<UploadResultModel> DeleteFile(string fileName);

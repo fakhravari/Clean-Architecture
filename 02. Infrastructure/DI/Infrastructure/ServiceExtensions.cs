@@ -1,18 +1,24 @@
 ﻿using Application.Contracts.Infrastructure;
+using Domain.Model.RabiitMQ;
 using Domain.Model.Redis;
 using Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 
-namespace DI.FileService;
+namespace DI.Infrastructure;
 
 public static class ServiceExtensions
 {
     public static void Add_FileService(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddScoped<IFileService, Infrastructure.FileRepository>();
+        services.AddScoped<IFileRepository, FileRepository>();
 
+        #region RabbitMQ
+        services.Configure<RabbitMQSettingModel>(configuration.GetSection("RabbitMQ"));
+        services.AddScoped<IRabbitMQRepository, RabbitMQRepository>();
+        #endregion
+        #region Redis
         var redisSettings = configuration.GetSection("Redis").Get<RedisSettingModel>();
         var options = new ConfigurationOptions
         {
@@ -23,5 +29,6 @@ public static class ServiceExtensions
         };
         services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(options));
         services.AddSingleton<IRedisRepository, RedisRepository>();
+        #endregion
     }
 }

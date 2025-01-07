@@ -1,5 +1,5 @@
 ﻿using Application.ExceptionsHandler;
-using DI.FileService;
+using DI.Infrastructure;
 using DI.Jwt;
 using DI.Localization;
 using DI.MediatR_FluentValidation;

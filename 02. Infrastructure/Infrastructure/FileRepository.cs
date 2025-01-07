@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure;
 
-public class FileRepository : IFileService
+public class FileRepository : IFileRepository
 {
     private readonly string _ftpAddress;
     private readonly NetworkCredential _ftpCredentials;

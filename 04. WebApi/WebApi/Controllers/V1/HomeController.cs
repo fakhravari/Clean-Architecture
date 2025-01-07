@@ -16,19 +16,17 @@ public class HomeController : BaseController
 {
     private readonly IStringLocalizer<SharedResource> localizer;
     private readonly IRedisRepository _redisRepository;
-    public HomeController(IStringLocalizer<SharedResource> _localizer, IRedisRepository redisRepository)
+    private readonly IRabbitMQRepository _rabbitMQRepository;
+    public HomeController(IStringLocalizer<SharedResource> _localizer, IRedisRepository redisRepository, IRabbitMQRepository rabbitMqRepository)
     {
         localizer = _localizer;
         _redisRepository = redisRepository;
+        _rabbitMQRepository = rabbitMqRepository;
     }
 
     [HttpPost]
     public async Task<IActionResult> PublicAction([FromBody] PublicActionDto model)
     {
-        await _redisRepository.ClearAllAsync();
-        await _redisRepository.SetAsync("PublicAction", model, TimeSpan.FromMinutes(10));
-        await _redisRepository.SetAsync("mhf", "محمدحسین فخرآوری", null);
-
         var json = JsonConvert.SerializeObject(model);
         return Ok(json);
     }
@@ -39,5 +37,26 @@ public class HomeController : BaseController
     {
         var json = JsonConvert.SerializeObject(model);
         return Ok(json);
+    }
+
+
+
+
+
+
+
+    [HttpPost]
+    public async Task<IActionResult> Redis([FromBody] string model)
+    {
+        await _redisRepository.ClearAllAsync();
+        await _redisRepository.SetAsync("PublicAction", model, TimeSpan.FromMinutes(10));
+        await _redisRepository.SetAsync("mhf", "محمدحسین فخرآوری", null);
+        return Ok();
+    }
+    [HttpPost]
+    public async Task<IActionResult> RabbitMQ([FromBody] string model)
+    {
+        await _rabbitMQRepository.SendMessageAsync(model);
+        return Ok();
     }
 }
