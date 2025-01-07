@@ -26,7 +26,6 @@ public static class ServiceExtensions
         var options = new ConfigurationOptions
         {
             EndPoints = { $"{redisSettings.Host}:{redisSettings.Port}" },
-            User = redisSettings.User,
             Password = redisSettings.Password,
             DefaultDatabase = redisSettings.DefaultDatabase
         };
