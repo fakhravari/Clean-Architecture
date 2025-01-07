@@ -6,14 +6,14 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 
-namespace Infrastructure
+namespace Infrastructure.RabbitMQR
 {
-    public class RabbitMQRepository : IRabbitMQRepository
+    public class RabbitMQRepository : IRabbitMQRepository, IDisposable
     {
         private readonly ILogger<RabbitMQRepository> _logger;
-        private readonly IConnection _connection;
-        private readonly IModel _channel;
         private readonly RabbitMQSettingModel _settings;
+        private IConnection _connection;
+        private IModel _channel;
 
         public RabbitMQRepository(IOptions<RabbitMQSettingModel> settings, ILogger<RabbitMQRepository> logger)
         {
@@ -22,6 +22,7 @@ namespace Infrastructure
 
             var factory = new ConnectionFactory()
             {
+                Uri = new Uri(_settings.Uri),
                 HostName = _settings.HostName,
                 UserName = _settings.UserName,
                 Password = _settings.Password
@@ -34,17 +35,17 @@ namespace Infrastructure
             _logger.LogInformation("RabbitMQ connection established.");
         }
 
-        public async Task<bool> SendMessageAsync(string message)
+        public Task SendMessageAsync(string message)
         {
             var body = Encoding.UTF8.GetBytes(message);
 
             _channel.BasicPublish(exchange: "", routingKey: _settings.QueueName, basicProperties: null, body: body);
-
             _logger.LogInformation("Message sent: {Message}", message);
-            return true;
+
+            return Task.CompletedTask;
         }
 
-        public async Task<bool> ReceiveMessagesAsync()
+        public Task ReceiveMessagesAsync()
         {
             var consumer = new EventingBasicConsumer(_channel);
             consumer.Received += (model, ea) =>
@@ -56,9 +57,9 @@ namespace Infrastructure
             };
 
             _channel.BasicConsume(queue: _settings.QueueName, autoAck: true, consumer: consumer);
-
             _logger.LogInformation("Waiting for messages...");
-            return true;
+
+            return Task.CompletedTask;
         }
 
         public void Dispose()
@@ -67,7 +68,7 @@ namespace Infrastructure
             _channel?.Dispose();
             _connection?.Close();
             _connection?.Dispose();
-            Console.WriteLine("RabbitMQ resources disposed.");
+            _logger.LogInformation("RabbitMQ resources disposed.");
         }
     }
 }

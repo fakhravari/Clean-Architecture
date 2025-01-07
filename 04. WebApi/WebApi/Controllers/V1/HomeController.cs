@@ -14,14 +14,14 @@ namespace WebApi.Controllers.V1;
 [ApiVersion("1")]
 public class HomeController : BaseController
 {
+    private readonly ILogger<HomeController> _logger;
     private readonly IStringLocalizer<SharedResource> localizer;
     private readonly IRedisRepository _redisRepository;
-    private readonly IRabbitMQRepository _rabbitMQRepository;
-    public HomeController(IStringLocalizer<SharedResource> _localizer, IRedisRepository redisRepository, IRabbitMQRepository rabbitMqRepository)
+    public HomeController(IStringLocalizer<SharedResource> _localizer, IRedisRepository redisRepository, ILogger<HomeController> logger)
     {
         localizer = _localizer;
         _redisRepository = redisRepository;
-        _rabbitMQRepository = rabbitMqRepository;
+        _logger = logger;
     }
 
     [HttpPost]
@@ -40,23 +40,12 @@ public class HomeController : BaseController
     }
 
 
-
-
-
-
-
     [HttpPost]
     public async Task<IActionResult> Redis([FromBody] string model)
     {
         await _redisRepository.ClearAllAsync();
         await _redisRepository.SetAsync("PublicAction", model, TimeSpan.FromMinutes(10));
         await _redisRepository.SetAsync("mhf", "محمدحسین فخرآوری", null);
-        return Ok();
-    }
-    [HttpPost]
-    public async Task<IActionResult> RabbitMQ([FromBody] string model)
-    {
-        await _rabbitMQRepository.SendMessageAsync(model);
         return Ok();
     }
 }

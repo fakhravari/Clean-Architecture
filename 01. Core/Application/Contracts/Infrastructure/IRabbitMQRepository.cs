@@ -1,8 +1,8 @@
 ﻿namespace Application.Contracts.Infrastructure
 {
-    public interface IRabbitMQRepository : IDisposable
+    public interface IRabbitMQRepository
     {
-        Task<bool> SendMessageAsync(string message);
-        Task<bool> ReceiveMessagesAsync();
+        Task SendMessageAsync(string message);
+        Task ReceiveMessagesAsync();
     }
 }

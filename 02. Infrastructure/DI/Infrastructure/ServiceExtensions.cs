@@ -2,6 +2,8 @@
 using Domain.Model.RabiitMQ;
 using Domain.Model.Redis;
 using Infrastructure;
+using Infrastructure.RabbitMQR;
+using Infrastructure.Redis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
@@ -16,7 +18,8 @@ public static class ServiceExtensions
 
         #region RabbitMQ
         services.Configure<RabbitMQSettingModel>(configuration.GetSection("RabbitMQ"));
-        services.AddScoped<IRabbitMQRepository, RabbitMQRepository>();
+        services.AddSingleton<IRabbitMQRepository, RabbitMQRepository>();
+        services.AddHostedService<RabbitMQBackgroundService>();
         #endregion
         #region Redis
         var redisSettings = configuration.GetSection("Redis").Get<RedisSettingModel>();

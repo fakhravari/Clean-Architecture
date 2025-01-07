@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using StackExchange.Redis;
 
-namespace Infrastructure;
+namespace Infrastructure.Redis;
 
 public class RedisRepository : IRedisRepository
 {
