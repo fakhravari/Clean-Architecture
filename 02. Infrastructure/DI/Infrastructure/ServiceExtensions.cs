@@ -1,7 +1,9 @@
 ﻿using Application.Contracts.Infrastructure;
-using Domain.Model.RabiitMQ;
+using Domain.Model.Email;
+using Domain.Model.RabbitMQ;
 using Domain.Model.Redis;
 using Infrastructure;
+using Infrastructure.Email;
 using Infrastructure.RabbitMQR;
 using Infrastructure.Redis;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +17,13 @@ public static class ServiceExtensions
     public static void Add_FileService(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IFileRepository, FileRepository>();
+        #region Email
+        services.Configure<EmailSettingModel>(configuration.GetSection("Email"));
+        services.AddSingleton<IEmailRepository, EmailRepository>();
+        #endregion
+
+
+
 
         var isDebug = true;
 

@@ -1,4 +1,4 @@
-﻿namespace Domain.Model.RabiitMQ
+﻿namespace Domain.Model.RabbitMQ
 {
     public class RabbitMQSettingModel
     {
