@@ -16,6 +16,16 @@ public static class ServiceExtensions
     {
         services.AddScoped<IFileRepository, FileRepository>();
 
+        var isDebug = true;
+
+#if DEBUG
+        isDebug = true;
+#else
+            isDebug = false;
+#endif
+
+        if (isDebug == false) return;
+
         #region RabbitMQ
         services.Configure<RabbitMQSettingModel>(configuration.GetSection("RabbitMQ"));
         services.AddSingleton<IRabbitMQRepository, RabbitMQRepository>();
