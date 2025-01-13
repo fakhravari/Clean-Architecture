@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold "Data Source=31.25.90.164;Initial Catalog=noyankes_TestEf;User ID=noyankes_TestEf;Password=168wu9_pM;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Entities --context FakhravariDbContext

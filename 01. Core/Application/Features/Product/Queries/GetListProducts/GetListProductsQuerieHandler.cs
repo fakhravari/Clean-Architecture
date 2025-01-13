@@ -9,14 +9,14 @@ namespace Application.Features.Product.Queries.GetListProducts;
 public sealed class
     GetListProductsQuerieHandler : IRequestHandler<GetListProductsQuerie, BaseResponse<List<GetListProductsDto>>>
 {
-    private readonly IJwtAuthenticatedService _jwtAuthenticated;
+    private readonly IJwtAuthService _jwtAuth;
     private readonly IProductRepository productRepository;
 
     public GetListProductsQuerieHandler(IProductRepository _personelRepository,
-        IJwtAuthenticatedService jwtAuthenticated)
+        IJwtAuthService jwtAuth)
     {
         productRepository = _personelRepository;
-        _jwtAuthenticated = jwtAuthenticated;
+        _jwtAuth = jwtAuth;
     }
 
     public async Task<BaseResponse<List<GetListProductsDto>>> Handle(GetListProductsQuerie request,

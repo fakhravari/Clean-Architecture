@@ -13,14 +13,14 @@ namespace WebApi.Controllers.V2;
 [ApiVersion("2")]
 public class ProductController : BaseController
 {
-    private readonly IJwtAuthenticatedService _iwJwtAuthenticatedService;
+    private readonly IJwtAuthService _iwJwtAuthService;
     private readonly ISerilogService _logger;
     private readonly IProductRepository iProductRepository;
 
-    public ProductController(IJwtAuthenticatedService iwJwtAuthenticatedService, ISerilogService logger,
+    public ProductController(IJwtAuthService iwJwtAuthService, ISerilogService logger,
         IProductRepository _iProductRepository)
     {
-        _iwJwtAuthenticatedService = iwJwtAuthenticatedService;
+        _iwJwtAuthService = iwJwtAuthService;
         _logger = logger;
         iProductRepository = _iProductRepository;
     }

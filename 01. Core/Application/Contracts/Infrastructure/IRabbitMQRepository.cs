@@ -2,7 +2,7 @@
 {
     public interface IRabbitMQRepository
     {
-        Task SendMessageAsync(string message);
+        Task SendMessageAsync(string ToEmail, string Subject, string Message);
         Task ReceiveMessagesAsync();
     }
 }

@@ -1,34 +1,29 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Application.Contracts.Persistence.IRepository;
-using Domain.Model.Jwt;
+﻿using Domain.Model.Jwt;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Shared.ExtensionMethod;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
-public interface IJwtAuthenticatedService
+public interface IJwtAuthService
 {
     TokenValidationParameters TokenValidationParameters { get; }
 
     string X_Token_JWT { get; }
     long IdUser { get; }
     string GenerateJwtToken(decimal id);
-    Task<bool> ValidateToken(string token);
+    ValidateTokenModel? ValidateToken(string token);
 }
 
-public class JwtAuthenticatedService : IJwtAuthenticatedService
+public class JwtAuthService : IJwtAuthService
 {
-    private readonly Lazy<IPersonelRepository> _authRepository;
-
     private readonly JwtSettingModel _jwtSetting;
 
-    public JwtAuthenticatedService(IOptions<JwtSettingModel> jwtSettings, Lazy<IPersonelRepository> authRepository)
+    public JwtAuthService(IOptions<JwtSettingModel> jwtSettings)
     {
-        _authRepository = authRepository;
-
         _jwtSetting = jwtSettings.Value;
         X_Token_JWT = jwtSettings.Value.X_Token_JWT;
 
@@ -89,9 +84,9 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
         return jwt;
     }
 
-    public async Task<bool> ValidateToken(string token)
+    public ValidateTokenModel? ValidateToken(string token)
     {
-        if (string.IsNullOrWhiteSpace(token)) return false;
+        if (string.IsNullOrWhiteSpace(token)) return null;
 
         try
         {
@@ -103,13 +98,15 @@ public class JwtAuthenticatedService : IJwtAuthenticatedService
 
             IdUser = jwtToken.Claims.First(claim => claim.Type == "nameid").Value.ToInt();
 
-            var item = await _authRepository.Value.ValidateToken(token, IdUser);
-
-            return item;
+            return new ValidateTokenModel()
+            {
+                Token = token,
+                IdUser = IdUser
+            };
         }
         catch (Exception ex)
         {
-            return false;
+            return null;
         }
     }
 }

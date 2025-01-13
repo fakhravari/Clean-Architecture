@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿using Application.Contracts.Persistence.IRepository;
 using Domain.Common;
 using Domain.Enum;
 using Domain.Model.Jwt;
@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace Application.Services.JWTAuthetication;
 
@@ -45,13 +46,17 @@ public static class JwtExtensions
             },
             OnTokenValidated = async context =>
             {
-                var jwtService = context.HttpContext.RequestServices.GetRequiredService<IJwtAuthenticatedService>();
+                var jwtService = context.HttpContext.RequestServices.GetRequiredService<IJwtAuthService>();
+                var iAuth = context.HttpContext.RequestServices.GetRequiredService<IPersonelRepository>();
                 var token = (context.HttpContext.Request.Headers["X-Token-JWT"].FirstOrDefault()
                              ?? context.HttpContext.Request.Query["X-Token-JWT"].FirstOrDefault() ?? "").Trim();
 
                 if (!string.IsNullOrWhiteSpace(token))
                 {
-                    var isFail = await jwtService.ValidateToken(token);
+                    var getUser = jwtService.ValidateToken(token);
+                    if (getUser == null) context.Fail("error OnTokenValidated");
+
+                    var isFail = await iAuth.ValidateToken(getUser.Token, getUser.IdUser);
                     if (!isFail) context.Fail("error OnTokenValidated");
                 }
                 else

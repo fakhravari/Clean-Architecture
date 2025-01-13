@@ -9,14 +9,14 @@ namespace Application.Features.Account.Queries.RefreshToken;
 public sealed class
     GetListProductsQuerieHandler : IRequestHandler<RefreshTokenCommand, BaseResponse<RefreshTokenResponseDto>>
 {
-    private readonly IJwtAuthenticatedService _jwtAuthenticated;
+    private readonly IJwtAuthService _jwtAuth;
     private readonly IPersonelRepository personelRepository;
 
     public GetListProductsQuerieHandler(IPersonelRepository _personelRepository,
-        IJwtAuthenticatedService jwtAuthenticated)
+        IJwtAuthService jwtAuth)
     {
         personelRepository = _personelRepository;
-        _jwtAuthenticated = jwtAuthenticated;
+        _jwtAuth = jwtAuth;
     }
 
     public async Task<BaseResponse<RefreshTokenResponseDto>> Handle(RefreshTokenCommand request,

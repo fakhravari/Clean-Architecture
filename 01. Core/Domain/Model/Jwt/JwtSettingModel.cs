@@ -19,3 +19,9 @@ public class GenerateJwtTokenModel
     public string Token { get; set; }
     public string RefreshToken { get; set; }
 }
+
+public class ValidateTokenModel
+{
+    public long IdUser { get; set; }
+    public string Token { get; set; }
+}

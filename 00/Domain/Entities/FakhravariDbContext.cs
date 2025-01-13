@@ -1,11 +1,37 @@
-﻿using Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persistence.Contexts.Configurations;
+namespace Domain.Entities;
 
-public static class ModelBuilderExtensions
+public partial class FakhravariDbContext : DbContext
 {
-    public static void ConfigureModels(this ModelBuilder modelBuilder)
+    public FakhravariDbContext()
+    {
+    }
+
+    public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options)
+        : base(options)
+    {
+    }
+
+    public virtual DbSet<Category> Categories { get; set; }
+
+    public virtual DbSet<Image> Images { get; set; }
+
+    public virtual DbSet<Personel> Personels { get; set; }
+
+    public virtual DbSet<Product> Products { get; set; }
+
+    public virtual DbSet<RabbitMq> RabbitMqs { get; set; }
+
+    public virtual DbSet<Token> Tokens { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=31.25.90.164;Initial Catalog=noyankes_TestEf;User ID=noyankes_TestEf;Password=168wu9_pM;TrustServerCertificate=True");
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("noyankes_TestEf");
 
@@ -88,5 +114,8 @@ public static class ModelBuilderExtensions
                 .HasConstraintName("FK_Tokens_Personel");
         });
 
+        OnModelCreatingPartial(modelBuilder);
     }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

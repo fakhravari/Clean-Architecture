@@ -8,23 +8,24 @@ public partial class FakhravariDbContext : DbContext
 {
     public FakhravariDbContext()
     {
+
     }
 
     public FakhravariDbContext(DbContextOptions<FakhravariDbContext> options) : base(options)
     {
+
     }
+
 
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Image> Images { get; set; }
 
-    public virtual DbSet<Log> Logs { get; set; }
-
     public virtual DbSet<Personel> Personels { get; set; }
 
-    public virtual DbSet<PersonnelToChangeRolesActivity> PersonnelToChangeRolesActivities { get; set; }
-
     public virtual DbSet<Product> Products { get; set; }
+
+    public virtual DbSet<RabbitMq> RabbitMqs { get; set; }
 
     public virtual DbSet<Token> Tokens { get; set; }
 

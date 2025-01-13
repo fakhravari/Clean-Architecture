@@ -20,10 +20,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Entities\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Include="Model\RabbitMQ\RabbitMQSettingModel.cs" />
 	</ItemGroup>
 

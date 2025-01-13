@@ -9,4 +9,15 @@ public interface IPersonelRepository
     Task<LoginDto> ValidateRefreshToken(string Token, Guid RefreshToken);
     Task<bool> ValidateToken(string Token, long IdPersonel);
     Task<Guid> TokenSave(string Token, long IdPersonel);
+
+
+
+
+
+
+
+
+
+    Task<decimal> RabbitMQSend(string Subject, string Body, string ToEmail);
+    Task<bool> RabbitMQReceive();
 }
