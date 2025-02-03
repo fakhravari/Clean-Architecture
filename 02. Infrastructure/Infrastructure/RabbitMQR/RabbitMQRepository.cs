@@ -38,9 +38,7 @@ public class RabbitMQRepository : IRabbitMQRepository, IDisposable
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
 
-
-
-        _channel.QueueDeclare(queue: Queue_Email, durable: true, exclusive: false, autoDelete: false, arguments: null);
+        _channel.QueueDeclare(queue: Queue_Email, durable: false, exclusive: false, autoDelete: false, arguments: null);
         _logger.LogInformation("RabbitMQ connection established.");
     }
 

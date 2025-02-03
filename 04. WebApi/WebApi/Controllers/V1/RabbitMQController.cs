@@ -19,9 +19,6 @@ public class RabbitMQController : BaseController
     public async Task<IActionResult> SendMessage(string ToEmail, string Subject, string Message)
     {
         await _rabbitMQRepository.SendMessageAsync(ToEmail, Subject, Message);
-
-        // await _emailRepository.SendEmailAsync(ToEmail, Subject, Message);
-
         return Ok("Message sent successfully.");
     }
 

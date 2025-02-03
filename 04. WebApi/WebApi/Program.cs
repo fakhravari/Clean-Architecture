@@ -44,12 +44,12 @@ else
 }
 
 app.UseSwaggerAndUI();
-
-
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.Use_AnyCors();
+
 app.UseStaticFiles();
 app.UseRouting();
+app.Use_AnyCors();
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
