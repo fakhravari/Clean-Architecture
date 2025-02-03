@@ -23,7 +23,7 @@
 	<ItemGroup>
 		<!--EF-->
 		<PackageReference Include="EFCore.BulkExtensions" Version="8.1.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
 		<!--MediatR & Fluent-->
 		<PackageReference Include="FluentValidation" Version="11.11.0" />
 		<PackageReference Include="MediatR" Version="12.4.1" />
@@ -34,6 +34,6 @@
 		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="8.1.0" />
 		<PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
 		<!--Other-->
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.1" />
 	</ItemGroup>
 </Project>
