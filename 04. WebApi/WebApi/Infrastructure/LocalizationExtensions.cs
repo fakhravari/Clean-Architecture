@@ -6,11 +6,9 @@ namespace WebApi.Infrastructure;
 
 public static class LocalizationExtensions
 {
-    public static IServiceCollection AddCustomLocalization(this IServiceCollection services,
-        IConfiguration configuration)
+    public static IServiceCollection AddCustomLocalization(this IServiceCollection services, IConfiguration configuration)
     {
-        var supportedCultures = configuration.GetSection("Localization:SupportedCultures")
-            .Get<List<string>>().Select(p => new CultureInfo(p)).ToArray();
+        var supportedCultures = configuration.GetSection("Localization:SupportedCultures").Get<List<string>>().Select(p => new CultureInfo(p)).ToArray();
 
         services.Configure<RequestLocalizationOptions>(options =>
         {
@@ -24,8 +22,7 @@ public static class LocalizationExtensions
 
     public static IApplicationBuilder UseCustomLocalization(this IApplicationBuilder app)
     {
-        app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>()
-            .Value);
+        app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
         return app;
     }
